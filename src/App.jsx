@@ -40,8 +40,9 @@ const NAV_LINKS = [
   { label: "Apple", href: "#apple" },
   { label: "Celulares", href: "#celulares" },
   { label: "Computadoras", href: "#computadoras" },
-  { label: "Tablets", href: "#tablets" },
-  { label: "Impresoras", href: "#impresoras" },
+  { label: "Upgrades", href: "#upgrades" },
+  { label: "Bisagras", href: "#bisagras" },
+  { label: "Consolas", href: "#consolas" },
   { label: "Armado PC", href: "#armado" },
   { label: "Contacto", href: "#contacto" },
 ];
@@ -51,11 +52,11 @@ const SERVICES = [
     id: "apple",
     icon: "🍏",
     title: "Especialistas Apple",
-    subtitle: "iPhone · iPad · MacBook",
-    desc: "Servicio técnico premium para dispositivos Apple. Trabajamos con repuestos originales, herramientas certificadas e ingenieros especializados en microsoldadura de placa.",
+    subtitle: "MacBook · iPhone · iPad",
+    desc: "Somos especialistas en MacBook, iPhone, iPad, todos los productos Apple. Servicio técnico premium con repuestos originales y microsoldadura de placa.",
     color: "#0d59f2",
-    img: "/img/crea-una-imagen-para-un-banner-de-un-sitio-web-que.jpeg",
-    items: ["Módulos OLED originales con TrueTone", "Baterías calidad 100% certificado", "Reparación avanzada de Face ID", "Microsoldadura en placas lógicas", "Ampliación de memoria NAND", "Garantía premium de 6 meses"],
+    img: "/img/apple_service_1773640672618.png",
+    items: ["Módulos OLED originales con TrueTone", "Baterías calidad 100% certificado", "Reparación avanzada de Face ID", "Microsoldadura en placas lógicas", "Ampliación de memoria NAND", "Reparaciones exprés en el día"],
   },
   {
     id: "celulares",
@@ -64,18 +65,48 @@ const SERVICES = [
     subtitle: "Samsung · Motorola · Xiaomi",
     desc: "Sabemos lo importante que es tu teléfono. Realizamos reparaciones rápidas y efectivas para dejar tu celular funcionando como el primer día, sin perder tu información.",
     color: "#ff3b30",
-    img: "/img/crea-una-imagen-para-un-banner-de-un-sitio-web-que-2.jpeg",
-    items: ["Cambio de módulo completo", "Reemplazo de baterías agotadas", "Reparación de pin de carga y audio", "Recuperación de equipos mojados", "Cámaras, sensores y botones", "Diagnóstico exprés en el acto"],
+    img: "/img/hero_lab_2_1773640646478.png",
+    items: ["Cambio de módulo completo", "Reemplazo de baterías agotadas", "Reparación de pin de carga y audio", "Recuperación de equipos mojados", "Cámaras, sensores y botones", "Diagnóstico sin cargo"],
   },
   {
     id: "computadoras",
     icon: "💻",
-    title: "Computadoras y Notebooks",
-    subtitle: "Reparación · Upgrades · Bisagras",
-    desc: "Desde la restauración de bisagras rotas y plásticos, hasta la instalación de discos sólidos y mantenimiento térmico integral. Dejamos tu PC lista para la exigencia.",
+    title: "Computadoras en General",
+    subtitle: "PC de Escritorio · All in One",
+    desc: "Diagnóstico y reparación integral de computadoras de escritorio, mothers y componentes electrónicos. Reemplazo de fuentes, memorias y solución de fallas complejas.",
+    color: "#9c27b0",
+    img: "/img/pc_general_1773640791199.png",
+    items: ["Reparación de placas base (motherboards)", "Mantenimiento térmico profundo", "Solución a fallos de encendido o video", "Formateo e instalación limpia Windows", "Backups seguros y recuperación de datos", "Limpieza general de componentes"],
+  },
+  {
+    id: "upgrades",
+    icon: "⚡",
+    title: "Mejoras de Velocidad",
+    subtitle: "Upgrade de Hardware",
+    desc: "Tu equipo viejo puede volar como nuevo. Optimizamos el rendimiento de tu notebook o PC instalando la última tecnología de almacenamiento y ampliando la memoria.",
     color: "#2dfc52",
+    img: "/img/upgrade_speed_1773640834807.png",
+    items: ["Instalación de SSD NVMe o SATA", "Ampliación de memoria RAM", "Optimización del sistema operativo", "Clonación de disco (sin perder datos)", "Hasta 100 veces más rápida", "Asesoramiento sobre compatibilidad"],
+  },
+  {
+    id: "bisagras",
+    icon: "🔧",
+    title: "Reparación de Bisagras",
+    subtitle: "Notebooks Multimarca",
+    desc: "Las bisagras rotas son el problema mecánico más frecuente. Reparamos o reemplazamos bisagras y anclajes con refuerzo estructural de resina de alta resistencia.",
+    color: "#ff9500",
     img: "/img/crea-una-imagen-para-un-banner-de-un-sitio-web-que-3.jpeg",
-    items: ["Instalación de SSD (100x más rápido)", "Reconstrucción de bisagras rotas", "Mantenimiento térmico profundo", "Ampliación de memoria RAM", "Formateo e instalación limpia Windows", "Backups seguros y recuperación de datos"],
+    items: ["Bisagras HP, Lenovo, Asus, Acer", "Restauración de plásticos rotos", "Reparación de marco de pantalla", "Refuerzo estructural del chasis", "Repuestos originales y compatibles", "Garantía de mano de obra y fijación"],
+  },
+  {
+    id: "consolas",
+    icon: "🎮",
+    title: "Consolas de Videojuegos",
+    subtitle: "PS5 · PS4 · Xbox · Switch",
+    desc: "Somos expertos en la reparación de consolas. Desde problemas de recalentamiento con el famoso metal líquido, hasta reballing de la GPU o cambio de lectura de disco.",
+    color: "#f20d59",
+    img: "/img/console_repair_1773640849993.png",
+    items: ["Mantenimiento preventivo completo", "Reballing profesional de GPU", "Cambio de puerto HDMI (PS4/PS5)", "Reparación Drift en joysticks", "Limpieza de metal líquido y pasta térmica", "Problemas de software y lector"],
   },
   {
     id: "tablets",
@@ -83,9 +114,9 @@ const SERVICES = [
     title: "Tablets e iPads",
     subtitle: "Estudio · Trabajo · Multimedia",
     desc: "Las tablets sufren muchos golpes y desgastes. Reparamos táctiles, displays completos y fallas de carga para que los más chicos o los profesionales no dejen de usarlas.",
-    color: "#ff9500",
+    color: "#0df2a6",
     img: "/img/crea-una-imagen-para-un-banner-de-un-sitio-web-que-4.jpeg",
-    items: ["Reemplazo de cristal táctil", "Cambio de display interno LCD", "Baterías nuevas de alta duración", "Desbloqueos de software", "Reparación de botón de encendido", "Limpieza de periféricos"],
+    items: ["Reemplazo de cristal táctil", "Cambio de display interno LCD", "Baterías nuevas de alta duración", "Desbloqueos de software", "Reparación de botón de encendido", "Limpieza de conectores"],
   },
   {
     id: "impresoras",
@@ -93,9 +124,9 @@ const SERVICES = [
     title: "Impresoras",
     subtitle: "Epson · HP · Brother",
     desc: "Mantenimiento especializado para impresoras de sistema continuo y cartuchos. Evitá manchas, atascos de papel y cabezales tapados con nuestro servicio profesional.",
-    color: "#9c27b0",
+    color: "#e6e6e6",
     img: "/img/realistic-modern-photo-of-a-modest-neighborhood-co-4.jpeg",
-    items: ["Destape profundo de cabezales", "Reseteo de almohadillas por software", "Sistemas continuos alternativos", "Reparación de toma de papel", "Limpieza general de engranajes", "Calibración de color"],
+    items: ["Destape profundo de cabezales", "Reseteo de almohadillas por software", "Sistemas continuos alternativos", "Reparación de toma de papel", "Limpieza general de engranajes", "Calibración de inyectores"],
   },
 ];
 
@@ -343,10 +374,10 @@ function Hero() {
             }}
           >
             {[
-              "/img/realistic-modern-photo-of-a-modest-neighborhood-co.jpeg",
-              "/img/realistic-modern-photo-of-a-modest-neighborhood-co-2.jpeg",
-              "/img/realistic-modern-photo-of-a-modest-neighborhood-co-3.jpeg",
-              "/img/realistic-modern-photo-of-a-modest-neighborhood-co-4.jpeg"
+              "/img/hero_lab_1_1773640631102.png",
+              "/img/apple_service_1773640672618.png",
+              "/img/pc_general_1773640791199.png",
+              "/img/hero_lab_2_1773640646478.png"
             ].map((src, i) => (
               <div key={i} style={{ width: "25%", height: "100%", position: "relative" }}>
                 <img
@@ -387,7 +418,7 @@ function Hero() {
               >
                 Servicio Técnico Multimarca
               </div>
-              <div style={{ fontSize: 12, color: "rgba(255,255,255,0.7)" }}>Reparaciones en tiempo récord</div>
+              <div style={{ fontSize: 12, color: "rgba(255,255,255,0.7)" }}>Reparaciones pensadas a cada medida</div>
             </div>
           </div>
         </div>
@@ -508,16 +539,26 @@ function BuildPCForm() {
   const [form, setForm] = useState({ name: "", use: "", budget: "", extraInfo: "" });
   const [sent, setSent] = useState(false);
 
-  function handleChange(e) {
-    setForm((f) => ({ ...f, [e.target.name]: e.target.value }));
-  }
-
   function handleSubmit(e) {
     e.preventDefault();
-    const text = `Hola TechnoStore! Quiero un presupuesto para armar una PC.\n\nNombre: ${form.name}\nUso principal: ${form.use}\nPresupuesto aproximado: $${form.budget}\nInformación extra: ${form.extraInfo}`;
+    const text = `Hola TechnoStore! Quiero un presupuesto para armar una PC.\n\nNombre: ${form.name}\nUso principal: ${form.use}\nPresupuesto aproximado: ${form.budget}\nInformación extra: ${form.extraInfo}`;
     window.open(`https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(text)}`, "_blank");
     setSent(true);
   }
+
+  const USES = [
+    { label: "Gaming a Tope", icon: "🎮" },
+    { label: "Edición y Diseño", icon: "🎨" },
+    { label: "Trabajo / Estudio", icon: "💼" },
+    { label: "Uso General", icon: "🏠" },
+  ];
+
+  const BUDGETS = [
+    "Hasta $500.000",
+    "Entre $500k y $1M",
+    "Entre $1M y $2M",
+    "Sin límite de presupuesto",
+  ];
 
   return (
     <section id="armado" style={{ padding: "100px 24px", background: "rgba(13,89,242,0.04)" }}>
@@ -552,7 +593,7 @@ function BuildPCForm() {
             Presupuesto Personalizado
           </h2>
           <p style={{ color: "rgba(255,255,255,0.5)", fontSize: 17 }}>
-            Completá el formulario y te mandamos el presupuesto por WhatsApp
+            Seleccioná cómo vas a usar tu PC y te enviamos la mejor opción por WhatsApp
           </p>
         </div>
 
@@ -567,91 +608,136 @@ function BuildPCForm() {
             }}
           >
             <div style={{ fontSize: 64, marginBottom: 16 }}>✅</div>
-            <h3 style={{ color: "#2dfc52", fontFamily: "'Space Grotesk', sans-serif", fontSize: 24, fontWeight: 800 }}>
-              ¡Listo!
-            </h3>
+            <h3 style={{ fontSize: 24, margin: "0 0 8px", color: "#fff" }}>¡Preparando tu presupuesto!</h3>
             <p style={{ color: "rgba(255,255,255,0.6)", fontSize: 16 }}>
-              Te redirigimos a WhatsApp. Si no se abrió,{" "}
-              <a href="#contacto" style={{ color: "#0d59f2" }}>contactanos acá</a>.
+              Se abrió WhatsApp para que nos mandes la info. Te vamos a asesorar de forma personalizada.
             </p>
           </div>
         ) : (
           <form
             onSubmit={handleSubmit}
             style={{
-              background: "rgba(255,255,255,0.03)",
+              background: "rgba(255,255,255,0.02)",
               border: "1px solid rgba(255,255,255,0.08)",
-              borderRadius: 20,
+              borderRadius: 24,
               padding: 40,
-              display: "flex",
-              flexDirection: "column",
-              gap: 20,
+              boxShadow: "0 24px 48px rgba(0,0,0,0.2)",
             }}
           >
-            {[
-              { name: "name", label: "Tu nombre", placeholder: "Juan García", type: "text" },
-              { name: "use", label: "Uso principal", placeholder: "Gaming, diseño gráfico, edición de video, trabajo de oficina...", type: "text" },
-              { name: "budget", label: "Presupuesto aproximado (ARS)", placeholder: "Ej: 500000", type: "number" },
-              { name: "extraInfo", label: "Información extra que quieras agregar", placeholder: "Ej: Necesito monitor, para correr Cyberpunk...", type: "text" },
-            ].map((field) => (
-              <div key={field.name}>
-                <label
-                  htmlFor={field.name}
-                  style={{
-                    display: "block",
-                    fontSize: 13,
-                    fontWeight: 600,
-                    color: "rgba(255,255,255,0.6)",
-                    marginBottom: 8,
-                    letterSpacing: 0.5,
-                  }}
-                >
-                  {field.label}
-                </label>
-                <input
-                  id={field.name}
-                  name={field.name}
-                  type={field.type}
-                  value={form[field.name]}
-                  onChange={handleChange}
-                  placeholder={field.placeholder}
-                  required
-                  style={{
-                    width: "100%",
-                    background: "rgba(255,255,255,0.06)",
-                    border: "1px solid rgba(255,255,255,0.12)",
-                    borderRadius: 10,
-                    padding: "12px 16px",
-                    color: "#fff",
-                    fontSize: 15,
-                    outline: "none",
-                    boxSizing: "border-box",
-                    fontFamily: "'Space Grotesk', sans-serif",
-                  }}
-                />
+            <div style={{ marginBottom: 32 }}>
+              <label style={{ display: "block", color: "rgba(255,255,255,0.6)", fontSize: 13, fontWeight: 700, marginBottom: 8, textTransform: "uppercase" }}>Tu Nombre</label>
+              <input
+                required
+                name="name"
+                value={form.name}
+                onChange={(e) => setForm({ ...form, name: e.target.value })}
+                placeholder="Ej: Juan García"
+                style={{
+                  width: "100%",
+                  background: "rgba(255,255,255,0.04)",
+                  border: "1px solid rgba(255,255,255,0.1)",
+                  borderRadius: 12,
+                  padding: "16px 20px",
+                  color: "#fff",
+                  fontSize: 16,
+                  outline: "none",
+                  fontFamily: "'Space Grotesk', sans-serif",
+                }}
+              />
+            </div>
+
+            <div style={{ marginBottom: 32 }}>
+              <label style={{ display: "block", color: "rgba(255,255,255,0.6)", fontSize: 13, fontWeight: 700, marginBottom: 12, textTransform: "uppercase" }}>Uso Principal</label>
+              <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(180px, 1fr))", gap: 12 }}>
+                {USES.map(u => (
+                  <button
+                    type="button"
+                    key={u.label}
+                    onClick={() => setForm({ ...form, use: u.label })}
+                    style={{
+                      background: form.use === u.label ? "rgba(13,89,242,0.2)" : "rgba(255,255,255,0.04)",
+                      border: form.use === u.label ? "1px solid #0d59f2" : "1px solid rgba(255,255,255,0.1)",
+                      borderRadius: 12,
+                      padding: "16px",
+                      color: form.use === u.label ? "#fff" : "rgba(255,255,255,0.6)",
+                      fontSize: 15,
+                      cursor: "pointer",
+                      display: "flex",
+                      alignItems: "center",
+                      gap: 8,
+                      transition: "all 0.2s",
+                    }}
+                  >
+                    <span style={{ fontSize: 20 }}>{u.icon}</span> {u.label}
+                  </button>
+                ))}
               </div>
-            ))}
+            </div>
+
+            <div style={{ marginBottom: 32 }}>
+              <label style={{ display: "block", color: "rgba(255,255,255,0.6)", fontSize: 13, fontWeight: 700, marginBottom: 12, textTransform: "uppercase" }}>Presupuesto Aproximado</label>
+              <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(180px, 1fr))", gap: 12 }}>
+                {BUDGETS.map(b => (
+                  <button
+                    type="button"
+                    key={b}
+                    onClick={() => setForm({ ...form, budget: b })}
+                    style={{
+                      background: form.budget === b ? "rgba(45,252,82,0.15)" : "rgba(255,255,255,0.04)",
+                      border: form.budget === b ? "1px solid #2dfc52" : "1px solid rgba(255,255,255,0.1)",
+                      borderRadius: 12,
+                      padding: "16px",
+                      color: form.budget === b ? "#fff" : "rgba(255,255,255,0.6)",
+                      fontSize: 14,
+                      cursor: "pointer",
+                      transition: "all 0.2s",
+                    }}
+                  >
+                    {b}
+                  </button>
+                ))}
+              </div>
+            </div>
+
+            <div style={{ marginBottom: 40 }}>
+              <label style={{ display: "block", color: "rgba(255,255,255,0.6)", fontSize: 13, fontWeight: 700, marginBottom: 8, textTransform: "uppercase" }}>Información Extra</label>
+              <textarea
+                name="extraInfo"
+                value={form.extraInfo}
+                onChange={(e) => setForm({ ...form, extraInfo: e.target.value })}
+                placeholder="Ej: Necesito monitor, quiero armarla con luces RGB..."
+                rows={3}
+                style={{
+                  width: "100%",
+                  background: "rgba(255,255,255,0.04)",
+                  border: "1px solid rgba(255,255,255,0.1)",
+                  borderRadius: 12,
+                  padding: "16px 20px",
+                  color: "#fff",
+                  fontSize: 16,
+                  outline: "none",
+                  fontFamily: "'Space Grotesk', sans-serif",
+                }}
+              />
+            </div>
+
             <button
               type="submit"
+              disabled={!form.name || !form.use || !form.budget}
               style={{
+                width: "100%",
                 background: "#0d59f2",
                 color: "#fff",
-                fontFamily: "'Space Grotesk', sans-serif",
-                fontWeight: 700,
-                fontSize: 16,
-                padding: "14px 32px",
+                padding: "18px",
                 borderRadius: 12,
+                fontSize: 16,
+                fontWeight: 800,
                 border: "none",
-                cursor: "pointer",
-                marginTop: 8,
-                display: "flex",
-                alignItems: "center",
-                justifyContent: "center",
-                gap: 10,
-                boxShadow: "0 8px 32px rgba(13,89,242,0.35)",
+                cursor: (!form.name || !form.use || !form.budget) ? "not-allowed" : "pointer",
+                opacity: (!form.name || !form.use || !form.budget) ? 0.5 : 1,
               }}
             >
-              💬 Recibir presupuesto por WhatsApp
+              Consultar Armado por WhatsApp
             </button>
           </form>
         )}
@@ -660,220 +746,50 @@ function BuildPCForm() {
   );
 }
 
-// ─── FORMULARIO DE CONTACTO ───────────────────────────────────────────────────
-function ServiceRequestForm() {
-  const [form, setForm] = useState({ name: "", device: "", brand: "", model: "", problem: "" });
-  const [sent, setSent] = useState(false);
-
-  function handleChange(e) {
-    setForm((f) => ({ ...f, [e.target.name]: e.target.value }));
-  }
-
-  function handleSubmit(e) {
-    e.preventDefault();
-    const link = buildWhatsAppLink(form.name, form.device, form.brand, form.model, form.problem);
-    window.open(link, "_blank");
-    setSent(true);
-  }
-
+// ─── CONTACT SECTION ──────────────────────────────────────────────────────────
+function ContactSection() {
   return (
-    <section id="contacto" style={{ padding: "100px 24px" }}>
-      <div style={{ maxWidth: 900, margin: "0 auto" }}>
-        <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 64, alignItems: "start" }}>
-
-          {/* Info del local */}
-          <div>
-            <div
-              style={{
-                display: "inline-block",
-                background: "rgba(45,252,82,0.12)",
-                border: "1px solid rgba(45,252,82,0.3)",
-                borderRadius: 99,
-                padding: "5px 14px",
-                fontSize: 12,
-                color: "#2dfc52",
-                fontWeight: 700,
-                letterSpacing: 1,
-                marginBottom: 24,
-              }}
-            >
-              📍 DATOS DEL LOCAL
+    <section id="contacto" style={{ padding: "100px 24px", background: "rgba(255,255,255,0.01)" }}>
+      <div style={{ maxWidth: 1280, margin: "0 auto", display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(320px, 1fr))", gap: 64, alignItems: "center" }}>
+        <div>
+          <h2 style={{ fontFamily: "'Space Grotesk', sans-serif", fontSize: "clamp(32px, 4vw, 48px)", fontWeight: 900, color: "#fff", letterSpacing: "-1px", margin: "0 0 16px" }}>
+            Vení a conocernos
+          </h2>
+          <p style={{ color: "rgba(255,255,255,0.55)", fontSize: 18, lineHeight: 1.7, marginBottom: 40 }}>
+            Nuestro laboratorio técnico está abierto al público. Traé tu equipo y te hacemos un diagnóstico profesional.
+          </p>
+          
+          <div style={{ display: "flex", flexDirection: "column", gap: 24, marginBottom: 40 }}>
+            <div style={{ display: "flex", gap: 16 }}>
+              <div style={{ width: 48, height: 48, background: "rgba(45,252,82,0.1)", borderRadius: 12, display: "flex", alignItems: "center", justifyContent: "center", fontSize: 24, color: "#2dfc52", flexShrink: 0 }}>📍</div>
+              <div>
+                <div style={{ color: "#fff", fontWeight: 700, fontSize: 17 }}>Dirección</div>
+                <div style={{ color: "rgba(255,255,255,0.5)", fontSize: 15 }}>Av. Santa Fe 2844, Local TechnoStore, CABA</div>
+              </div>
             </div>
-            <h2
-              style={{
-                fontFamily: "'Space Grotesk', sans-serif",
-                fontSize: "clamp(28px, 3.5vw, 44px)",
-                fontWeight: 900,
-                color: "#fff",
-                letterSpacing: "-1px",
-                margin: "0 0 32px",
-              }}
-            >
-              Vení a vernos o <span style={{ color: "#2dfc52" }}>escribinos</span>
-            </h2>
-            {[
-              { icon: "📍", title: "Dirección", value: "Av. Santa Fe 2844 — Local TechnoStore" },
-              { icon: "🕐", title: "Horario", value: "Lunes a Sábados 12:00 a 20:00 hs" },
-              { icon: "📅", title: "Turnos", value: "Recomendamos reservar turno" },
-              { icon: "✉️", title: "Email", value: "tsbarrionorte@gmail.com" },
-            ].map((info) => (
-              <div
-                key={info.title}
-                style={{
-                  display: "flex",
-                  alignItems: "flex-start",
-                  gap: 16,
-                  marginBottom: 24,
-                  padding: "16px 20px",
-                  background: "rgba(255,255,255,0.03)",
-                  border: "1px solid rgba(255,255,255,0.07)",
-                  borderRadius: 12,
-                }}
-              >
-                <span style={{ fontSize: 24 }}>{info.icon}</span>
-                <div>
-                  <div style={{ fontSize: 12, color: "rgba(255,255,255,0.4)", fontWeight: 600, letterSpacing: 0.5, marginBottom: 4 }}>
-                    {info.title}
-                  </div>
-                  <div style={{ color: "rgba(255,255,255,0.85)", fontSize: 15 }}>{info.value}</div>
-                </div>
+            <div style={{ display: "flex", gap: 16 }}>
+              <div style={{ width: 48, height: 48, background: "rgba(13,89,242,0.1)", borderRadius: 12, display: "flex", alignItems: "center", justifyContent: "center", fontSize: 24, color: "#0d59f2", flexShrink: 0 }}>🕐</div>
+              <div>
+                <div style={{ color: "#fff", fontWeight: 700, fontSize: 17 }}>Horarios de Atención</div>
+                <div style={{ color: "rgba(255,255,255,0.5)", fontSize: 15 }}>Lunes a Sábados de 12:00 a 20:00 hs</div>
               </div>
-            ))}
-            <a
-              href={`https://wa.me/${WHATSAPP_NUMBER}`}
-              target="_blank"
-              rel="noreferrer"
-              style={{
-                display: "inline-flex",
-                alignItems: "center",
-                gap: 10,
-                background: "#2dfc52",
-                color: "#0a0f1a",
-                fontFamily: "'Space Grotesk', sans-serif",
-                fontWeight: 800,
-                fontSize: 15,
-                padding: "13px 28px",
-                borderRadius: 12,
-                textDecoration: "none",
-                marginTop: 8,
-              }}
-            >
-              💬 Abrir WhatsApp
-            </a>
-          </div>
-
-          {/* Formulario */}
-          <div>
-            <h3 style={{ fontFamily: "'Space Grotesk', sans-serif", fontSize: 22, fontWeight: 800, color: "#fff", margin: "0 0 24px" }}>
-              Solicitar servicio técnico
-            </h3>
-            <p style={{ color: "rgba(255,255,255,0.5)", fontSize: 14, marginBottom: 28 }}>
-              Completá el formulario y se abrirá un chat de WhatsApp con toda la info precargada.
-            </p>
-            {sent ? (
-              <div
-                style={{
-                  background: "rgba(13,89,242,0.1)",
-                  border: "1px solid rgba(13,89,242,0.3)",
-                  borderRadius: 16,
-                  padding: 32,
-                  textAlign: "center",
-                }}
-              >
-                <div style={{ fontSize: 48, marginBottom: 12 }}>✅</div>
-                <p style={{ color: "rgba(255,255,255,0.7)", fontSize: 15 }}>¡Gracias! Te redirigimos a WhatsApp.</p>
+            </div>
+            <div style={{ display: "flex", gap: 16 }}>
+              <div style={{ width: 48, height: 48, background: "rgba(255,59,48,0.1)", borderRadius: 12, display: "flex", alignItems: "center", justifyContent: "center", fontSize: 24, color: "#ff3b30", flexShrink: 0 }}>📱</div>
+              <div>
+                <div style={{ color: "#fff", fontWeight: 700, fontSize: 17 }}>WhatsApp Directo</div>
+                <div style={{ color: "rgba(255,255,255,0.5)", fontSize: 15 }}>+54 9 11 2765-0658</div>
               </div>
-            ) : (
-              <form onSubmit={handleSubmit} style={{ display: "flex", flexDirection: "column", gap: 16 }}>
-                {[
-                  { name: "name", label: "Nombre", placeholder: "Tu nombre completo", type: "text" },
-                  { name: "device", label: "Tipo de equipo", placeholder: "Ej: iPhone 13, Notebook, PS5", type: "text" },
-                  { name: "brand", label: "Marca", placeholder: "Ej: Apple, HP, Sony", type: "text" },
-                  { name: "model", label: "Modelo", placeholder: "Ej: Pro Max, Pavilion 15", type: "text" },
-                ].map((field) => (
-                  <div key={field.name}>
-                    <label
-                      htmlFor={`req-${field.name}`}
-                      style={{ display: "block", fontSize: 12, color: "rgba(255,255,255,0.5)", marginBottom: 6, fontWeight: 600 }}
-                    >
-                      {field.label}
-                    </label>
-                    <input
-                      id={`req-${field.name}`}
-                      name={field.name}
-                      type={field.type}
-                      value={form[field.name]}
-                      onChange={handleChange}
-                      placeholder={field.placeholder}
-                      required
-                      style={{
-                        width: "100%",
-                        background: "rgba(255,255,255,0.05)",
-                        border: "1px solid rgba(255,255,255,0.1)",
-                        borderRadius: 8,
-                        padding: "10px 14px",
-                        color: "#fff",
-                        fontSize: 14,
-                        outline: "none",
-                        boxSizing: "border-box",
-                        fontFamily: "'Space Grotesk', sans-serif",
-                      }}
-                    />
-                  </div>
-                ))}
-                <div>
-                  <label
-                    htmlFor="req-problem"
-                    style={{ display: "block", fontSize: 12, color: "rgba(255,255,255,0.5)", marginBottom: 6, fontWeight: 600 }}
-                  >
-                    Descripción del problema
-                  </label>
-                  <textarea
-                    id="req-problem"
-                    name="problem"
-                    value={form.problem}
-                    onChange={handleChange}
-                    placeholder="Describí el problema con tu equipo..."
-                    required
-                    rows={3}
-                    style={{
-                      width: "100%",
-                      background: "rgba(255,255,255,0.05)",
-                      border: "1px solid rgba(255,255,255,0.1)",
-                      borderRadius: 8,
-                      padding: "10px 14px",
-                      color: "#fff",
-                      fontSize: 14,
-                      outline: "none",
-                      boxSizing: "border-box",
-                      resize: "vertical",
-                      fontFamily: "'Space Grotesk', sans-serif",
-                    }}
-                  />
-                </div>
-                <button
-                  type="submit"
-                  style={{
-                    background: "#0d59f2",
-                    color: "#fff",
-                    fontFamily: "'Space Grotesk', sans-serif",
-                    fontWeight: 700,
-                    fontSize: 15,
-                    padding: "13px 24px",
-                    borderRadius: 10,
-                    border: "none",
-                    cursor: "pointer",
-                    display: "flex",
-                    alignItems: "center",
-                    justifyContent: "center",
-                    gap: 8,
-                  }}
-                >
-                  💬 Contactar por WhatsApp
-                </button>
-              </form>
-            )}
+            </div>
           </div>
+          
+          <a href={`https://wa.me/${WHATSAPP_NUMBER}`} target="_blank" rel="noreferrer" style={{ display: "inline-block", background: "#0d59f2", color: "#fff", fontFamily: "'Space Grotesk', sans-serif", fontWeight: 800, fontSize: 16, padding: "16px 36px", borderRadius: 14, textDecoration: "none", boxShadow: "0 8px 32px rgba(13,89,242,0.35)" }}>
+            💬 Escribirnos ahora
+          </a>
+        </div>
+        
+        <div style={{ width: "100%", height: 500, background: "rgba(255,255,255,0.05)", borderRadius: 24, padding: 8, border: "1px solid rgba(255,255,255,0.1)" }}>
+          <iframe title="Mapa TechnoStore" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3284.4074811370215!2d-58.4069502!3d-34.5938498!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95bcca97bba5c2a1%3A0x6b49e2cf4b971a8!2sAv.%20Sta.%20Fe%202844%2C%20C1425%20Cdad.%20Aut%C3%B3noma%20de%20Buenos%20Aires!5e0!3m2!1ses-419!2sar!4v1700000000000!5m2!1ses-419!2sar" width="100%" height="100%" style={{ border: 0, borderRadius: 16 }} allowFullScreen loading="lazy" referrerPolicy="no-referrer-when-downgrade"></iframe>
         </div>
       </div>
     </section>
@@ -891,22 +807,10 @@ function Footer() {
       }}
     >
       <div style={{ maxWidth: 1280, margin: "0 auto" }}>
-        <div style={{ display: "grid", gridTemplateColumns: "2fr 1fr 1fr 1fr", gap: 48, marginBottom: 48 }}>
+        <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(240px, 1fr))", gap: 48, marginBottom: 48 }}>
           <div>
-            <a href="#inicio" style={{ display: "flex", alignItems: "center", gap: 10, textDecoration: "none", marginBottom: 16 }}>
+            <a href="#inicio" style={{ display: "inline-block", marginBottom: 16 }}>
               <img src="/img/LOGO BLANCO.png" alt="TechnoStore" style={{ height: 40, width: "auto" }} />
-              <span
-                style={{
-                  fontFamily: "'Space Grotesk', sans-serif",
-                  fontWeight: 700,
-                  fontSize: 18,
-                  background: "linear-gradient(90deg, #0d59f2, #2dfc52)",
-                  WebkitBackgroundClip: "text",
-                  WebkitTextFillColor: "transparent",
-                }}
-              >
-                TechnoStore
-              </span>
             </a>
             <p style={{ color: "rgba(255,255,255,0.4)", fontSize: 14, lineHeight: 1.7, maxWidth: 280 }}>
               Servicio técnico especializado con más de 15 años de experiencia. Reparamos Apple, PC, consolas y notebooks.
@@ -920,18 +824,27 @@ function Footer() {
           </div>
           <div>
             <h4 style={{ fontFamily: "'Space Grotesk', sans-serif", fontWeight: 700, color: "#fff", fontSize: 14, marginBottom: 20 }}>Servicios</h4>
-            {["Reparación Apple", "Upgrade PC/Notebook", "Consolas", "Bisagras", "Armado de PC"].map((l) => (
-              <a key={l} href="#servicios" style={{ display: "block", color: "rgba(255,255,255,0.45)", fontSize: 14, marginBottom: 10, textDecoration: "none" }}>{l}</a>
+            {[
+              {l: "Reparación Apple", href: "#apple"},
+              {l: "Celulares Multimarca", href: "#celulares"},
+              {l: "Computadoras", href: "#computadoras"},
+              {l: "Reparación Bisagras", href: "#bisagras"},
+              {l: "Consolas (PS/Xbox)", href: "#consolas"}
+            ].map((s) => (
+              <a key={s.l} href={s.href} style={{ display: "block", color: "rgba(255,255,255,0.45)", fontSize: 14, marginBottom: 10, textDecoration: "none" }}>{s.l}</a>
             ))}
           </div>
           <div>
-            <h4 style={{ fontFamily: "'Space Grotesk', sans-serif", fontWeight: 700, color: "#fff", fontSize: 14, marginBottom: 20 }}>Información</h4>
-            {["Cómo trabajamos", "Garantía", "Preguntas frecuentes", "Presupuesto PC"].map((l) => (
-              <a key={l} href="#contacto" style={{ display: "block", color: "rgba(255,255,255,0.45)", fontSize: 14, marginBottom: 10, textDecoration: "none" }}>{l}</a>
-            ))}
+            <h4 style={{ fontFamily: "'Space Grotesk', sans-serif", fontWeight: 700, color: "#fff", fontSize: 14, marginBottom: 20 }}>Garantía</h4>
+            <div style={{ color: "rgba(255,255,255,0.45)", fontSize: 13, lineHeight: 1.6 }}>
+              ✅ Reparaciones garantizadas.<br/>
+              ✅ Repuestos originales certificados.<br/><br/>
+              <strong style={{color:"#2dfc52", fontWeight: 700}}>Garantía de 90 días</strong><br/>
+              (salvo casos excepcionales detallados en la orden).
+            </div>
           </div>
           <div>
-            <h4 style={{ fontFamily: "'Space Grotesk', sans-serif", fontWeight: 700, color: "#fff", fontSize: 14, marginBottom: 20 }}>Contacto</h4>
+            <h4 style={{ fontFamily: "'Space Grotesk', sans-serif", fontWeight: 700, color: "#fff", fontSize: 14, marginBottom: 20 }}>Contacto Rápidio</h4>
             <a
               href={`https://wa.me/${WHATSAPP_NUMBER}`}
               target="_blank"
@@ -1499,7 +1412,7 @@ export default function App() {
       ))}
 
       <BuildPCForm />
-      <ServiceRequestForm />
+      <ContactSection />
       <Footer />
 
       {/* Chatbot flotante con IA */}
