@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="es"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Techno Store | Expertos en Reparación Apple</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#0d59f2",
+                        "background-light": "#f5f6f8",
+                        "background-dark": "#101622",
+                    },
+                    fontFamily: {
+                        "display": ["Space Grotesk", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+<style>
+        body {
+            font-family: 'Space Grotesk', sans-serif;
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark text-slate-900 dark:text-slate-100 antialiased">
+<!-- TopNavBar -->
+<header class="sticky top-0 z-50 w-full border-b border-slate-200 dark:border-slate-800 bg-background-light/80 dark:bg-background-dark/80 backdrop-blur-md">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="flex items-center justify-between h-20">
+<div class="flex items-center gap-3">
+<img alt="Techno Store Logo" class="h-10 w-auto" data-alt="Logo oficial de Techno Store Apple" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBLyPsbULiDElNnlhUaVH5yBjDps3NIP5OS_AW19JiB9cfpqPA59CfKbOZVU_hv7egFWwxXsrPIrjyrp-DlzdwTWmpnLGKYvOvG0k3fL9I7QQmsmoA9ogS_aolRYjSisNRd5q1rnUFAT0-yhNxVPF1M-L7-LoHzuKIMT-YsY_aabj2-NimoAGG-SleeQ2VRHCCHz-3R2I2rVoHznWJoPKySMSTAwmHf6xKlvZFyoeyWqQAJbI5qeZ2OuWvOpk4nZFUKRltb_o4wfezY"/>
+<span class="text-xl font-bold tracking-tight text-slate-900 dark:text-white font-display uppercase">Techno Store</span>
+</div>
+<nav class="hidden md:flex items-center gap-10">
+<a class="text-sm font-medium hover:text-primary transition-colors" href="#reparaciones">MacBook</a>
+<a class="text-sm font-medium hover:text-primary transition-colors" href="#iphone">iPhone</a>
+<a class="text-sm font-medium hover:text-primary transition-colors" href="#ipad">iPad</a>
+<a class="text-sm font-medium hover:text-primary transition-colors" href="#servicios">Servicios Técnicos</a>
+</nav>
+<div class="flex items-center gap-4">
+<button class="hidden lg:flex items-center justify-center rounded-lg bg-primary px-6 py-2.5 text-sm font-bold text-white hover:bg-primary/90 transition-all">
+                        Solicitar presupuesto
+                    </button>
+<button class="md:hidden text-slate-900 dark:text-white">
+<span class="material-symbols-outlined">menu</span>
+</button>
+</div>
+</div>
+</div>
+</header>
+<main>
+<!-- Hero Section -->
+<section class="relative overflow-hidden pt-16 pb-24 lg:pt-32 lg:pb-40">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+<div class="flex flex-col gap-8">
+<div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/10 border border-primary/20 text-primary text-xs font-bold uppercase tracking-widest">
+<span class="relative flex h-2 w-2">
+<span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary opacity-75"></span>
+<span class="relative inline-flex rounded-full h-2 w-2 bg-primary"></span>
+</span>
+                            Certificación Técnica Apple
+                        </div>
+<h1 class="text-5xl lg:text-7xl font-black leading-[1.1] text-slate-900 dark:text-white font-display">
+                            Especialistas en Reparación <span class="text-primary">Apple</span>
+</h1>
+<p class="text-lg text-slate-600 dark:text-slate-400 max-w-xl leading-relaxed">
+                            Servicio técnico profesional para MacBook, iPhone e iPad. Expertos en microsoldadura, recuperación de datos y cambio de componentes originales con garantía total.
+                        </p>
+<div class="flex flex-col sm:flex-row gap-4">
+<button class="flex items-center justify-center rounded-lg bg-primary px-8 py-4 text-base font-bold text-white hover:bg-primary/90 shadow-lg shadow-primary/20 transition-all">
+                                Solicitar presupuesto
+                            </button>
+<button class="flex items-center justify-center rounded-lg border border-slate-300 dark:border-slate-700 bg-transparent px-8 py-4 text-base font-bold hover:bg-slate-100 dark:hover:bg-slate-800 transition-all">
+                                Ver detalles técnicos
+                            </button>
+</div>
+</div>
+<div class="relative">
+<div class="absolute -inset-4 bg-primary/20 rounded-full blur-3xl opacity-20"></div>
+<div class="relative rounded-2xl overflow-hidden border border-slate-200 dark:border-slate-800 shadow-2xl">
+<img alt="Reparación de MacBook" class="w-full aspect-video object-cover" data-alt="Técnico reparando placa base de MacBook con microscopio" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCqHncErGh7NCQ01p1pFU1PWvSPlzEeyczjkyA_tVEswGzpsZHo1lbmTz3Hen9PNjNJ5Nk3K2NLQZAdOm9shYqdbGlBOGSjAy8ublLC0Z6UXTG01M_rNxhfBEVJR5lNpi2T2tEVr-8zru-dXs9hB9aetBbL629eNMeNQznVXEm7FoEOfxwWkc9yGWnvK8ZElPcWRfcKYX0yteFk4XSeH6-YKVgZ3eddnrMYnKiyoPWDrFqiLMDqyhkM-BT2PDL2UlbSj4S39__IjD6F"/>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Stats / Why Us -->
+<section class="py-20 bg-slate-50 dark:bg-slate-900/50">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+<div class="p-8 rounded-2xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-background-dark flex flex-col gap-4">
+<span class="material-symbols-outlined text-primary text-4xl">verified_user</span>
+<h3 class="text-xl font-bold font-display">Repuestos Originales</h3>
+<p class="text-slate-500 dark:text-slate-400 text-sm">Garantizamos la máxima compatibilidad y rendimiento utilizando componentes certificados de grado A+.</p>
+</div>
+<div class="p-8 rounded-2xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-background-dark flex flex-col gap-4">
+<span class="material-symbols-outlined text-primary text-4xl">precision_manufacturing</span>
+<h3 class="text-xl font-bold font-display">Laboratorio Avanzado</h3>
+<p class="text-slate-500 dark:text-slate-400 text-sm">Contamos con estaciones de microsoldadura y cámaras de flujo laminar para limpiezas profundas.</p>
+</div>
+<div class="p-8 rounded-2xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-background-dark flex flex-col gap-4">
+<span class="material-symbols-outlined text-primary text-4xl">timer</span>
+<h3 class="text-xl font-bold font-display">Diagnóstico Veloz</h3>
+<p class="text-slate-500 dark:text-slate-400 text-sm">Recibe un análisis técnico detallado y un presupuesto cerrado en menos de 24 horas hábiles.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Services Grid -->
+<section class="py-24" id="reparaciones">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="flex flex-col gap-4 mb-16 text-center max-w-3xl mx-auto">
+<h2 class="text-4xl font-bold font-display tracking-tight text-slate-900 dark:text-white">Nuestras Especialidades</h2>
+<p class="text-slate-500 dark:text-slate-400">Dominamos cada arquitectura de Apple para ofrecerte soluciones definitivas.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+<!-- MacBook Card -->
+<div class="group flex flex-col overflow-hidden rounded-2xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-background-dark hover:border-primary/50 transition-all shadow-sm hover:shadow-xl">
+<div class="relative aspect-[16/10] overflow-hidden">
+<img alt="MacBook Repair" class="object-cover w-full h-full group-hover:scale-105 transition-transform duration-500" data-alt="MacBook abierto mostrando componentes internos y placa base" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC_ptvmTgyVZgoBNLhkBSrzq1_6m7LEvKuwjgVgNSbWdlPDGVWFhEPY9PRDr1O-y1AauWekiU_TNdD0KUGYBKg111gS-YkpEHn8EQdfTWWUSPzuDoQ748zvosfc_vuox_DZmdi2nm9Otd--KcpUqk4ZmAJeH1lILRgJh9wdfdWCUQFL-ot1nv2e3UA37YAi89vZ0QCmgFE3ih-FyACutmliX9uBhuFQftJ42KyIKXcDfKv_Fl7V6PydhQKEtv9GtXYzsVT1UuIpm_fk"/>
+</div>
+<div class="p-6 flex flex-col gap-4 flex-grow">
+<h3 class="text-2xl font-bold font-display">MacBook Air &amp; Pro</h3>
+<ul class="space-y-2 text-sm text-slate-500 dark:text-slate-400">
+<li class="flex items-center gap-2"><span class="material-symbols-outlined text-xs text-primary">check_circle</span>Reparación de placa lógica</li>
+<li class="flex items-center gap-2"><span class="material-symbols-outlined text-xs text-primary">check_circle</span>Cambio de pantalla Retina</li>
+<li class="flex items-center gap-2"><span class="material-symbols-outlined text-xs text-primary">check_circle</span>Sustitución de batería original</li>
+</ul>
+<div class="mt-auto pt-4 flex gap-3">
+<button class="flex-1 bg-primary text-white py-2 rounded font-bold text-sm">Presupuesto</button>
+<button class="px-3 border border-slate-200 dark:border-slate-800 rounded hover:bg-slate-50 dark:hover:bg-slate-800">
+<span class="material-symbols-outlined text-sm">info</span>
+</button>
+</div>
+</div>
+</div>
+<!-- iPhone Card -->
+<div class="group flex flex-col overflow-hidden rounded-2xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-background-dark hover:border-primary/50 transition-all shadow-sm hover:shadow-xl" id="iphone">
+<div class="relative aspect-[16/10] overflow-hidden">
+<img alt="iPhone Repair" class="object-cover w-full h-full group-hover:scale-105 transition-transform duration-500" data-alt="Herramientas de precisión rodeando un iPhone desmontado" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB13tSSxeANN2ITvyBQpVNPDWmc4d10Q-qcO3Xxw0Iq8OtfSwq2GetXSQBQLMqn2tgGtci-PbFjZMgmGyvPSwQR97RD90VCQ7MH9SVvmCsorKzTwxFMq8znIct0mdHfDMMc08QGRRBPgx9CU1rDLZN8uMZ1rcxyOxIOLV-ZIniQHkOON2JifNp0Gfxny7g7LBO-hAdTlJcaJc77ve9vluzEvmi6h-ZnOrB97tUSn8hI-9zSKKvC6yyGVd3W_ZZZM-U5xVTKzVNL2LqA"/>
+</div>
+<div class="p-6 flex flex-col gap-4 flex-grow">
+<h3 class="text-2xl font-bold font-display">iPhone Series</h3>
+<ul class="space-y-2 text-sm text-slate-500 dark:text-slate-400">
+<li class="flex items-center gap-2"><span class="material-symbols-outlined text-xs text-primary">check_circle</span>Cambio de cristal trasero</li>
+<li class="flex items-center gap-2"><span class="material-symbols-outlined text-xs text-primary">check_circle</span>Reparación Face ID / Touch ID</li>
+<li class="flex items-center gap-2"><span class="material-symbols-outlined text-xs text-primary">check_circle</span>Reparación de cámaras y sensores</li>
+</ul>
+<div class="mt-auto pt-4 flex gap-3">
+<button class="flex-1 bg-primary text-white py-2 rounded font-bold text-sm">Presupuesto</button>
+<button class="px-3 border border-slate-200 dark:border-slate-800 rounded hover:bg-slate-50 dark:hover:bg-slate-800">
+<span class="material-symbols-outlined text-sm">info</span>
+</button>
+</div>
+</div>
+</div>
+<!-- iPad Card -->
+<div class="group flex flex-col overflow-hidden rounded-2xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-background-dark hover:border-primary/50 transition-all shadow-sm hover:shadow-xl" id="ipad">
+<div class="relative aspect-[16/10] overflow-hidden">
+<img alt="iPad Repair" class="object-cover w-full h-full group-hover:scale-105 transition-transform duration-500" data-alt="iPad con pantalla táctil siendo reemplazada" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBJOKWSqJaIDmTY2hJLZHQk1VyeU-_kFZKZvKK-QlhvKUGt9-HUCjS1skRQFdOaA8fYZxoHrBG6X2AfOveGX6s8CrrP19HDglY0KP6VI9rpJ1RRP16RXWdC_hifFFRDNF-Q3W8k1sH5vvqRvPwFbwU-BRn8CBxVuyLAKwxelN-w3rdy9wCxBNksxllE6BxZQ8GC83Zr61UvZYuuZVwsuPnCmzsLIEOUUloFVbyJ7WKhUYRt0KDmSLowAAud5MAdhzFTQlLOc7sATglc"/>
+</div>
+<div class="p-6 flex flex-col gap-4 flex-grow">
+<h3 class="text-2xl font-bold font-display">iPad Pro &amp; Air</h3>
+<ul class="space-y-2 text-sm text-slate-500 dark:text-slate-400">
+<li class="flex items-center gap-2"><span class="material-symbols-outlined text-xs text-primary">check_circle</span>Digitalizadores y LCDs</li>
+<li class="flex items-center gap-2"><span class="material-symbols-outlined text-xs text-primary">check_circle</span>Conectores de carga USB-C</li>
+<li class="flex items-center gap-2"><span class="material-symbols-outlined text-xs text-primary">check_circle</span>Soluciones de software avanzado</li>
+</ul>
+<div class="mt-auto pt-4 flex gap-3">
+<button class="flex-1 bg-primary text-white py-2 rounded font-bold text-sm">Presupuesto</button>
+<button class="px-3 border border-slate-200 dark:border-slate-800 rounded hover:bg-slate-50 dark:hover:bg-slate-800">
+<span class="material-symbols-outlined text-sm">info</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Technical Excellence Section -->
+<section class="py-24 bg-primary text-white overflow-hidden relative" id="servicios">
+<div class="absolute inset-0 opacity-10">
+<div class="absolute top-0 left-0 w-96 h-96 bg-white rounded-full -translate-x-1/2 -translate-y-1/2 blur-3xl"></div>
+<div class="absolute bottom-0 right-0 w-96 h-96 bg-white rounded-full translate-x-1/2 translate-y-1/2 blur-3xl"></div>
+</div>
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+<div>
+<h2 class="text-4xl lg:text-5xl font-black font-display mb-8">Excelencia Técnica sin Compromisos</h2>
+<div class="space-y-6">
+<div class="flex gap-4">
+<div class="flex-shrink-0 w-12 h-12 rounded-xl bg-white/20 flex items-center justify-center">
+<span class="material-symbols-outlined">memory</span>
+</div>
+<div>
+<h4 class="text-xl font-bold mb-1">Microsoldadura SMD/BGA</h4>
+<p class="text-white/80">Reparamos lo que otros consideran irreparable. Soldadura de integrados y reparación de cortocircuitos en placa base.</p>
+</div>
+</div>
+<div class="flex gap-4">
+<div class="flex-shrink-0 w-12 h-12 rounded-xl bg-white/20 flex items-center justify-center">
+<span class="material-symbols-outlined">database</span>
+</div>
+<div>
+<h4 class="text-xl font-bold mb-1">Recuperación de Datos</h4>
+<p class="text-white/80">Si tu dispositivo no enciende, extraemos tu información valiosa directamente de los chips de memoria NAND.</p>
+</div>
+</div>
+<div class="flex gap-4">
+<div class="flex-shrink-0 w-12 h-12 rounded-xl bg-white/20 flex items-center justify-center">
+<span class="material-symbols-outlined">shield</span>
+</div>
+<div>
+<h4 class="text-xl font-bold mb-1">Garantía Escrita</h4>
+<p class="text-white/80">Todas nuestras intervenciones técnicas incluyen un certificado de garantía de 6 a 12 meses.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="relative">
+<div class="aspect-square bg-white/5 rounded-3xl border border-white/10 p-4">
+<img alt="Laboratorio Apple" class="w-full h-full object-cover rounded-2xl shadow-2xl" data-alt="Estación de trabajo técnica con osciloscopio y soldadores profesionales" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAkdNYOSwL5JhjWvb0QUoJIzGhHq5QrL_I7LwXrEloUSsi8TN1SD27fgQcaFPmvh7Azq6xVvWxNJIrqaNp55pnnmnk42jZAbrNvVTyiTghvcaOY8IuOlzbT7qUBwkPpPOCebxUSrIXykQIpKR3GVlGBbntHeuOsT2RxVmDsQD_NhOUvew9RPvDUAFnrobqIVh_FR6LAwVFE3ARIGSKh_XIDtzoSIng1sC4v5Rou6CaGcMlm3p9N3KD3oCTyQDew-bVs0v_tHnwD9TZd"/>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- CTA Section -->
+<section class="py-24">
+<div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+<div class="rounded-3xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-background-dark p-12 lg:p-20 shadow-xl overflow-hidden relative">
+<div class="absolute top-0 right-0 p-8">
+<span class="material-symbols-outlined text-primary/10 text-9xl">support_agent</span>
+</div>
+<div class="relative z-10">
+<h2 class="text-4xl font-black font-display mb-6">¿Listo para reparar tu dispositivo?</h2>
+<p class="text-xl text-slate-500 dark:text-slate-400 mb-10 max-w-2xl mx-auto">
+                            No pongas tu inversión en manos inexpertas. Solicita hoy mismo tu diagnóstico técnico oficial.
+                        </p>
+<div class="flex flex-col sm:flex-row justify-center gap-4">
+<button class="bg-primary text-white px-10 py-4 rounded-xl font-bold text-lg hover:shadow-lg hover:shadow-primary/30 transition-all flex items-center justify-center gap-2">
+<span class="material-symbols-outlined">description</span>
+                                Solicitar presupuesto
+                            </button>
+<button class="border border-slate-300 dark:border-slate-700 px-10 py-4 rounded-xl font-bold text-lg hover:bg-slate-50 dark:hover:bg-slate-800 transition-all">
+                                Consultar disponibilidad
+                            </button>
+</div>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-slate-50 dark:bg-slate-900 border-t border-slate-200 dark:border-slate-800 py-12">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="grid grid-cols-1 md:grid-cols-4 gap-12 mb-12">
+<div class="col-span-1 md:col-span-1">
+<div class="flex items-center gap-3 mb-6">
+<img alt="Logo" class="h-8 w-auto" data-alt="Miniatura de logo Techno Store" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCzsZ3QStPwJsz7xks2D9d3PfXvi0S624d_DasokyUgDfnrYxoXI4oScAN4QDy01HnNWCHREd5PcZA0h2Ex-PqWxdg7LQj_gusWCcD6ELgaS59PWiO_JswSz5OAEgNVrxSusXUPGEDpq149cCDsKh9dH7ARCMFzfBIBLQzErVgVJmwrKrsuUAemhO2o2kH8d2yc65ZRRQ-ZARAEf0SwZs1_eYjRXySRiHY9eIXwhprO-_4Ya2S9QnqnJFTbUXufMC3z8qmumuW7XYkz"/>
+<span class="text-lg font-bold font-display uppercase">Techno Store</span>
+</div>
+<p class="text-sm text-slate-500 dark:text-slate-400">
+                        Líderes en servicio técnico especializado Apple. Calidad, rapidez y garantía en cada reparación.
+                    </p>
+</div>
+<div>
+<h5 class="font-bold mb-6 font-display uppercase tracking-wider text-xs">Reparaciones</h5>
+<ul class="space-y-4 text-sm text-slate-500 dark:text-slate-400">
+<li><a class="hover:text-primary transition-colors" href="#">MacBook Pro / Air</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">iPhone 13 / 14 / 15</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">iPad Pro &amp; Mini</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">iMac &amp; Mac Mini</a></li>
+</ul>
+</div>
+<div>
+<h5 class="font-bold mb-6 font-display uppercase tracking-wider text-xs">Soporte</h5>
+<ul class="space-y-4 text-sm text-slate-500 dark:text-slate-400">
+<li><a class="hover:text-primary transition-colors" href="#">Garantía Técnica</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">Estado de mi Equipo</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">Preguntas Frecuentes</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">Contacto</a></li>
+</ul>
+</div>
+<div>
+<h5 class="font-bold mb-6 font-display uppercase tracking-wider text-xs">Ubicación</h5>
+<div class="flex flex-col gap-4 text-sm text-slate-500 dark:text-slate-400">
+<p class="flex items-start gap-2">
+<span class="material-symbols-outlined text-primary text-lg">location_on</span>
+                            Av. Libertador 1500, <br/>Ciudad Autónoma de Buenos Aires
+                        </p>
+<p class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-lg">call</span>
+                            +54 (11) 4567-8900
+                        </p>
+<div class="mt-4 h-32 w-full rounded-lg overflow-hidden grayscale border border-slate-200 dark:border-slate-800">
+<img alt="Mapa" class="w-full h-full object-cover" data-location="Buenos Aires" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB8JaGSvfgoqT5OZpB0NYOtiz0VBhv4gL4PKZaWXC4kAwYd3XQSk6vvBvyNIAOdFjBXTtHENOdcWjf7RNQ26qN4EHvWzN_k7Uvifl8qKVkWIRUniCd5RajpwrjHhCTCYgmWb9tmoHO1zP8iiIDJ-Zm0JiDh79SfENIp1JRXGa4UTQeu4hLtttacgfTTUsVqRwUWmWohMlJ8qje1yZHw6roROUMhTQ97E8ZOJB42T1H4eHH9YpEmVpORVFCvy4hKjOm7Ofqstme6KWoe"/>
+</div>
+</div>
+</div>
+</div>
+<div class="pt-8 border-t border-slate-200 dark:border-slate-800 flex flex-col md:flex-row justify-between items-center gap-4">
+<p class="text-xs text-slate-500 dark:text-slate-500">
+                    © 2024 Techno Store Apple Specialists. Todos los derechos reservados. Apple, MacBook, iPhone e iPad son marcas registradas de Apple Inc.
+                </p>
+<div class="flex gap-6">
+<a class="text-slate-400 hover:text-primary" href="#"><span class="material-symbols-outlined">share</span></a>
+<a class="text-slate-400 hover:text-primary" href="#"><span class="material-symbols-outlined">mail</span></a>
+</div>
+</div>
+</div>
+</footer>
+</body></html>

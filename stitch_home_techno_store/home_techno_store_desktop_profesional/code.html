@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="es"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#0d59f2", // Azul Eléctrico
+                        "secondary": "#2dfc52", // Verde pastel intenso/vibrante
+                        "background-light": "#f5f6f8",
+                        "background-dark": "#0a0f1a",
+                        "slate-custom": "#1e293b",
+                    },
+                    fontFamily: {
+                        "display": ["Space Grotesk", "sans-serif"]
+                    },
+                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>
+        body { font-family: 'Space Grotesk', sans-serif; }
+        .glass-card {
+            background: rgba(30, 41, 59, 0.5);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        .gradient-text {
+            background: linear-gradient(90deg, #0d59f2, #2dfc52);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark text-slate-900 dark:text-slate-100 antialiased">
+<div class="relative flex h-auto min-h-screen w-full flex-col overflow-x-hidden">
+<!-- Navigation -->
+<header class="sticky top-0 z-50 w-full border-b border-slate-200 dark:border-slate-800 bg-background-light/80 dark:bg-background-dark/80 backdrop-blur-md px-6 lg:px-20 py-4">
+<div class="max-w-7xl mx-auto flex items-center justify-between">
+<div class="flex items-center gap-3">
+<img alt="Techno Store Logo" class="size-10" data-alt="Logotipo moderno circular con formas geométricas azules" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC-58J2qXrf9kWm0u_lJJ_N5tokSsWQ41nD6s2pZm4dJIQEIMnRB3P1uflpUQWzlN-aNiwtqEJvRsc2Ak4Bxm90ZfGgGYlduGg1VcgycuobifRB-s_4RBRsBQ3cEfqvRc6BSCVevICeUxGr16XJMe5-SyJ5Sj1SmsEY6Up6-ab0ZpEnestSeABWH5F9kXSk3Tyf4VXM_7nuD04Y2teo0RGjL3e0HvKQqvPjHXT5zkENlXlDkrl0a7FofiYRLIlu5behgJF4ZTG-eIBD"/>
+<h2 class="text-xl font-bold tracking-tight gradient-text">Techno Store</h2>
+</div>
+<nav class="hidden md:flex items-center gap-10">
+<a class="text-sm font-medium hover:text-primary transition-colors" href="#inicio">Inicio</a>
+<a class="text-sm font-medium hover:text-primary transition-colors" href="#servicios">Servicios</a>
+<a class="text-sm font-medium hover:text-primary transition-colors" href="#consulta">Estado de Orden</a>
+<a class="text-sm font-medium hover:text-primary transition-colors" href="#marcas">Marcas</a>
+</nav>
+<div class="flex items-center gap-4">
+<button class="hidden sm:flex items-center justify-center rounded-full h-11 px-6 bg-primary text-white text-sm font-bold transition-all hover:scale-105 active:scale-95">
+                    Agendar Cita
+                </button>
+<span class="material-symbols-outlined text-slate-400 cursor-pointer">account_circle</span>
+</div>
+</div>
+</header>
+<main class="flex-1">
+<!-- Hero Section -->
+<section class="relative overflow-hidden px-6 py-16 lg:px-20 lg:py-24" id="inicio">
+<div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+<div class="flex flex-col gap-8">
+<div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/10 border border-primary/20 text-primary w-fit">
+<span class="material-symbols-outlined text-sm">verified</span>
+<span class="text-xs font-bold uppercase tracking-widest">Servicio Técnico Certificado</span>
+</div>
+<h1 class="text-5xl lg:text-7xl font-black leading-[1.1] tracking-tight text-slate-900 dark:text-white">
+                        Servicio Técnico <span class="text-primary">Profesional</span>
+</h1>
+<p class="text-lg text-slate-600 dark:text-slate-400 max-w-lg leading-relaxed">
+                        Especialistas en la restauración de hardware de alta gama. Reparamos computadoras, celulares y consolas con estándares premium y garantía total de funcionamiento.
+                    </p>
+<div class="flex flex-wrap gap-4">
+<button class="flex min-w-[160px] items-center justify-center rounded-lg h-14 px-8 bg-primary text-white font-bold text-lg hover:shadow-lg hover:shadow-primary/30 transition-all">
+                            Reparar Ahora
+                        </button>
+<button class="flex min-w-[160px] items-center justify-center rounded-lg h-14 px-8 bg-slate-200 dark:bg-slate-800 text-slate-900 dark:text-white font-bold text-lg border border-slate-300 dark:border-slate-700 hover:bg-slate-300 dark:hover:bg-slate-700 transition-all">
+                            Ver Servicios
+                        </button>
+</div>
+<div class="flex items-center gap-6 pt-4">
+<div class="flex -space-x-3">
+<div class="size-10 rounded-full border-2 border-background-dark bg-slate-500" data-alt="Avatar de cliente satisfecho" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuA32YZBaORrjhC_xCSwKxbA_6PgPBA4ByCLL17e1h2aaXUpyB-WywG710753Dl5qYJynwDpaCAZ435hFj5tdPxsjjV0hfHg4-E5KvM9tDywjdu6iku-fTWTODh7GYpkncOVSf1tDFw8KSt-Rnk3LNcnR4XoQHl37ISM__RClsWIjuUtUgsyJgcLkH0wqX21yljGrmVp7RCYYSxi-oe1h9iPJZ5lQpuFBIn7G-s6bG7xi7kLQOu-Rknr0BK1O3am6RgwITysFbkG1o0r')"></div>
+<div class="size-10 rounded-full border-2 border-background-dark bg-slate-500" data-alt="Avatar de cliente satisfecho" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuC4MbeIQEqUBRACvZ3chtODEYVbnUX_VJZL1DnsqA5YKJ5PfC3DO68q2y5R34eAm9y9M-7CYuW4duICusYWdAZDh-27wmI7NgNhtoY3T-SEMJw-zn98s_IBr3aJKXTH1VxaD7fz0Q9RTk21CsTWq6NtBNnkefnVSUe_WxvB3AkQwMQ2z-yoBuD6QF4SBdTw5Ehk75eXwn9gds-OSgrU4rIYKrqSyMdbqQedQZ6PFVvNMJhde-dINqzaMO-FT0uZL9HBYOsgNgBfvWbs')"></div>
+<div class="size-10 rounded-full border-2 border-background-dark bg-slate-500" data-alt="Avatar de cliente satisfecho" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuD2h08VXB8Qboj7rCkFNTGl4qjg3-tnh5Sd0Cz6h8gQhzMqDpaJzoeh8CrRXahhx_g_4fnL82kVBT5RxRYsh4J1v-D5sN_M1OqEs2ca0Vl7TtGxMO-2T1n73_VVlSokO8n1Lsdgrg1SKtYvUTBrTQ_YrNnWBMPRcBdQQEg7misc6N9P8VLncXJeQo_Jh-CpHKnpGPxseHU825Rlb07xIh4JW97Zn7mZqf-qppW9Q29OiL8ZE4dysa2LDGOjTXrXncaUlZTlPDnYo4Nl')"></div>
+</div>
+<p class="text-sm font-medium text-slate-500">+5,000 reparaciones exitosas este año</p>
+</div>
+</div>
+<div class="relative">
+<div class="absolute -top-10 -right-10 size-64 bg-secondary/20 blur-[100px] rounded-full"></div>
+<div class="absolute -bottom-10 -left-10 size-64 bg-primary/20 blur-[100px] rounded-full"></div>
+<div class="relative rounded-2xl overflow-hidden border border-slate-200 dark:border-slate-800 shadow-2xl">
+<img alt="Técnico trabajando" class="w-full aspect-square object-cover" data-alt="Técnico profesional reparando placa base de laptop con microscopio" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBUdnVFyMZnyqk9rF7l1NQXFY_X1ZcfnTuzRkcPKEcLKyc4Y6PD1cq8HDXGU9io-SiCL6cuylcCHjkgOie4rd5VRSfAt-BjiziJMVe3WzCefvz_gvnI--FC__bBhVVQKJNtB7rw72zTmnLiGhOYDLhOMjHPjrxDsNcwdRLZGIx3XsgOAnu3m8RTmqGf4x7ZvXcN5PxB3uswhH857m9C6cMfPiSfXNUaC-7J9ohvX01ETZJQIaQCLrWvb87yJXw3baFWVw-OOlmT-ZVq"/>
+<div class="absolute bottom-6 left-6 right-6 p-6 glass-card rounded-xl">
+<div class="flex items-center justify-between">
+<div>
+<p class="text-secondary font-bold text-sm">Laboratorio Nivel 3</p>
+<p class="text-white text-xs">Equipamiento de última generación</p>
+</div>
+<span class="material-symbols-outlined text-secondary text-3xl">biotech</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Order Status Tracker -->
+<section class="py-20 bg-slate-100 dark:bg-slate-900/30" id="consulta">
+<div class="max-w-4xl mx-auto px-6 text-center">
+<h2 class="text-3xl lg:text-4xl font-bold mb-4">Consulta el estado de tu equipo</h2>
+<p class="text-slate-600 dark:text-slate-400 mb-10">Ingresa tu número de orden para conocer el avance de tu reparación en tiempo real.</p>
+<div class="relative max-w-2xl mx-auto">
+<div class="flex flex-col sm:flex-row gap-3 p-2 rounded-2xl bg-white dark:bg-slate-800 shadow-xl border border-slate-200 dark:border-slate-700">
+<div class="flex-1 flex items-center px-4 gap-3">
+<span class="material-symbols-outlined text-primary">search</span>
+<input class="w-full bg-transparent border-none focus:ring-0 text-slate-900 dark:text-white placeholder:text-slate-400" placeholder="Número de orden (ej. TS-1234)" type="text"/>
+</div>
+<button class="bg-primary hover:bg-primary/90 text-white font-bold py-4 px-8 rounded-xl transition-all shadow-lg shadow-primary/20">
+                            Consultar Estado
+                        </button>
+</div>
+</div>
+<div class="mt-12 grid grid-cols-2 md:grid-cols-4 gap-6 opacity-60">
+<div class="flex flex-col items-center gap-2">
+<span class="material-symbols-outlined text-secondary">check_circle</span>
+<span class="text-xs font-medium uppercase tracking-tighter">Recibido</span>
+</div>
+<div class="flex flex-col items-center gap-2">
+<span class="material-symbols-outlined text-primary">analytics</span>
+<span class="text-xs font-medium uppercase tracking-tighter">Diagnóstico</span>
+</div>
+<div class="flex flex-col items-center gap-2">
+<span class="material-symbols-outlined text-slate-400">build</span>
+<span class="text-xs font-medium uppercase tracking-tighter">En Proceso</span>
+</div>
+<div class="flex flex-col items-center gap-2">
+<span class="material-symbols-outlined text-slate-400">package_2</span>
+<span class="text-xs font-medium uppercase tracking-tighter">Listo</span>
+</div>
+</div>
+</div>
+</section>
+<!-- Specialties -->
+<section class="py-24 px-6 lg:px-20" id="servicios">
+<div class="max-w-7xl mx-auto">
+<div class="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6">
+<div class="max-w-2xl">
+<h2 class="text-4xl font-bold mb-4">Nuestras Especialidades</h2>
+<p class="text-slate-600 dark:text-slate-400 text-lg">Ofrecemos soluciones técnicas avanzadas para los ecosistemas tecnológicos más exigentes del mercado.</p>
+</div>
+<a class="text-primary font-bold flex items-center gap-2 hover:underline" href="#">
+                        Ver todos los servicios <span class="material-symbols-outlined">arrow_forward</span>
+</a>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+<!-- Apple -->
+<div class="group relative p-8 rounded-3xl bg-white dark:bg-slate-800/50 border border-slate-200 dark:border-slate-700 hover:border-primary/50 transition-all duration-300">
+<div class="size-16 rounded-2xl bg-primary/10 flex items-center justify-center text-primary mb-6 group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined text-4xl">phone_iphone</span>
+</div>
+<h3 class="text-2xl font-bold mb-3">Expertos Apple</h3>
+<p class="text-slate-600 dark:text-slate-400 mb-6 leading-relaxed">Reparación certificada de iPhone, iPad y MacBook. Cambio de pantallas, baterías y microsoldadura avanzada.</p>
+<ul class="space-y-3 mb-8">
+<li class="flex items-center gap-2 text-sm text-slate-500"><span class="material-symbols-outlined text-secondary text-sm">check</span> Repuestos Genuinos</li>
+<li class="flex items-center gap-2 text-sm text-slate-500"><span class="material-symbols-outlined text-secondary text-sm">check</span> Garantía de 6 meses</li>
+<li class="flex items-center gap-2 text-sm text-slate-500"><span class="material-symbols-outlined text-secondary text-sm">check</span> Diagnóstico Express</li>
+</ul>
+</div>
+<!-- PC -->
+<div class="group relative p-8 rounded-3xl bg-white dark:bg-slate-800/50 border border-slate-200 dark:border-slate-700 hover:border-primary/50 transition-all duration-300">
+<div class="size-16 rounded-2xl bg-secondary/10 flex items-center justify-center text-secondary mb-6 group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined text-4xl">desktop_windows</span>
+</div>
+<h3 class="text-2xl font-bold mb-3">Reparación de PC</h3>
+<p class="text-slate-600 dark:text-slate-400 mb-6 leading-relaxed">Mantenimiento preventivo, optimización de software y recuperación de datos para laptops y equipos de escritorio.</p>
+<ul class="space-y-3 mb-8">
+<li class="flex items-center gap-2 text-sm text-slate-500"><span class="material-symbols-outlined text-secondary text-sm">check</span> Gaming &amp; Workstations</li>
+<li class="flex items-center gap-2 text-sm text-slate-500"><span class="material-symbols-outlined text-secondary text-sm">check</span> Limpieza de Hardware</li>
+<li class="flex items-center gap-2 text-sm text-slate-500"><span class="material-symbols-outlined text-secondary text-sm">check</span> Instalación de SO</li>
+</ul>
+</div>
+<!-- Consolas -->
+<div class="group relative p-8 rounded-3xl bg-white dark:bg-slate-800/50 border border-slate-200 dark:border-slate-700 hover:border-primary/50 transition-all duration-300">
+<div class="size-16 rounded-2xl bg-primary/10 flex items-center justify-center text-primary mb-6 group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined text-4xl">sports_esports</span>
+</div>
+<h3 class="text-2xl font-bold mb-3">Consolas de Videojuegos</h3>
+<p class="text-slate-600 dark:text-slate-400 mb-6 leading-relaxed">Especialistas en PlayStation 5, Xbox Series X y Nintendo Switch. Reparación de HDMI y problemas de placa.</p>
+<ul class="space-y-3 mb-8">
+<li class="flex items-center gap-2 text-sm text-slate-500"><span class="material-symbols-outlined text-secondary text-sm">check</span> Reballing Profesional</li>
+<li class="flex items-center gap-2 text-sm text-slate-500"><span class="material-symbols-outlined text-secondary text-sm">check</span> Cambio de Pasta Térmica</li>
+<li class="flex items-center gap-2 text-sm text-slate-500"><span class="material-symbols-outlined text-secondary text-sm">check</span> Reparación de Controles</li>
+</ul>
+</div>
+</div>
+</div>
+</section>
+<!-- Brands Section -->
+<section class="py-20 border-t border-slate-200 dark:border-slate-800 overflow-hidden" id="marcas">
+<div class="max-w-7xl mx-auto px-6">
+<p class="text-center text-sm font-bold uppercase tracking-widest text-slate-400 mb-12">Marcas que reparamos con confianza</p>
+<div class="flex flex-wrap justify-center items-center gap-12 lg:gap-20 opacity-40 grayscale hover:grayscale-0 transition-all">
+<img alt="Apple" class="h-8 dark:invert" data-alt="Logotipo de Apple" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAcaujPFg5Et-AEVyicCHbOrN5mRqHygmGlOcVXPssvEsD2OKJw4LJKNLpXQXds-MNDK-PBjG8N7LvhIxNyQrUU65tkOXI7f3G5RAcbgcuXVaHRf8AEjJCS8u90dNNhOsSSHtjcBZN-8hdnfJDQmeUMwPqlzc6UYD9ZcDHc7ylWpVHjzdlQpvkKE87UGw75xD-GdfOv1_77P0h-Qnel3S8Ag6UxK5hivTmAMyWygPjMYKY3QTfNU0HYC7-asAzYa4V0CrO-l-yULpfs"/>
+<img alt="Samsung" class="h-6 dark:invert" data-alt="Logotipo de Samsung" src="https://lh3.googleusercontent.com/aida-public/AB6AXuARp7n7npWV8fMemDsuC6UeCbOMIXnQAPGHeYuTmBd-nArztr0aMhqNr7CoSxh5NeafGbwsiCdvy0OsdgnKfH_67i4hLns4fDf8VXW94feMUujfN5t-d9gPKjhc-3bxaas8MvmYc8tbQbkTL4OvbcUZRto3z0glpIi318eos3Qr-mcB6cpgEyhmtZ-cMmC0nyISBWze54q2oevYf_ueW6VU8mc2uR-I2-L2l0giqd16thGCySJpXp5MVhU3Oiug88K4LwIvVZgJFKzT"/>
+<img alt="Lenovo" class="h-6 dark:invert" data-alt="Logotipo de Lenovo" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAjCI5JhHxcEBLJmoizzxZ6ElzeVfmcYUgGKb9m7XcITmFOnEFejdYfA2u0mFplC8xec3VTtgH_zbeFG0YOwFMnEw6sLk39G_d0GjUJ_jvLdkG_BA2u04mdGH-A_9AqpjRadZQNzqiklnL9Ygl6SPHkLs3_IDfBLeixNBXb-JKkHCSTdlC8NJbFgVEH02z8r8NScNvLj1C_DiXsJQcYOq9RmIfvx02OhCqvTupKStUp5xQIeIV-Dp7rXhRzgpNp3NQXKv4G0aedTdup"/>
+<img alt="HP" class="h-10 dark:invert" data-alt="Logotipo de HP" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDbxXKetZA7w_NA9RLdRbCQih4GCK9GMlwvo4WNriFeraZZ1VlyqeV0qA3JY8KWIzf3bczdcFkofaDu076AcFb9QlLQzd9YyhJB7QDxj_NA-4CdhRJK24HD8XNW0Q5Lr4HJ-aUGw-rcPXrha8vI6sEarbk_d1VIJInlVV11-ofvf-UAIRi-ENMsdXjx8XZA4wC83uo3LBTFzqPrORb_KmGIpeFNzP4OAiYWt-rrjMC5PqGj11DIHTIhbgjFKAMfr0JckrPYeHbiZGe9"/>
+<img alt="Nintendo" class="h-6 dark:invert" data-alt="Logotipo de Nintendo" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBn_9azI5fkoT-hFX0UqH99UR7UZ8rMMwCMPMBHGU-d47P8R-j4VcPUY-Oet9OjptXphtei-T_JT_MtuR8stWtjSWZsN10-2gm_SvMjOWObMyOS7GlaFidpDZFHDEGVMuRFwMwWlbMDtQVNVGLZXIH7cWFivLm5pBtMEWrBkLvNyxMVQw74Q0l7eByjWng__a7GrgdZ0wZFPCB84dFd_TixuiGB_-k6giCFhaKdoNG1ytpY1WQ8KmtQU2-q0wwZ3Ugz6PdhNwfDKd5d"/>
+<img alt="Sony" class="h-4 dark:invert" data-alt="Logotipo de Sony" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBOIBxtfdHnZUpEEnT0qzMpG7dewGjXyLno7XxY0DPPPcd4u_XdobVx289iZrHQU4MQ2cp-qlkWTdfJEo0bzwGctotR9yEf8DfkCEHKZv-O4PkeS4E02jCBOT3JOghRfHNSI7NwUsbuOwVyPmTVPlZq-G5ne8QfNpvC-H8nmRXFWc76fXz2p8p-A7e5YAO_8JLknbS10Bc0KfkOZg0JPz6s9-VCpFF2ixk6fOgYAfRAO3J8TRCgvrXikaT6q0uw5WNH--O6A6DmkafZ"/>
+<img alt="Microsoft" class="h-6 dark:invert" data-alt="Logotipo de Microsoft" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCtz2ub-61dfcY651qM2bd1s-KGTfzU8m9yZxpPgRizCvSibrfmZnXG61_kHU1eMTwc0oSGPYvATHoEeKoE9FhxXYWJaBg5qEqSI6O1cETKwJUtJ7Ixtlw3iXDFumcI0MgUV6PZqn2F-VSVw5ZjA8dzEXCW1sOsgbnbspTyCIsCePF-JnO6JGgDemqvsZ8YO8fquoEte_7lYXhFpmBSG69BiW9ve-Y56O6aT3cyeojekqE_c0g_clYHbDCQpk7JfxXZZYNWnyCiPmn6"/>
+</div>
+</div>
+</section>
+<!-- CTA Final -->
+<section class="py-24 px-6">
+<div class="max-w-5xl mx-auto relative rounded-[2.5rem] overflow-hidden bg-primary p-12 lg:p-20 text-center">
+<div class="absolute inset-0 bg-[radial-gradient(circle_at_top_right,#2dfc52,transparent_60%)] opacity-30"></div>
+<div class="relative z-10 flex flex-col items-center gap-8">
+<h2 class="text-4xl lg:text-6xl font-black text-white tracking-tight">¿Tu equipo necesita ayuda?</h2>
+<p class="text-white/80 text-lg lg:text-xl max-w-2xl mx-auto leading-relaxed">
+                        No esperes más. Nuestros técnicos están listos para darte un presupuesto sin compromiso y devolverle la vida a tus dispositivos.
+                    </p>
+<div class="flex flex-wrap justify-center gap-4 mt-4">
+<button class="bg-white text-primary font-bold px-10 py-5 rounded-2xl text-xl shadow-xl hover:scale-105 transition-transform flex items-center gap-3">
+<span class="material-symbols-outlined">calendar_month</span>
+                            Reservar Turno
+                        </button>
+<button class="bg-slate-900/20 text-white font-bold px-10 py-5 rounded-2xl text-xl border border-white/30 backdrop-blur hover:bg-slate-900/30 transition-all">
+                            Contactar por WhatsApp
+                        </button>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-slate-100 dark:bg-slate-950 py-16 px-6 lg:px-20 border-t border-slate-200 dark:border-slate-800">
+<div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-12">
+<div class="col-span-1 md:col-span-1 flex flex-col gap-6">
+<div class="flex items-center gap-2">
+<img alt="Techno Store Logo" class="size-8" data-alt="Icono del logo Techno Store" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAVyC5QHFzmOcXySrcl1m0wyQWb-cKnSuFlb5c_Ks0z5LN4nVqOcHvRWAlb1_9egUT4m2n59-oR-4Q45cTVXnShVqQvmJ2NsyJddG94lFK66DLkGZ6DekCbJTY-FgJphfpOv7bngcl8LSlP8dQ948-ZconI0Mr_mPm6LoJcefk0SiUd2Gx3NHCorHP8D7_4BRdkd_FnOXKdFjGfmYM_pMN3zt9G_B67S_Yn-t9u5L2EH3wfLutdeeTCUyvpMK-O1QAbHRN6ewT2P5q3"/>
+<h2 class="text-lg font-bold tracking-tight gradient-text">Techno Store</h2>
+</div>
+<p class="text-sm text-slate-500 leading-relaxed">Expertos en servicio técnico premium con más de 10 años de trayectoria reparando el futuro de tu tecnología.</p>
+<div class="flex gap-4">
+<a class="size-10 rounded-full bg-slate-200 dark:bg-slate-800 flex items-center justify-center text-slate-600 dark:text-slate-400 hover:text-primary transition-colors" href="#">
+<span class="material-symbols-outlined text-xl">share</span>
+</a>
+<a class="size-10 rounded-full bg-slate-200 dark:bg-slate-800 flex items-center justify-center text-slate-600 dark:text-slate-400 hover:text-primary transition-colors" href="#">
+<span class="material-symbols-outlined text-xl">public</span>
+</a>
+</div>
+</div>
+<div>
+<h4 class="font-bold mb-6">Servicios</h4>
+<ul class="space-y-4 text-sm text-slate-500">
+<li><a class="hover:text-primary transition-colors" href="#">iPhone &amp; iPad</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">Mac &amp; Laptops</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">Consolas de Videojuegos</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">Recuperación de Datos</a></li>
+</ul>
+</div>
+<div>
+<h4 class="font-bold mb-6">Compañía</h4>
+<ul class="space-y-4 text-sm text-slate-500">
+<li><a class="hover:text-primary transition-colors" href="#">Sobre Nosotros</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">Nuestras Sedes</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">Garantía Techno</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">Preguntas Frecuentes</a></li>
+</ul>
+</div>
+<div>
+<h4 class="font-bold mb-6">Ubicación</h4>
+<div class="rounded-xl overflow-hidden mb-4 border border-slate-200 dark:border-slate-800 grayscale hover:grayscale-0 transition-all h-32 bg-slate-300" data-location="Ciudad de Mexico" style="">
+<img alt="Mapa de ubicación" class="w-full h-full object-cover" data-alt="Mapa abstracto de la ubicación del local" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBHgmABTHhTKhGjrnE0s-MwDryIHqvLo65NCl8KLE3p5lD-gQq21WoQ4uEwi90TewehCVuQdP7bkPE71cughNB1VgGCeNgD5x6nh_TjwhCwB996xrpEYwgwtyB83Z55_0Qs84q7Lj1Wa8MGnUFxQzBmW7LtgxA97Zr9bqkJfA7WfXxu6oOol9VUE6RpYzDhTCX8BGhZJ4LBhWR4Jh6JsCEkBVSk3Ez9EBEScc6FynxtC0vPp7ohNLXzPqr6izeh_U0cmZiX3WPGeeqU"/>
+</div>
+<p class="text-sm text-slate-500 flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-lg">location_on</span>
+                    Av. Central 452, Edificio Tech
+                </p>
+</div>
+</div>
+<div class="max-w-7xl mx-auto mt-16 pt-8 border-t border-slate-200 dark:border-slate-800 flex flex-col md:flex-row justify-between items-center gap-4">
+<p class="text-xs text-slate-400">© 2024 Techno Store. Todos los derechos reservados.</p>
+<div class="flex gap-6 text-xs text-slate-400">
+<a class="hover:text-slate-600 dark:hover:text-slate-200" href="#">Privacidad</a>
+<a class="hover:text-slate-600 dark:hover:text-slate-200" href="#">Términos</a>
+</div>
+</div>
+</footer>
+</div>
+</body></html>
