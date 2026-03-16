@@ -5,27 +5,33 @@ const LOGO_B64 = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAA8wAAAJ+CAYAAABi
 const WHATSAPP_NUMBER = "5491127650658";
 
 // ─── SISTEMA DEL CHATBOT ───────────────────────────────────────────────────
-const BOT_SYSTEM = `Sos el asistente virtual de TechnoStore, un servicio técnico especializado en Buenos Aires. Respondés en español rioplatense, de manera amigable, directa y concisa.
+const BOT_SYSTEM = `Sos el asistente virtual de TechnoStore, un servicio técnico de barrio con más de 15 años de experiencia en Buenos Aires. Respondés en español rioplatense, de manera amigable, directa y concisa.
 
-SERVICIOS:
-SERVICIOS:
-• Reparación Apple: iPhone, iPad, MacBook. Repuestos 100% originales, Face ID, microsoldadura.
-• Celulares (Multimarca): Samsung, Motorola, Xiaomi. Módulos, pines de carga, baterías.
-• Computadoras & Notebooks: Cambio a SSD, ampliación de RAM, reballing, bisagras rotas, armado de PC a medida.
-• Tablets: Cambio de táctil, displays, baterías, software. Todas las marcas.
-• Impresoras: Mantenimiento preventivo, destape de cabezales, reseteo de almohadillas, recarga de sistemas continuos. Epson, HP, Brother.
-• Armado de PC a medida: presupuestos personalizados para gaming, diseño, edición de video o trabajo de oficina.
+SERVICIOS QUE OFRECEMOS:
+• Apple (MacBook, iPhone, iPad, iMac): microsoldadura, Face ID, pantallas, baterías, ampliación NAND.
+• Celulares multimarca (Samsung, Motorola, Xiaomi, Huawei): pantallas, baterías, pines de carga, daño por líquido.
+• Computadoras y Notebooks: reparación de motherboard, formateo, backups, cambio de teclado y batería.
+• Upgrade de velocidad: instalación de SSD, ampliación de RAM, clonación de disco. "No tires tu compu vieja".
+• Bisagras de notebooks: reparación y refuerzo estructural para HP, Lenovo, Asus, Acer, Dell.
+• Consolas (PS4, PS5, Xbox, Switch): mantenimiento, reballing GPU, HDMI, drift de joysticks, metal líquido.
+• Tablets e iPads: táctiles, displays, baterías, software.
+• Impresoras (Epson, HP, Brother, Canon): destape de cabezales, sistema continuo, almohadillas.
+• Armado de PC a medida: presupuestos personalizados para gaming, diseño, edición o trabajo.
+• Venta de celulares e insumos: equipos libres, fundas, templados, cargadores, hardware PC.
 
 DATOS DEL LOCAL:
 • Dirección: Av. Santa Fe 2844, Local TechnoStore, Buenos Aires
 • Horario: Lunes a Sábados de 12:00 a 20:00 hs
 • Email: tsbarrionorte@gmail.com
+• WhatsApp: 11 2765-0658
+• Instagram: @technostore_ts
 • Se recomienda reservar turno previamente
 
 POLÍTICAS:
 • Diagnóstico sin cargo para todos los equipos
-• Garantía de mano de obra en todas las reparaciones
-• Repuestos de la más alta calidad disponible (y originales cuando es posible)
+• Garantía de 90 días en mano de obra (salvo casos excepcionales)
+• Repuestos de la más alta calidad disponible (originales cuando es posible)
+• +15.000 equipos reparados
 
 IMPORTANTE: Si no sabés algo con certeza, derivá al cliente por WhatsApp o email. Sé breve: máximo 3-4 oraciones. No inventes precios.`;
 
@@ -43,6 +49,8 @@ const NAV_LINKS = [
   { label: "Upgrades", href: "#upgrades" },
   { label: "Bisagras", href: "#bisagras" },
   { label: "Consolas", href: "#consolas" },
+  { label: "Tablets", href: "#tablets" },
+  { label: "Impresoras", href: "#impresoras" },
   { label: "Armado PC", href: "#armado" },
   { label: "Ventas", href: "#ventas" },
   { label: "Contacto", href: "#contacto" },
@@ -52,82 +60,82 @@ const SERVICES = [
   {
     id: "apple",
     icon: "🍏",
-    title: "Especialistas Apple",
-    subtitle: "MacBook · iPhone · iPad",
-    desc: "Somos especialistas en MacBook, iPhone, iPad, todos los productos Apple. Servicio técnico premium con repuestos originales y microsoldadura de placa.",
+    title: "Servicio Técnico Apple",
+    subtitle: "MacBook · iPhone · iPad · iMac · Apple Watch",
+    desc: "En TechnoStore trabajamos con productos Apple hace más de 10 años. Sabemos que tu MacBook o iPhone no es solo un equipo: es tu herramienta de trabajo, tus fotos, tus datos. Por eso los tratamos con el cuidado que merecen. Hacemos desde cambios de pantalla y batería hasta microsoldadura de componentes en placa lógica, reparación de Face ID, y ampliación de almacenamiento interno. Usamos repuestos de la más alta calidad disponible y, cuando es posible, originales Apple.",
     color: "#0d59f2",
-    img: "https://images.unsplash.com/photo-1512054502232-10a0a035d672?auto=format&fit=crop&q=80&w=800", // Mac repair
-    items: ["Módulos OLED originales con TrueTone", "Baterías calidad 100% certificado", "Reparación avanzada de Face ID", "Microsoldadura en placas lógicas", "Ampliación de memoria NAND", "Reparaciones exprés en el día"],
+    img: "https://images.unsplash.com/photo-1517336714731-489689fd1ca8?w=800&q=80",
+    items: ["Cambio de pantalla OLED/LCD con TrueTone", "Reemplazo de batería original y compatible", "Reparación de Face ID y Touch ID", "Microsoldadura en placa lógica (IC de carga, audio, etc.)", "Ampliación de almacenamiento NAND", "Diagnóstico gratuito · Reparaciones en el día"],
   },
   {
     id: "celulares",
     icon: "📱",
-    title: "Celulares Multimarca",
-    subtitle: "Samsung · Motorola · Xiaomi",
-    desc: "Sabemos lo importante que es tu teléfono. Realizamos reparaciones rápidas y efectivas para dejar tu celular funcionando como el primer día, sin perder tu información.",
+    title: "Reparación de Celulares",
+    subtitle: "Samsung · Motorola · Xiaomi · Huawei · Todas las marcas",
+    desc: "Se te rompió la pantalla, no carga, se apaga solo o le anda mal el audio? Traelo y en la gran mayoría de los casos te lo devolvemos reparado en el mismo día. Trabajamos con todas las marcas y modelos: Samsung Galaxy, Motorola, Xiaomi, Huawei y más. No hace falta turno previo para diagnóstico, es sin cargo y sin compromiso. Cuidamos tu información, siempre.",
     color: "#ff3b30",
-    img: "https://images.unsplash.com/photo-1581092160562-40aa08e78837?auto=format&fit=crop&q=80&w=800", // Phone repair
-    items: ["Cambio de módulo completo", "Reemplazo de baterías agotadas", "Reparación de pin de carga y audio", "Recuperación de equipos mojados", "Cámaras, sensores y botones", "Diagnóstico sin cargo"],
+    img: "https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?w=800&q=80",
+    items: ["Cambio de módulo de pantalla completo", "Reemplazo de batería gastada", "Reparación de pin de carga (USB-C / Lightning)", "Recuperación de equipos con daño por líquido", "Cámaras, micrófonos, parlantes y botones", "Diagnóstico sin cargo en el acto"],
   },
   {
     id: "computadoras",
     icon: "💻",
     title: "Computadoras y Notebooks",
-    subtitle: "PC de Escritorio · All in One",
-    desc: "Diagnóstico y reparación integral de computadoras de escritorio, mothers y componentes electrónicos. Reemplazo de fuentes, memorias y solución de fallas complejas.",
+    subtitle: "PC de Escritorio · Notebooks · All in One",
+    desc: "¿Tu compu no enciende, se cuelga o hace ruidos raros? Traela al local y te la revisamos. Reparamos computadoras de escritorio, notebooks de todas las marcas, y equipos All-in-One. Hacemos desde un simple formateo hasta reparación de motherboard, cambio de fuente, y solución de problemas de video. También hacemos backups de tus datos antes de cualquier intervención.",
     color: "#9c27b0",
-    img: "https://images.unsplash.com/photo-1597872200969-2b65d56bd16b?auto=format&fit=crop&q=80&w=800", // PC logic board
-    items: ["Reparación de placas base (motherboards)", "Mantenimiento térmico profundo", "Solución a fallos de encendido o video", "Formateo e instalación limpia Windows", "Backups seguros y recuperación de datos", "Limpieza general de componentes"],
+    img: "https://images.unsplash.com/photo-1591488320449-011701bb6704?w=800&q=80",
+    items: ["Reparación de motherboard y componentes", "Mantenimiento térmico profundo (pasta térmica y limpieza)", "Solución a pantalla negra, reinicios y bluescreens", "Formateo con instalación limpia de Windows 10/11", "Backup seguro y recuperación de archivos", "Cambio de teclado, cargador y batería en notebooks"],
   },
   {
     id: "upgrades",
     icon: "⚡",
-    title: "Mejoras de Velocidad",
-    subtitle: "Upgrade de Hardware",
-    desc: "Tu equipo viejo puede volar como nuevo. Optimizamos el rendimiento de tu notebook o PC instalando la última tecnología de almacenamiento y ampliando la memoria.",
+    title: "Upgrade de Velocidad",
+    subtitle: "No tires tu compu vieja, nosotros la revivimos",
+    desc: "¿Tu notebook tarda 10 minutos en arrancar? ¿Se traba con solo abrir el navegador? No la tires, traela. Con un cambio de disco rígido a SSD y una ampliación de memoria RAM, tu equipo puede quedar hasta 100 veces más rápido, sin exagerar. Clonamos tu disco para que no pierdas absolutamente nada: programas, archivos, contraseñas, todo queda igual pero volando.",
     color: "#2dfc52",
-    img: "https://images.unsplash.com/photo-1541560052-5e137f229371?auto=format&fit=crop&q=80&w=800", // RAM / SSD upgrade
-    items: ["Instalación de SSD NVMe o SATA", "Ampliación de memoria RAM", "Optimización del sistema operativo", "Clonación de disco (sin perder datos)", "Hasta 100 veces más rápida", "Asesoramiento sobre compatibilidad"],
+    img: "https://images.unsplash.com/photo-1597838816882-4435b1977fbe?w=800&q=80",
+    items: ["Instalación de disco SSD (SATA o NVMe M.2)", "Ampliación de memoria RAM (DDR3 / DDR4 / DDR5)", "Clonación de disco (no perdés nada)", "Optimización completa del sistema operativo", "Limpieza de programas innecesarios y malware", "Te asesoramos sobre qué conviene para tu equipo"],
   },
   {
     id: "bisagras",
     icon: "🔧",
     title: "Reparación de Bisagras",
-    subtitle: "Notebooks Multimarca",
-    desc: "Las bisagras rotas son el problema mecánico más frecuente. Reparamos o reemplazamos bisagras y anclajes con refuerzo estructural de resina de alta resistencia.",
+    subtitle: "El problema más común en notebooks",
+    desc: "Las bisagras rotas son de los problemas más frecuentes que vemos en el taller. Se rompen por el uso diario, por abrirla de un solo lado, o simplemente porque el plástico cede con el tiempo. No hace falta cambiar la notebook entera: nosotros reparamos o reemplazamos las bisagras, reconstruimos los plásticos rotos y reforzamos la estructura para que no vuelva a pasar.",
     color: "#ff9500",
-    img: "https://images.unsplash.com/photo-1588508065123-287b28e013da?auto=format&fit=crop&q=80&w=800", // Broken hinge/laptop rep
-    items: ["Bisagras HP, Lenovo, Asus, Acer", "Restauración de plásticos rotos", "Reparación de marco de pantalla", "Refuerzo estructural del chasis", "Repuestos originales y compatibles", "Garantía de mano de obra y fijación"],
+    img: "https://images.unsplash.com/photo-1496181133206-80ce9b88a853?w=800&q=80",
+    items: ["Bisagras para HP, Lenovo, Asus, Acer, Dell y más", "Reconstrucción de plásticos y anclajes rotos", "Refuerzo estructural con resina de alta resistencia", "Reparación del marco y tapa de pantalla", "Repuestos de la más alta calidad disponible", "Garantía de 90 días en mano de obra"],
   },
   {
     id: "consolas",
     icon: "🎮",
-    title: "Consolas de Videojuegos",
-    subtitle: "PS5 · PS4 · Xbox · Switch",
-    desc: "Somos expertos en la reparación de consolas. Desde problemas de recalentamiento con el famoso metal líquido, hasta reballing de la GPU o cambio de lectura de disco.",
+    title: "Reparación de Consolas",
+    subtitle: "PlayStation · Xbox · Nintendo Switch",
+    desc: "¿Tu PS4 suena como una turbina? ¿Tu PS5 se apaga sola? ¿Los joysticks de tu Switch hacen drift? Reparamos todo tipo de consolas de videojuegos. Hacemos mantenimiento preventivo, limpieza de metal líquido (el talón de Aquiles de la PS5), reballing de GPU, cambio de puerto HDMI, y reparación de lectora. Usamos las mejores herramientas y repuestos para que vuelvas a jugar tranquilo.",
     color: "#f20d59",
-    img: "https://images.unsplash.com/photo-1605901309536-21876aff8ce2?auto=format&fit=crop&q=80&w=800", // Console repair / controller
-    items: ["Mantenimiento preventivo completo", "Reballing profesional de GPU", "Cambio de puerto HDMI (PS4/PS5)", "Reparación Drift en joysticks", "Limpieza de metal líquido y pasta térmica", "Problemas de software y lector"],
+    img: "https://images.unsplash.com/photo-1606144042614-b2417e99c4e3?w=800&q=80",
+    items: ["Mantenimiento preventivo completo (limpieza + pasta térmica)", "Reballing profesional de GPU / APU", "Cambio de puerto HDMI (PS4 / PS5 / Xbox)", "Reparación de drift en joysticks (Switch / PS5)", "Cambio de metal líquido y pad térmico", "Reparación de lectora y problemas de software"],
   },
   {
     id: "tablets",
-    icon: "📴",
+    icon: "📱",
     title: "Tablets e iPads",
-    subtitle: "Estudio · Trabajo · Multimedia",
-    desc: "Las tablets sufren muchos golpes y desgastes. Reparamos táctiles, displays completos y fallas de carga para que los más chicos o los profesionales no dejen de usarlas.",
+    subtitle: "iPad · Samsung Tab · Lenovo · Todas las marcas",
+    desc: "Ya sea la tablet de tus hijos que se cayó al piso o el iPad que usás para trabajar, la reparamos. Cambiamos táctiles rotos, displays completos, baterías agotadas, y solucionamos problemas de software y carga. Trabajamos con iPads de todas las generaciones, Samsung Galaxy Tab, Lenovo y otras marcas.",
     color: "#0df2a6",
-    img: "https://images.unsplash.com/photo-1563203369-26f2e4a5ccf7?auto=format&fit=crop&q=80&w=800", // Tablet repair
-    items: ["Reemplazo de cristal táctil", "Cambio de display interno LCD", "Baterías nuevas de alta duración", "Desbloqueos de software", "Reparación de botón de encendido", "Limpieza de conectores"],
+    img: "https://images.unsplash.com/photo-1544244015-0df4b3ffc6b0?w=800&q=80",
+    items: ["Cambio de cristal táctil (glass)", "Reemplazo de display LCD / OLED completo", "Baterías nuevas de alta duración", "Reparación de conector de carga", "Solución a bloqueos y problemas de software", "Diagnóstico sin cargo para todas las marcas"],
   },
   {
     id: "impresoras",
     icon: "🖨️",
-    title: "Impresoras",
-    subtitle: "Epson · HP · Brother",
-    desc: "Mantenimiento especializado para impresoras de sistema continuo y cartuchos. Evitá manchas, atascos de papel y cabezales tapados con nuestro servicio profesional.",
+    title: "Servicio de Impresoras",
+    subtitle: "Epson · HP · Brother · Canon",
+    desc: "¿Tu impresora mancha, no toma papel o directamente dejó de imprimir? Hacemos mantenimiento y reparación de impresoras hogareñas y de oficina. Destapamos cabezales, reseteamos almohadillas de tinta, instalamos sistemas continuos alternativos y solucionamos atascos de papel. Si estás pensando en instalar un sistema de tinta continua, también lo hacemos.",
     color: "#e6e6e6",
-    img: "https://images.unsplash.com/photo-1612815154858-60aa4c59eaa6?auto=format&fit=crop&q=80&w=800", // Printer
-    items: ["Destape profundo de cabezales", "Reseteo de almohadillas por software", "Sistemas continuos alternativos", "Reparación de toma de papel", "Limpieza general de engranajes", "Calibración de inyectores"],
+    img: "https://images.unsplash.com/photo-1585776245991-cf89dd7fc73a?w=800&q=80",
+    items: ["Destape de cabezales por ultrasonido y líquido", "Reseteo de almohadillas (waste ink pad)", "Instalación de sistema de tinta continua", "Reparación de toma/arrastre de papel", "Limpieza de rodillos y engranajes", "Calibración y alineación de inyectores"],
   },
 ];
 
@@ -288,8 +296,8 @@ function Hero() {
               margin: "0 0 36px",
             }}
           >
-            Reparación profesional de Apple, PC, consolas y notebooks. Instalamos SSD, ampliamos RAM
-            y devolvemos la vida a equipos viejos. Somos TechnoStore.
+            Más de 15 años reparando celulares, computadoras, consolas, tablets e impresoras en el barrio.
+            Instalamos SSD, ampliamos RAM y le devolvemos la vida a tu equipo. Diagnóstico sin cargo.
           </p>
 
           <div style={{ display: "flex", gap: 16, flexWrap: "wrap" }}>
@@ -362,10 +370,10 @@ function Hero() {
             }}
           >
             {[
-              "https://images.unsplash.com/photo-1581092921461-e5d487cb1015?auto=format&fit=crop&q=80&w=1200", // Lab
-              "https://images.unsplash.com/photo-1597872200969-2b65d56bd16b?auto=format&fit=crop&q=80&w=1200", // Mobo
-              "https://images.unsplash.com/photo-1581092160562-40aa08e78837?auto=format&fit=crop&q=80&w=1200", // Tools
-              "https://images.unsplash.com/photo-1555680202-c86f0e12f086?auto=format&fit=crop&q=80&w=1200" // Circuit
+              "https://images.unsplash.com/photo-1517336714731-489689fd1ca8?w=1200&q=80",
+              "https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?w=1200&q=80",
+              "https://images.unsplash.com/photo-1591488320449-011701bb6704?w=1200&q=80",
+              "https://images.unsplash.com/photo-1606144042614-b2417e99c4e3?w=1200&q=80"
             ].map((src, i) => (
               <div key={i} style={{ width: "25%", height: "100%", position: "relative" }}>
                 <img
@@ -879,14 +887,14 @@ function Footer() {
           <div>
             <h4 style={{ fontFamily: "'Space Grotesk', sans-serif", fontWeight: 700, color: "#fff", fontSize: 14, marginBottom: 20 }}>Garantía</h4>
             <div style={{ color: "rgba(255,255,255,0.45)", fontSize: 13, lineHeight: 1.6 }}>
-              ✅ Reparaciones garantizadas.<br/>
-              ✅ Repuestos originales certificados.<br/><br/>
+              ✅ Todas las reparaciones con garantía.<br/>
+              ✅ Repuestos de la más alta calidad.<br/><br/>
               <strong style={{color:"#2dfc52", fontWeight: 700}}>Garantía de 90 días</strong><br/>
               (salvo casos excepcionales detallados en la orden).
             </div>
           </div>
           <div>
-            <h4 style={{ fontFamily: "'Space Grotesk', sans-serif", fontWeight: 700, color: "#fff", fontSize: 14, marginBottom: 20 }}>Contacto Rápidio</h4>
+            <h4 style={{ fontFamily: "'Space Grotesk', sans-serif", fontWeight: 700, color: "#fff", fontSize: 14, marginBottom: 20 }}>Contacto Rápido</h4>
             <a
               href={`https://wa.me/${WHATSAPP_NUMBER}`}
               target="_blank"
