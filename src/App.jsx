@@ -2,16 +2,18 @@ import { useState, useRef, useEffect } from "react";
 
 const LOGO_B64 = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAA8wAAAJ+CAYAAABi9vxiAAAACXBIWXMAABcSAAAXEgFnn9JSAAAFgWlUWHRYTUw6Y29tLmFkb2JlLnhtcAAAAAAAPD94cGFja2V0IGJlZ2luPSLvu78iIGlkPSJXNU0wTXBDZWhpSHpyZVN6TlRjemtjOWQiPz4gPHg6eG1wbWV0YSB4bWxuczp4PSJhZG9iZTpuczptZXRhLyIgeDp4bXB0az0iQWRvYmUgWE1QIENvcmUgNi4wLWMwMDIgNzkuMTY0MzUyLCAyMDIwLzAxLzMwLTE1OjUwOjM4ICAgICAgICAiPiA8cmRmOlJERiB4bWxuczpyZGY9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkvMDIvMjItcmRmLXN5bnRheC1ucyMiPiA8cmRmOkRlc2NyaXB0aW9uIHJkZjphYm91dD0iIiB4bWxuczp4bXA9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC8iIHhtbG5zOmRjPSJodHRwOi8vcHVybC5vcmcvZGMvZWxlbWVudHMvMS4xLyIgeG1sbnM6cGhvdG9zaG9wPSJodHRwOi8vbnMuYWRvYmUuY29tL3Bob3Rvc2hvcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RFdnQ9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZUV2ZW50IyIgeG1wOkNyZWF0b3JUb29sPSJBZG9iZSBQaG90b3Nob3AgMjEuMSAoTWFjaW50b3NoKSIgeG1wOkNyZWF0ZURhdGU9IjIwMTktMDYtMjhUMDU6MDk6MzgtMDM6MDAiIHhtcDpNb2RpZnlEYXRlPSIyMDIwLTA0LTExVDA0OjAzOjMzLTAzOjAwIiB4bXA6TWV0YWRhdGFEYXRlPSIyMDIwLTA0LTExVDA0OjAzOjMzLTAzOjAwIiBkYzpmb3JtYXQ9ImltYWdlL3BuZyIgcGhvdG9zaG9wOkNvbG9yTW9kZT0iMyIgcGhvdG9zaG9wOklDQ1Byb2ZpbGU9InNSR0IgSUVDNjE5NjYtMi4xIiB4bXBNTTpJbnN0YW5jZUlEPSJ4bXAuaWlkOjM4ZjJiOWM5LTZmYjItNDNlYy1hNTQ2LWNmMTJlZjVlYzRiMyIgeG1wTU06RG9jdW1lbnRJRD0iYWRvYmU6ZG9jaWQ6cGhvdG9zaG9wOjFlNWFkNjkxLTI3YmItOTU0OS05MmE2LTgxZmI2Nzk5ZTJjMSIgeG1wTU06T3JpZ2luYWxEb2N1bWVudElEPSJ4bXAuZGlkOmVmOWI5MDk0LTUwNTAtNGY5NC1iNGEzLWMyYTc3OTFmYjMzYyI+IDx4bXBNTTpIaXN0b3J5PiA8cmRmOlNlcT4gPHJkZjpsaSBzdEV2dDphY3Rpb249ImNyZWF0ZWQiIHN0RXZ0Omluc3RhbmNlSUQ9InhtcC5paWQ6ZWY5YjkwOTQtNTA1MC00Zjk0LWI0YTMtYzJhNzc5MWZiMzNjIiBzdEV2dDp3aGVuPSIyMDE5LTA2LTI4VDA1OjA5OjM4LTAzOjAwIiBzdEV2dDpzb2Z0d2FyZUFnZW50PSJBZG9iZSBQaG90b3Nob3AgMjEuMSAoTWFjaW50b3NoKSIvPiA8cmRmOmxpIHN0RXZ0OmFjdGlvbj0ic2F2ZWQiIHN0RXZ0Omluc3RhbmNlSUQ9InhtcC5paWQ6MzhmMmI5YzktNmZiMi00M2VjLWE1NDYtY2YxMmVmNWVjNGIzIiBzdEV2dDp3aGVuPSIyMDIwLTA0LTExVDA0OjAzOjMzLTAzOjAwIiBzdEV2dDpzb2Z0d2FyZUFnZW50PSJBZG9iZSBQaG90b3Nob3AgMjEuMSAoTWFjaW50b3NoKSIgc3RFdnQ6Y2hhbmdlZD0iLyIvPiA8L3JkZjpTZXE+IDwveG1wTU06SGlzdG9yeT4gPC9yZGY6RGVzY3JpcHRpb24+IDwvcmRmOlJERj4gPC94OnhtcG1ldGE+IDw/eHBhY2tldCBlbmQ9InIiPz6bJKqNAAB4qklEQVR42tz9d5xdV3Xwj7/22af3mftemVGXZFnuveEGLhhMCyFAgIQkJCGN9EISSJ4QCCFACB0CBkxzw71gy7JsWb1Lo5HmnpnenXP2Xr8/ztGM5CbbKqvk/X7e13NvOWvvs/faa6/1WQq99NJLL7300ksvvfTSSy+99NJLL7300ksvvfTSSy+99NJLL7300ksvvfTSSy+99NJLL7300ksvvfTSSy+99NJLL7300ksvvfTSSy+99NJLL7300ksvvfTSSy+99NJLL7300ksvvfTSSy+99NJLL7300ksvvfTSSy+99NJLL7300ksvvfTSSy+99NJLL7300ksvvfTSSy+99NJLL7300ksvvfTSSy+99NJLL7300ksvvfTSSy+99NJLL7300ksvvfTSSy+99NJLL7300ksvvfTSSy+99NJLL7300ksvvfTSSy+99NJLL7300ksvvfTSSy+99NJLL7300ksvvfTSSy+99NJLL7300ksvvfTSSy+99NJLL7300ksvvfTSSy+99NJLL7300ksvvfTSSy+99NJLL7300ksvvfTSSy+99NJLL7300ksvvfTSSy+99NJLL7300ksvvfTSSy+99NJLL7300ksvvfTSSy+99NJLL7300ksvvfTSSy+99NJLL7300ksvvfTSSy+99NJLL7300ksvvfTSSy+99NJLL7300ksvvfTSSy+99NJLL7300ksvvfTSSy+99NJLL7300ksvvfTSSy+99NJLL7300ksvvfTSSy+99NJLL7300ksvvfTSSy+99NJLL7300ksvvfTSSy+99NJLL7300ksvvfTSSy+99NJLL7300ksvvfTSSy+99NJLL7300ksvvfTSSy+99NJLL7300ksvvfTSSy+99NJLL7300ksvvfTSSy+99NJLL7300ksvvfTSSy+99NJLL7300ksvvfTSSy+99NJLL7300ksvvfTSSy+99NJLL7300ksvvfTSSy+99NJLL7300ksvvfTSSy+99NJLL7300ksvvfTSSy+99NJLL7300ksvvfTSSy+99NJLL7300ksvvfTSSy+99NJLL7300ksvvfTSSy+99NJLL7300ksvvfTSSy+99NJLL7300ksvvfTSSy+99NJLL7300ksvvfTSSy+99NJLL7300ksvvfTSSy+99NJLL7300ksvvfTSSy+99NJLL7300ksvvfTSSy+99NJLL7300ksvvfTSSy+99NJLL7300ksvvfTSSy+99NJLL7300ksvvfTSSy+99NJLL7300ksvvfTSSy+99NJLL7300ksvvfTSSy+99NJLL7300ksvvfTSSy+99NJLL7300ksvvfTSSy+99NJLL7300ksvvfTSSy+99NJLL7300ksvvfTSSy+99NJLL7300ksvvfTSSy+99NJLL7300ksvvfTSSy+99NJLL7300ksvvfTSSy+99NJLL7300ksvvfTSSy+99NJLL7300ksvvfTSSy+99NJLL7300ksvvfTSSy+99NJLL7300ksvvfTSSy+99NJLL7300ksvvfTSSy+99NJLL7300ksvvfTSSy+99NJLL7300ksvvfTSSy+99NJLL7300ksvvfTSSy+99NJLL7300ksvvfTSSy+99NJLL7300ksvvfTSSy+99NJLL7300ksvvfTSSy+99NJLL7300ksvvfTSSy+99NJLL7300ksvvfTSSy+99NJLL7300ksvvfTSSy+99NJLL7300ksvvfTSSy+99NJLL7300ksvvfTSSy+99NJLL7300ksvvfTSSy+99NJLL7300ksvvfTSSy+99NJLL7300ksvvfTSSy+99NJL";
 
-const WHATSAPP_NUMBER = "5491100000000";
+const WHATSAPP_NUMBER = "5491127650658";
 
 // ─── SISTEMA DEL CHATBOT ───────────────────────────────────────────────────
 const BOT_SYSTEM = `Sos el asistente virtual de TechnoStore, un servicio técnico especializado en Buenos Aires. Respondés en español rioplatense, de manera amigable, directa y concisa.
 
 SERVICIOS:
-• Reparación Apple: iPhone, iPad, MacBook. Pantallas OLED/LCD originales, baterías con ciclos reales, conectores Lightning/USB-C, Face ID, Touch ID, cámaras, microsoldadura de placa. Diagnóstico sin cargo.
-• Upgrade PC/Notebook: SSD NVMe y SATA, ampliación RAM DDR3/DDR4, limpieza profunda, pasta térmica, reinstalación de sistema. Tu vieja notebook puede ser hasta 100 veces más rápida.
-• Reparación de Consolas: PS4, PS5, Xbox One/Series, Nintendo Switch. Reballing de GPU, cambio de puerto HDMI (PS3/PS4/PS5), joystick drift, limpieza de ventilador, lector de disco, fuente de poder.
-• Reparación de Bisagras: todas las marcas (HP, Lenovo, Asus, Acer, Dell, Samsung, Toshiba). Reparación de marco de pantalla, cambio de bisagras, refuerzo estructural. Garantía de mano de obra.
+SERVICIOS:
+• Reparación Apple: iPhone, iPad, MacBook. Repuestos 100% originales, Face ID, microsoldadura.
+• Celulares (Multimarca): Samsung, Motorola, Xiaomi. Módulos, pines de carga, baterías.
+• Computadoras & Notebooks: Cambio a SSD, ampliación de RAM, reballing, bisagras rotas, armado de PC a medida.
+• Tablets: Cambio de táctil, displays, baterías, software. Todas las marcas.
+• Impresoras: Mantenimiento preventivo, destape de cabezales, reseteo de almohadillas, recarga de sistemas continuos. Epson, HP, Brother.
 • Armado de PC a medida: presupuestos personalizados para gaming, diseño, edición de video o trabajo de oficina.
 
 DATOS DEL LOCAL:
@@ -35,50 +37,65 @@ function buildWhatsAppLink(name, device, brand, model, problem) {
 const NAV_LINKS = [
   { label: "Inicio", href: "#inicio" },
   { label: "Servicios", href: "#servicios" },
-  { label: "Reparación Apple", href: "#apple" },
-  { label: "Upgrade PC", href: "#upgrade" },
-  { label: "Consolas", href: "#consolas" },
-  { label: "Bisagras", href: "#bisagras" },
-  { label: "Presupuesto PC", href: "#armado" },
+  { label: "Apple", href: "#apple" },
+  { label: "Celulares", href: "#celulares" },
+  { label: "Computadoras", href: "#computadoras" },
+  { label: "Tablets", href: "#tablets" },
+  { label: "Impresoras", href: "#impresoras" },
+  { label: "Armado PC", href: "#armado" },
   { label: "Contacto", href: "#contacto" },
 ];
 
 const SERVICES = [
   {
     id: "apple",
-    icon: "📱",
-    title: "Reparación Apple",
+    icon: "🍏",
+    title: "Especialistas Apple",
     subtitle: "iPhone · iPad · MacBook",
-    desc: "Especialistas certificados en toda la línea Apple. Pantallas, baterías, conectores, microsoldadura y más. Repuestos originales y garantía real.",
+    desc: "Servicio técnico premium para dispositivos Apple. Trabajamos con repuestos originales, herramientas certificadas e ingenieros especializados en microsoldadura de placa.",
     color: "#0d59f2",
-    items: ["Pantallas OLED/LCD originales", "Baterías con ciclos reales", "Conectores y cámaras", "Microsoldadura de placa", "Diagnóstico sin cargo"],
+    img: "/img/crea-una-imagen-para-un-banner-de-un-sitio-web-que.jpeg",
+    items: ["Módulos OLED originales con TrueTone", "Baterías calidad 100% certificado", "Reparación avanzada de Face ID", "Microsoldadura en placas lógicas", "Ampliación de memoria NAND", "Garantía premium de 6 meses"],
   },
   {
-    id: "upgrade",
-    icon: "⚡",
-    title: "No tires tu vieja compu",
-    subtitle: "La volvemos hasta 100 veces más rápida",
-    desc: "Instalación de SSD NVMe, RAM, limpieza profunda y optimización de sistema. Tu notebook del 2015 puede volar como nueva.",
-    color: "#2dfc52",
-    items: ["SSD NVMe / SATA 2.5\"", "Ampliación de RAM", "Limpieza profunda de polvo", "Renovación de pasta térmica", "Reinstalación de sistema"],
+    id: "celulares",
+    icon: "📱",
+    title: "Celulares Multimarca",
+    subtitle: "Samsung · Motorola · Xiaomi",
+    desc: "Sabemos lo importante que es tu teléfono. Realizamos reparaciones rápidas y efectivas para dejar tu celular funcionando como el primer día, sin perder tu información.",
+    color: "#ff3b30",
+    img: "/img/crea-una-imagen-para-un-banner-de-un-sitio-web-que-2.jpeg",
+    items: ["Cambio de módulo completo", "Reemplazo de baterías agotadas", "Reparación de pin de carga y audio", "Recuperación de equipos mojados", "Cámaras, sensores y botones", "Diagnóstico exprés en el acto"],
   },
   {
-    id: "consolas",
-    icon: "🎮",
-    title: "Reparación de Consolas",
-    subtitle: "PS4 · PS5 · Xbox · Switch",
-    desc: "Reballing de GPU, cambio de puerto HDMI, limpieza de ventilador, joystick drift y fallas de lectura de disco.",
-    color: "#0d59f2",
-    items: ["Reballing profesional PS4/PS5", "Puerto HDMI PS3/PS4/PS5", "Drift de joystick Switch/PS5", "Limpieza y pasta térmica", "Falla de lectura de disco"],
-  },
-  {
-    id: "bisagras",
+    id: "computadoras",
     icon: "💻",
-    title: "Reparación de Bisagras",
-    subtitle: "Notebooks de todas las marcas",
-    desc: "Las bisagras rotas son el problema más común en notebooks. Las reparamos o reemplazamos con repuestos específicos para tu modelo.",
+    title: "Computadoras y Notebooks",
+    subtitle: "Reparación · Upgrades · Bisagras",
+    desc: "Desde la restauración de bisagras rotas y plásticos, hasta la instalación de discos sólidos y mantenimiento térmico integral. Dejamos tu PC lista para la exigencia.",
     color: "#2dfc52",
-    items: ["Bisagras HP, Lenovo, Acer, Asus", "Reparación de marco de pantalla", "Cambio de bisagras originales", "Refuerzo estructural", "Garantía de mano de obra"],
+    img: "/img/crea-una-imagen-para-un-banner-de-un-sitio-web-que-3.jpeg",
+    items: ["Instalación de SSD (100x más rápido)", "Reconstrucción de bisagras rotas", "Mantenimiento térmico profundo", "Ampliación de memoria RAM", "Formateo e instalación limpia Windows", "Backups seguros y recuperación de datos"],
+  },
+  {
+    id: "tablets",
+    icon: "📴",
+    title: "Tablets e iPads",
+    subtitle: "Estudio · Trabajo · Multimedia",
+    desc: "Las tablets sufren muchos golpes y desgastes. Reparamos táctiles, displays completos y fallas de carga para que los más chicos o los profesionales no dejen de usarlas.",
+    color: "#ff9500",
+    img: "/img/crea-una-imagen-para-un-banner-de-un-sitio-web-que-4.jpeg",
+    items: ["Reemplazo de cristal táctil", "Cambio de display interno LCD", "Baterías nuevas de alta duración", "Desbloqueos de software", "Reparación de botón de encendido", "Limpieza de periféricos"],
+  },
+  {
+    id: "impresoras",
+    icon: "🖨️",
+    title: "Impresoras",
+    subtitle: "Epson · HP · Brother",
+    desc: "Mantenimiento especializado para impresoras de sistema continuo y cartuchos. Evitá manchas, atascos de papel y cabezales tapados con nuestro servicio profesional.",
+    color: "#9c27b0",
+    img: "/img/realistic-modern-photo-of-a-modest-neighborhood-co-4.jpeg",
+    items: ["Destape profundo de cabezales", "Reseteo de almohadillas por software", "Sistemas continuos alternativos", "Reparación de toma de papel", "Limpieza general de engranajes", "Calibración de color"],
   },
 ];
 
@@ -110,7 +127,7 @@ function NavBar({ activeSection }) {
         }}
       >
         <a href="#inicio" style={{ display: "flex", alignItems: "center", gap: 12, textDecoration: "none" }}>
-          <img src={LOGO_B64} alt="TechnoStore" style={{ height: 44 }} />
+          <img src="/img/LOGO BLANCO.png" alt="TechnoStore" style={{ height: 44, width: "auto" }} />
           <span
             style={{
               fontFamily: "'Space Grotesk', sans-serif",
@@ -315,29 +332,40 @@ function Hero() {
           </div>
         </div>
 
-        <div style={{ position: "relative", height: 500 }}>
+        <div style={{ position: "relative", height: 500, width: "100%", overflow: "hidden", borderRadius: 24, border: "1px solid rgba(255,255,255,0.1)", boxShadow: "0 20px 40px rgba(0,0,0,0.4)" }}>
           <div
             style={{
               position: "absolute",
               inset: 0,
-              background: "linear-gradient(135deg, rgba(13,89,242,0.2) 0%, rgba(45,252,82,0.1) 100%)",
-              border: "1px solid rgba(255,255,255,0.1)",
-              borderRadius: 24,
               display: "flex",
-              alignItems: "center",
-              justifyContent: "center",
-              fontSize: 120,
+              width: "400%",
+              animation: "slide 16s infinite cubic-bezier(0.8, 0, 0.2, 1)",
             }}
           >
-            🛠️
+            {[
+              "/img/realistic-modern-photo-of-a-modest-neighborhood-co.jpeg",
+              "/img/realistic-modern-photo-of-a-modest-neighborhood-co-2.jpeg",
+              "/img/realistic-modern-photo-of-a-modest-neighborhood-co-3.jpeg",
+              "/img/realistic-modern-photo-of-a-modest-neighborhood-co-4.jpeg"
+            ].map((src, i) => (
+              <div key={i} style={{ width: "25%", height: "100%", position: "relative" }}>
+                <img
+                  src={src}
+                  alt={`TechnoStore Servicio ${i + 1}`}
+                  style={{ width: "100%", height: "100%", objectFit: "cover" }}
+                />
+                <div style={{ position: "absolute", inset: 0, background: "linear-gradient(to top, rgba(10,15,26,0.9) 0%, transparent 60%)" }} />
+              </div>
+            ))}
           </div>
+
           <div
             style={{
               position: "absolute",
               bottom: 32,
               left: 24,
               right: 24,
-              background: "rgba(10,15,26,0.85)",
+              background: "rgba(10,15,26,0.75)",
               backdropFilter: "blur(12px)",
               border: "1px solid rgba(45,252,82,0.3)",
               borderRadius: 16,
@@ -357,9 +385,9 @@ function Hero() {
                   fontSize: 14,
                 }}
               >
-                Laboratorio Nivel 3
+                Servicio Técnico Multimarca
               </div>
-              <div style={{ fontSize: 12, color: "rgba(255,255,255,0.5)" }}>Equipamiento de última generación</div>
+              <div style={{ fontSize: 12, color: "rgba(255,255,255,0.7)" }}>Reparaciones en tiempo récord</div>
             </div>
           </div>
         </div>
@@ -473,236 +501,7 @@ function Services() {
   );
 }
 
-// ─── UPGRADE SECTION ──────────────────────────────────────────────────────────
-function UpgradeSection() {
-  return (
-    <section
-      id="upgrade"
-      style={{
-        padding: "100px 24px",
-        background: "radial-gradient(ellipse 70% 50% at 50% 50%, rgba(45,252,82,0.08) 0%, transparent 70%)",
-      }}
-    >
-      <div
-        style={{
-          maxWidth: 1280,
-          margin: "0 auto",
-          display: "grid",
-          gridTemplateColumns: "1fr 1fr",
-          gap: 80,
-          alignItems: "center",
-        }}
-      >
-        <div
-          style={{
-            background: "rgba(45,252,82,0.07)",
-            border: "1px solid rgba(45,252,82,0.2)",
-            borderRadius: 24,
-            padding: 48,
-            textAlign: "center",
-          }}
-        >
-          <div style={{ fontSize: 96, marginBottom: 24 }}>🖥️</div>
-          <div style={{ display: "flex", flexDirection: "column", gap: 12 }}>
-            {[
-              { label: "HDD lento", before: true },
-              { label: "Instalamos SSD NVMe", arrow: true },
-              { label: "100 veces más rápido", after: true },
-            ].map((row, i) => (
-              <div
-                key={i}
-                style={{
-                  display: "flex",
-                  alignItems: "center",
-                  justifyContent: "center",
-                  gap: 12,
-                  padding: "12px 20px",
-                  borderRadius: 10,
-                  background: row.after ? "rgba(45,252,82,0.15)" : "rgba(255,255,255,0.04)",
-                  border: row.after ? "1px solid rgba(45,252,82,0.4)" : "1px solid rgba(255,255,255,0.06)",
-                }}
-              >
-                <span style={{ fontSize: 14, color: row.after ? "#2dfc52" : "rgba(255,255,255,0.6)", fontWeight: row.after ? 700 : 400 }}>
-                  {row.label}
-                </span>
-              </div>
-            ))}
-          </div>
-        </div>
-
-        <div>
-          <div
-            style={{
-              display: "inline-block",
-              background: "rgba(45,252,82,0.12)",
-              border: "1px solid rgba(45,252,82,0.3)",
-              borderRadius: 99,
-              padding: "5px 14px",
-              fontSize: 12,
-              color: "#2dfc52",
-              fontWeight: 700,
-              letterSpacing: 1,
-              marginBottom: 24,
-            }}
-          >
-            ⚡ UPGRADE DE HARDWARE
-          </div>
-          <h2
-            style={{
-              fontFamily: "'Space Grotesk', sans-serif",
-              fontSize: "clamp(28px, 3.5vw, 48px)",
-              fontWeight: 900,
-              color: "#fff",
-              letterSpacing: "-1px",
-              margin: "0 0 16px",
-              lineHeight: 1.1,
-            }}
-          >
-            No tires tu vieja compu. <br />
-            <span style={{ color: "#2dfc52" }}>La volvemos nueva.</span>
-          </h2>
-          <p style={{ color: "rgba(255,255,255,0.6)", fontSize: 17, lineHeight: 1.7, marginBottom: 32 }}>
-            Con la instalación de un SSD NVMe tu notebook del 2015 arranca en segundos y trabaja
-            sin lag. Además ampliamos la RAM y hacemos una limpieza profunda.
-          </p>
-          <div style={{ display: "flex", flexDirection: "column", gap: 16, marginBottom: 40 }}>
-            {[
-              "Diagnóstico previo sin cargo",
-              "SSD NVMe hasta 4 TB de velocidad",
-              "Ampliación de RAM DDR3/DDR4",
-              "Limpieza profunda y pasta térmica",
-              "Garantía sobre mano de obra",
-            ].map((item) => (
-              <div key={item} style={{ display: "flex", alignItems: "center", gap: 12 }}>
-                <span
-                  style={{
-                    width: 24,
-                    height: 24,
-                    borderRadius: "50%",
-                    background: "rgba(45,252,82,0.2)",
-                    border: "1px solid rgba(45,252,82,0.4)",
-                    display: "flex",
-                    alignItems: "center",
-                    justifyContent: "center",
-                    fontSize: 12,
-                    color: "#2dfc52",
-                    flexShrink: 0,
-                  }}
-                >
-                  ✓
-                </span>
-                <span style={{ color: "rgba(255,255,255,0.7)", fontSize: 15 }}>{item}</span>
-              </div>
-            ))}
-          </div>
-          <a
-            href="#contacto"
-            style={{
-              display: "inline-block",
-              background: "#2dfc52",
-              color: "#0a0f1a",
-              fontFamily: "'Space Grotesk', sans-serif",
-              fontWeight: 800,
-              fontSize: 16,
-              padding: "14px 32px",
-              borderRadius: 12,
-              textDecoration: "none",
-            }}
-          >
-            Consultar por WhatsApp
-          </a>
-        </div>
-      </div>
-    </section>
-  );
-}
-
-// ─── SERVICE DETAIL ───────────────────────────────────────────────────────────
-function ServiceDetail({ id, icon, title, subtitle, desc, color, items }) {
-  return (
-    <section id={id} style={{ padding: "100px 24px" }}>
-      <div style={{ maxWidth: 900, margin: "0 auto" }}>
-        <div style={{ display: "flex", alignItems: "flex-start", gap: 32, flexWrap: "wrap" }}>
-          <div
-            style={{
-              width: 80,
-              height: 80,
-              borderRadius: 20,
-              background: color + "20",
-              border: `1px solid ${color}40`,
-              display: "flex",
-              alignItems: "center",
-              justifyContent: "center",
-              fontSize: 40,
-              flexShrink: 0,
-            }}
-          >
-            {icon}
-          </div>
-          <div style={{ flex: 1, minWidth: 280 }}>
-            <p style={{ color, fontWeight: 700, fontSize: 13, letterSpacing: 1, margin: "0 0 8px" }}>{subtitle}</p>
-            <h2
-              style={{
-                fontFamily: "'Space Grotesk', sans-serif",
-                fontSize: "clamp(26px, 3.5vw, 44px)",
-                fontWeight: 900,
-                color: "#fff",
-                letterSpacing: "-1px",
-                margin: "0 0 16px",
-              }}
-            >
-              {title}
-            </h2>
-            <p style={{ color: "rgba(255,255,255,0.6)", fontSize: 17, lineHeight: 1.7, maxWidth: 600 }}>{desc}</p>
-            <div
-              style={{
-                display: "grid",
-                gridTemplateColumns: "repeat(auto-fit, minmax(220px, 1fr))",
-                gap: 12,
-                marginTop: 32,
-              }}
-            >
-              {items.map((item) => (
-                <div
-                  key={item}
-                  style={{
-                    display: "flex",
-                    alignItems: "center",
-                    gap: 10,
-                    background: "rgba(255,255,255,0.04)",
-                    border: "1px solid rgba(255,255,255,0.07)",
-                    borderRadius: 10,
-                    padding: "12px 16px",
-                  }}
-                >
-                  <span style={{ color, fontSize: 16 }}>✓</span>
-                  <span style={{ color: "rgba(255,255,255,0.7)", fontSize: 14 }}>{item}</span>
-                </div>
-              ))}
-            </div>
-            <a
-              href="#contacto"
-              style={{
-                display: "inline-block",
-                background: color,
-                color: color === "#2dfc52" ? "#0a0f1a" : "#fff",
-                fontFamily: "'Space Grotesk', sans-serif",
-                fontWeight: 800,
-                fontSize: 15,
-                padding: "13px 28px",
-                borderRadius: 12,
-                textDecoration: "none",
-                marginTop: 32,
-              }}
-            >
-              Solicitar este servicio →
-            </a>
-          </div>
-        </div>
-      </div>
-    </section>
-  );
-}
+// ─── BUILD PC FORM ────────────────────────────────────────────────────────────
 
 // ─── BUILD PC FORM ────────────────────────────────────────────────────────────
 function BuildPCForm() {
@@ -1095,7 +894,7 @@ function Footer() {
         <div style={{ display: "grid", gridTemplateColumns: "2fr 1fr 1fr 1fr", gap: 48, marginBottom: 48 }}>
           <div>
             <a href="#inicio" style={{ display: "flex", alignItems: "center", gap: 10, textDecoration: "none", marginBottom: 16 }}>
-              <img src={LOGO_B64} alt="TechnoStore" style={{ height: 40 }} />
+              <img src="/img/LOGO BLANCO.png" alt="TechnoStore" style={{ height: 40, width: "auto" }} />
               <span
                 style={{
                   fontFamily: "'Space Grotesk', sans-serif",
@@ -1236,7 +1035,14 @@ function Chatbot() {
     setLoading(false);
   }
 
-  const QUICK_REPLIES = ["¿Qué servicios hacen?", "¿Dónde están ubicados?", "¿Cómo agendo un turno?", "Quiero reparar mi iPhone"];
+  const QUICK_REPLIES = [
+    "Reparación Apple",
+    "Celulares Multimarca",
+    "Computadoras & Notebooks",
+    "Tablets e iPads",
+    "Impresoras Epson/HP",
+    "Otra consulta",
+  ];
 
   return (
     <>
@@ -1598,43 +1404,99 @@ export default function App() {
         @media (max-width: 768px) {
           nav { display: none !important; }
         }
+        @keyframes slide {
+          0% { transform: translateX(0); }
+          20% { transform: translateX(0); }
+          25% { transform: translateX(-25%); }
+          45% { transform: translateX(-25%); }
+          50% { transform: translateX(-50%); }
+          70% { transform: translateX(-50%); }
+          75% { transform: translateX(-75%); }
+          95% { transform: translateX(-75%); }
+          100% { transform: translateX(0); }
+        }
       `}</style>
 
       <NavBar activeSection="inicio" />
       <Hero />
       <Services />
 
-      <ServiceDetail
-        id="apple"
-        icon="📱"
-        title="Reparación Apple"
-        subtitle="ESPECIALISTAS EN APPLE"
-        color="#0d59f2"
-        desc="Contamos con técnicos certificados y repuestos originales para toda la línea Apple. Desde pantallas rotas hasta problemas de placa base y microsoldadura avanzada."
-        items={["Pantallas OLED y LCD originales", "Baterías con ciclos reales certificados", "Conectores Lightning y USB-C", "Face ID, Touch ID, Cámara", "Microsoldadura de componentes", "Diagnóstico sin cargo previo"]}
-      />
+      {SERVICES.map((s, index) => (
+        <section key={s.id} id={s.id} style={{ padding: "100px 24px", background: index % 2 === 0 ? "rgba(255,255,255,0.01)" : "transparent" }}>
+          <div style={{ maxWidth: 1000, margin: "0 auto" }}>
+            <div style={{ display: "flex", flexDirection: index % 2 === 0 ? "row" : "row-reverse", alignItems: "center", gap: 64, flexWrap: "wrap" }}>
+              
+              <div style={{ flex: 1, minWidth: 320 }}>
+                <p style={{ color: s.color, fontWeight: 700, fontSize: 13, letterSpacing: 1, margin: "0 0 8px", background: `${s.color}15`, display: "inline-block", padding: "6px 14px", borderRadius: 99 }}>
+                  {s.icon} {s.subtitle}
+                </p>
+                <h2
+                  style={{
+                    fontFamily: "'Space Grotesk', sans-serif",
+                    fontSize: "clamp(32px, 4vw, 48px)",
+                    fontWeight: 900,
+                    color: "#fff",
+                    letterSpacing: "-1px",
+                    margin: "12px 0 20px",
+                    lineHeight: 1.1
+                  }}
+                >
+                  {s.title}
+                </h2>
+                <p style={{ color: "rgba(255,255,255,0.65)", fontSize: 17, lineHeight: 1.7, marginBottom: 32 }}>{s.desc}</p>
+                <ul style={{ listStyle: "none", padding: 0, margin: 0, display: "grid", gridTemplateColumns: "1fr 1fr", gap: "16px 24px" }}>
+                  {s.items.map((item) => (
+                    <li
+                      key={item}
+                      style={{ display: "flex", alignItems: "flex-start", gap: 10, color: "rgba(255,255,255,0.8)", fontSize: 14, lineHeight: 1.4 }}
+                    >
+                      <span style={{ color: s.color, fontSize: 16, marginTop: -2 }}>✓</span>
+                      {item}
+                    </li>
+                  ))}
+                </ul>
+                <a
+                  href="#contacto"
+                  style={{
+                    display: "inline-block",
+                    background: s.color,
+                    color: ["#2dfc52"].includes(s.color) ? "#0a0f1a" : "#fff",
+                    fontFamily: "'Space Grotesk', sans-serif",
+                    fontWeight: 800,
+                    fontSize: 16,
+                    padding: "16px 36px",
+                    borderRadius: 14,
+                    textDecoration: "none",
+                    marginTop: 48,
+                    boxShadow: `0 8px 32px ${s.color}35`,
+                  }}
+                >
+                  Agendar turno →
+                </a>
+              </div>
 
-      <UpgradeSection />
+              <div style={{ flex: 1, minWidth: 320, position: "relative" }}>
+                <div style={{ position: "absolute", inset: -20, background: `radial-gradient(circle at center, ${s.color}20 0%, transparent 70%)`, filter: "blur(40px)" }} />
+                <img 
+                  src={s.img} 
+                  alt={s.title}
+                  style={{ 
+                    width: "100%", 
+                    height: 400, 
+                    objectFit: "cover", 
+                    borderRadius: 24, 
+                    border: `1px solid ${s.color}40`,
+                    boxShadow: `0 24px 64px rgba(0,0,0,0.4), 0 0 0 1px rgba(255,255,255,0.05)`,
+                    position: "relative",
+                    zIndex: 1
+                  }} 
+                />
+              </div>
 
-      <ServiceDetail
-        id="consolas"
-        icon="🎮"
-        title="Reparación de Consolas"
-        subtitle="PS4 · PS5 · XBOX · SWITCH"
-        color="#0d59f2"
-        desc="Somos expertos en la reparación de consolas de todas las marcas y generaciones. Desde el reballing de la GPU hasta el cambio de puerto HDMI y problemas de lector de disco."
-        items={["Reballing GPU PS4/PS5/Xbox", "Cambio puerto HDMI PS3/PS4/PS5", "Drift joystick Switch/PS5/Xbox", "Limpieza y pasta térmica", "Lector de disco y blu-ray", "Reparación de fuente de poder"]}
-      />
-
-      <ServiceDetail
-        id="bisagras"
-        icon="💻"
-        title="Reparación de Bisagras"
-        subtitle="TODAS LAS MARCAS Y MODELOS"
-        color="#2dfc52"
-        desc="Las bisagras rotas son el problema más frecuente en notebooks. Reparamos o reemplazamos bisagras con repuestos específicos para tu modelo, incluyendo el refuerzo del chasis."
-        items={["Bisagras HP, Lenovo, Asus, Acer", "Dell, Samsung, Toshiba y más", "Reparación de marco de pantalla", "Refuerzo estructural del chasis", "Repuestos originales y compatibles", "Garantía de mano de obra"]}
-      />
+            </div>
+          </div>
+        </section>
+      ))}
 
       <BuildPCForm />
       <ServiceRequestForm />
