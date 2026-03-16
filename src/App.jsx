@@ -25,7 +25,7 @@ DATOS DEL LOCAL:
 POLÍTICAS:
 • Diagnóstico sin cargo para todos los equipos
 • Garantía de mano de obra en todas las reparaciones
-• Repuestos originales cuando es posible
+• Repuestos de la más alta calidad disponible (y originales cuando es posible)
 
 IMPORTANTE: Si no sabés algo con certeza, derivá al cliente por WhatsApp o email. Sé breve: máximo 3-4 oraciones. No inventes precios.`;
 
@@ -44,6 +44,7 @@ const NAV_LINKS = [
   { label: "Bisagras", href: "#bisagras" },
   { label: "Consolas", href: "#consolas" },
   { label: "Armado PC", href: "#armado" },
+  { label: "Ventas", href: "#ventas" },
   { label: "Contacto", href: "#contacto" },
 ];
 
@@ -55,7 +56,7 @@ const SERVICES = [
     subtitle: "MacBook · iPhone · iPad",
     desc: "Somos especialistas en MacBook, iPhone, iPad, todos los productos Apple. Servicio técnico premium con repuestos originales y microsoldadura de placa.",
     color: "#0d59f2",
-    img: "/img/apple_service_1773640672618.png",
+    img: "https://images.unsplash.com/photo-1512054502232-10a0a035d672?auto=format&fit=crop&q=80&w=800", // Mac repair
     items: ["Módulos OLED originales con TrueTone", "Baterías calidad 100% certificado", "Reparación avanzada de Face ID", "Microsoldadura en placas lógicas", "Ampliación de memoria NAND", "Reparaciones exprés en el día"],
   },
   {
@@ -65,17 +66,17 @@ const SERVICES = [
     subtitle: "Samsung · Motorola · Xiaomi",
     desc: "Sabemos lo importante que es tu teléfono. Realizamos reparaciones rápidas y efectivas para dejar tu celular funcionando como el primer día, sin perder tu información.",
     color: "#ff3b30",
-    img: "/img/hero_lab_2_1773640646478.png",
+    img: "https://images.unsplash.com/photo-1581092160562-40aa08e78837?auto=format&fit=crop&q=80&w=800", // Phone repair
     items: ["Cambio de módulo completo", "Reemplazo de baterías agotadas", "Reparación de pin de carga y audio", "Recuperación de equipos mojados", "Cámaras, sensores y botones", "Diagnóstico sin cargo"],
   },
   {
     id: "computadoras",
     icon: "💻",
-    title: "Computadoras en General",
+    title: "Computadoras y Notebooks",
     subtitle: "PC de Escritorio · All in One",
     desc: "Diagnóstico y reparación integral de computadoras de escritorio, mothers y componentes electrónicos. Reemplazo de fuentes, memorias y solución de fallas complejas.",
     color: "#9c27b0",
-    img: "/img/pc_general_1773640791199.png",
+    img: "https://images.unsplash.com/photo-1597872200969-2b65d56bd16b?auto=format&fit=crop&q=80&w=800", // PC logic board
     items: ["Reparación de placas base (motherboards)", "Mantenimiento térmico profundo", "Solución a fallos de encendido o video", "Formateo e instalación limpia Windows", "Backups seguros y recuperación de datos", "Limpieza general de componentes"],
   },
   {
@@ -85,7 +86,7 @@ const SERVICES = [
     subtitle: "Upgrade de Hardware",
     desc: "Tu equipo viejo puede volar como nuevo. Optimizamos el rendimiento de tu notebook o PC instalando la última tecnología de almacenamiento y ampliando la memoria.",
     color: "#2dfc52",
-    img: "/img/upgrade_speed_1773640834807.png",
+    img: "https://images.unsplash.com/photo-1541560052-5e137f229371?auto=format&fit=crop&q=80&w=800", // RAM / SSD upgrade
     items: ["Instalación de SSD NVMe o SATA", "Ampliación de memoria RAM", "Optimización del sistema operativo", "Clonación de disco (sin perder datos)", "Hasta 100 veces más rápida", "Asesoramiento sobre compatibilidad"],
   },
   {
@@ -95,7 +96,7 @@ const SERVICES = [
     subtitle: "Notebooks Multimarca",
     desc: "Las bisagras rotas son el problema mecánico más frecuente. Reparamos o reemplazamos bisagras y anclajes con refuerzo estructural de resina de alta resistencia.",
     color: "#ff9500",
-    img: "/img/crea-una-imagen-para-un-banner-de-un-sitio-web-que-3.jpeg",
+    img: "https://images.unsplash.com/photo-1588508065123-287b28e013da?auto=format&fit=crop&q=80&w=800", // Broken hinge/laptop rep
     items: ["Bisagras HP, Lenovo, Asus, Acer", "Restauración de plásticos rotos", "Reparación de marco de pantalla", "Refuerzo estructural del chasis", "Repuestos originales y compatibles", "Garantía de mano de obra y fijación"],
   },
   {
@@ -105,7 +106,7 @@ const SERVICES = [
     subtitle: "PS5 · PS4 · Xbox · Switch",
     desc: "Somos expertos en la reparación de consolas. Desde problemas de recalentamiento con el famoso metal líquido, hasta reballing de la GPU o cambio de lectura de disco.",
     color: "#f20d59",
-    img: "/img/console_repair_1773640849993.png",
+    img: "https://images.unsplash.com/photo-1605901309536-21876aff8ce2?auto=format&fit=crop&q=80&w=800", // Console repair / controller
     items: ["Mantenimiento preventivo completo", "Reballing profesional de GPU", "Cambio de puerto HDMI (PS4/PS5)", "Reparación Drift en joysticks", "Limpieza de metal líquido y pasta térmica", "Problemas de software y lector"],
   },
   {
@@ -115,7 +116,7 @@ const SERVICES = [
     subtitle: "Estudio · Trabajo · Multimedia",
     desc: "Las tablets sufren muchos golpes y desgastes. Reparamos táctiles, displays completos y fallas de carga para que los más chicos o los profesionales no dejen de usarlas.",
     color: "#0df2a6",
-    img: "/img/crea-una-imagen-para-un-banner-de-un-sitio-web-que-4.jpeg",
+    img: "https://images.unsplash.com/photo-1563203369-26f2e4a5ccf7?auto=format&fit=crop&q=80&w=800", // Tablet repair
     items: ["Reemplazo de cristal táctil", "Cambio de display interno LCD", "Baterías nuevas de alta duración", "Desbloqueos de software", "Reparación de botón de encendido", "Limpieza de conectores"],
   },
   {
@@ -125,7 +126,7 @@ const SERVICES = [
     subtitle: "Epson · HP · Brother",
     desc: "Mantenimiento especializado para impresoras de sistema continuo y cartuchos. Evitá manchas, atascos de papel y cabezales tapados con nuestro servicio profesional.",
     color: "#e6e6e6",
-    img: "/img/realistic-modern-photo-of-a-modest-neighborhood-co-4.jpeg",
+    img: "https://images.unsplash.com/photo-1612815154858-60aa4c59eaa6?auto=format&fit=crop&q=80&w=800", // Printer
     items: ["Destape profundo de cabezales", "Reseteo de almohadillas por software", "Sistemas continuos alternativos", "Reparación de toma de papel", "Limpieza general de engranajes", "Calibración de inyectores"],
   },
 ];
@@ -157,21 +158,8 @@ function NavBar({ activeSection }) {
           gap: 24,
         }}
       >
-        <a href="#inicio" style={{ display: "flex", alignItems: "center", gap: 12, textDecoration: "none" }}>
+        <a href="#inicio" style={{ display: "flex", alignItems: "center", textDecoration: "none" }}>
           <img src="/img/LOGO BLANCO.png" alt="TechnoStore" style={{ height: 44, width: "auto" }} />
-          <span
-            style={{
-              fontFamily: "'Space Grotesk', sans-serif",
-              fontWeight: 700,
-              fontSize: 20,
-              background: "linear-gradient(90deg, #0d59f2, #2dfc52)",
-              WebkitBackgroundClip: "text",
-              WebkitTextFillColor: "transparent",
-              letterSpacing: "-0.5px",
-            }}
-          >
-            TechnoStore
-          </span>
         </a>
 
         <nav style={{ display: "flex", gap: 32, alignItems: "center" }}>
@@ -342,7 +330,7 @@ function Hero() {
           <div style={{ display: "flex", gap: 40, marginTop: 48 }}>
             {[
               { n: "15+", label: "Años de experiencia" },
-              { n: "+5.000", label: "Reparaciones" },
+              { n: "+15.000", label: "Equipos Reparados" },
               { n: "100%", label: "Clientes satisfechos" },
             ].map((s) => (
               <div key={s.label}>
@@ -374,10 +362,10 @@ function Hero() {
             }}
           >
             {[
-              "/img/hero_lab_1_1773640631102.png",
-              "/img/apple_service_1773640672618.png",
-              "/img/pc_general_1773640791199.png",
-              "/img/hero_lab_2_1773640646478.png"
+              "https://images.unsplash.com/photo-1581092921461-e5d487cb1015?auto=format&fit=crop&q=80&w=1200", // Lab
+              "https://images.unsplash.com/photo-1597872200969-2b65d56bd16b?auto=format&fit=crop&q=80&w=1200", // Mobo
+              "https://images.unsplash.com/photo-1581092160562-40aa08e78837?auto=format&fit=crop&q=80&w=1200", // Tools
+              "https://images.unsplash.com/photo-1555680202-c86f0e12f086?auto=format&fit=crop&q=80&w=1200" // Circuit
             ].map((src, i) => (
               <div key={i} style={{ width: "25%", height: "100%", position: "relative" }}>
                 <img
@@ -746,6 +734,60 @@ function BuildPCForm() {
   );
 }
 
+// ─── SALES SECTION ───────────────────────────────────────────────────────────
+function SalesSection() {
+  return (
+    <section id="ventas" style={{ padding: "100px 24px", background: "rgba(255,255,255,0.02)" }}>
+      <div style={{ maxWidth: 1280, margin: "0 auto", display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(320px, 1fr))", gap: 64, alignItems: "center" }}>
+        
+        <div style={{ width: "100%", height: 500, background: "rgba(255,255,255,0.05)", borderRadius: 24, padding: 8, border: "1px solid rgba(255,255,255,0.1)", position: "relative", overflow: "hidden" }}>
+          <img 
+            src="https://images.unsplash.com/photo-1601784551446-20c9e07cdbff?auto=format&fit=crop&q=80&w=1200" 
+            alt="Venta de equipos e insumos" 
+            style={{ width: "100%", height: "100%", objectFit: "cover", borderRadius: 16 }}
+          />
+          <div style={{ position: "absolute", inset: 0, background: "linear-gradient(to top, rgba(10,15,26,0.9) 0%, transparent 50%)" }} />
+          <div style={{ position: "absolute", bottom: 32, left: 32, right: 32 }}>
+            <div style={{ background: "rgba(255,59,48,0.2)", border: "1px solid rgba(255,59,48,0.5)", color: "#ff3b30", padding: "6px 16px", borderRadius: 99, display: "inline-block", fontSize: 13, fontWeight: 700, marginBottom: 12 }}>
+              NUEVO
+            </div>
+            <h3 style={{ fontFamily: "'Space Grotesk', sans-serif", fontSize: 28, fontWeight: 800, color: "#fff", margin: 0 }}>Renová tu equipo con nosotros</h3>
+          </div>
+        </div>
+
+        <div>
+          <h2 style={{ fontFamily: "'Space Grotesk', sans-serif", fontSize: "clamp(32px, 4vw, 48px)", fontWeight: 900, color: "#fff", letterSpacing: "-1px", margin: "0 0 16px" }}>
+            Venta de Celulares <br/>e <span style={{ color: "#ff3b30" }}>Insumos</span>
+          </h2>
+          <p style={{ color: "rgba(255,255,255,0.55)", fontSize: 18, lineHeight: 1.7, marginBottom: 40 }}>
+            Además de reparar, te asesoramos en tu próxima compra. Encontrá repuestos premium, accesorios de alta duración y celulares a excelentes precios.
+          </p>
+          
+          <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 24, marginBottom: 40 }}>
+            {[
+              { icon: "📱", title: "Celulares Nuevos", desc: "Equipos libres de fábrica con garantía." },
+              { icon: "🛡️", title: "Insumos Premium", desc: "Fundas, templados y cargadores." },
+              { icon: "💻", title: "Hardware PC", desc: "Discos sólidos, memorias y fuentes." },
+              { icon: "🎧", title: "Accesorios", desc: "Auriculares, cables y periféricos." },
+            ].map(item => (
+              <div key={item.title} style={{ background: "rgba(255,255,255,0.03)", padding: "20px", borderRadius: 16, border: "1px solid rgba(255,255,255,0.06)" }}>
+                <div style={{ fontSize: 24, marginBottom: 12 }}>{item.icon}</div>
+                <h4 style={{ color: "#fff", fontSize: 15, fontWeight: 700, marginBottom: 6 }}>{item.title}</h4>
+                <p style={{ color: "rgba(255,255,255,0.4)", fontSize: 13, lineHeight: 1.5, margin: 0 }}>{item.desc}</p>
+              </div>
+            ))}
+          </div>
+
+          <a href={`https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent("Hola TechnoStore! Quería consultar el precio/disponibilidad de equipos o insumos.")}`} target="_blank" rel="noreferrer" style={{ display: "inline-block", background: "#ff3b30", color: "#fff", fontFamily: "'Space Grotesk', sans-serif", fontWeight: 800, fontSize: 16, padding: "16px 36px", borderRadius: 14, textDecoration: "none", boxShadow: "0 8px 32px rgba(255,59,48,0.25)" }}>
+            🛒 Cotizar por WhatsApp
+          </a>
+        </div>
+
+      </div>
+    </section>
+  );
+}
+
 // ─── CONTACT SECTION ──────────────────────────────────────────────────────────
 function ContactSection() {
   return (
@@ -829,7 +871,7 @@ function Footer() {
               {l: "Celulares Multimarca", href: "#celulares"},
               {l: "Computadoras", href: "#computadoras"},
               {l: "Reparación Bisagras", href: "#bisagras"},
-              {l: "Consolas (PS/Xbox)", href: "#consolas"}
+              {l: "Venta de Equipos", href: "#ventas"}
             ].map((s) => (
               <a key={s.l} href={s.href} style={{ display: "block", color: "rgba(255,255,255,0.45)", fontSize: 14, marginBottom: 10, textDecoration: "none" }}>{s.l}</a>
             ))}
@@ -1412,6 +1454,7 @@ export default function App() {
       ))}
 
       <BuildPCForm />
+      <SalesSection />
       <ContactSection />
       <Footer />
 
