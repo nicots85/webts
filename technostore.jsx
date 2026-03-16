@@ -1,8 +1,31 @@
-import { useState } from "react";
+import { useState, useRef, useEffect } from "react";
 
-const LOGO_B64 = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAA8wAAAJ+CAYAAABi9vxiAAAACXBIWXMAABcSAAAXEgFnn9JSAAAFgWlUWHRYTUw6Y29tLmFkb2JlLnhtcAAAAAAAPD94cGFja2V0IGJlZ2luPSLvu78iIGlkPSJXNU0wTXBDZWhpSHpyZVN6TlRjemtjOWQiPz4gPHg6eG1wbWV0YSB4bWxuczp4PSJhZG9iZTpuczptZXRhLyIgeDp4bXB0az0iQWRvYmUgWE1QIENvcmUgNi4wLWMwMDIgNzkuMTY0MzUyLCAyMDIwLzAxLzMwLTE1OjUwOjM4ICAgICAgICAiPiA8cmRmOlJERiB4bWxuczpyZGY9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkvMDIvMjItcmRmLXN5bnRheC1ucyMiPiA8cmRmOkRlc2NyaXB0aW9uIHJkZjphYm91dD0iIiB4bWxuczp4bXA9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC8iIHhtbG5zOmRjPSJodHRwOi8vcHVybC5vcmcvZGMvZWxlbWVudHMvMS4xLyIgeG1sbnM6cGhvdG9zaG9wPSJodHRwOi8vbnMuYWRvYmUuY29tL3Bob3Rvc2hvcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RFdnQ9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZUV2ZW50IyIgeG1wOkNyZWF0b3JUb29sPSJBZG9iZSBQaG90b3Nob3AgMjEuMSAoTWFjaW50b3NoKSIgeG1wOkNyZWF0ZURhdGU9IjIwMTktMDYtMjhUMDU6MDk6MzgtMDM6MDAiIHhtcDpNb2RpZnlEYXRlPSIyMDIwLTA0LTExVDA0OjAzOjMzLTAzOjAwIiB4bXA6TWV0YWRhdGFEYXRlPSIyMDIwLTA0LTExVDA0OjAzOjMzLTAzOjAwIiBkYzpmb3JtYXQ9ImltYWdlL3BuZyIgcGhvdG9zaG9wOkNvbG9yTW9kZT0iMyIgcGhvdG9zaG9wOklDQ1Byb2ZpbGU9InNSR0IgSUVDNjE5NjYtMi4xIiB4bXBNTTpJbnN0YW5jZUlEPSJ4bXAuaWlkOjM4ZjJiOWM5LTZmYjItNDNlYy1hNTQ2LWNmMTJlZjVlYzRiMyIgeG1wTU06RG9jdW1lbnRJRD0iYWRvYmU6ZG9jaWQ6cGhvdG9zaG9wOjFlNWFkNjkxLTI3YmItOTU0OS05MmE2LTgxZmI2Nzk5ZTJjMSIgeG1wTU06T3JpZ2luYWxEb2N1bWVudElEPSJ4bXAuZGlkOmVmOWI5MDk0LTUwNTAtNGY5NC1iNGEzLWMyYTc3OTFmYjMzYyI+IDx4bXBNTTpIaXN0b3J5PiA8cmRmOlNlcT4gPHJkZjpsaSBzdEV2dDphY3Rpb249ImNyZWF0ZWQiIHN0RXZ0Omluc3RhbmNlSUQ9InhtcC5paWQ6ZWY5YjkwOTQtNTA1MC00Zjk0LWI0YTMtYzJhNzc5MWZiMzNjIiBzdEV2dDp3aGVuPSIyMDE5LTA2LTI4VDA1OjA5OjM4LTAzOjAwIiBzdEV2dDpzb2Z0d2FyZUFnZW50PSJBZG9iZSBQaG90b3Nob3AgMjEuMSAoTWFjaW50b3NoKSIvPiA8cmRmOmxpIHN0RXZ0OmFjdGlvbj0ic2F2ZWQiIHN0RXZ0Omluc3RhbmNlSUQ9InhtcC5paWQ6MzhmMmI5YzktNmZiMi00M2VjLWE1NDYtY2YxMmVmNWVjNGIzIiBzdEV2dDp3aGVuPSIyMDIwLTA0LTExVDA0OjAzOjMzLTAzOjAwIiBzdEV2dDpzb2Z0d2FyZUFnZW50PSJBZG9iZSBQaG90b3Nob3AgMjEuMSAoTWFjaW50b3NoKSIgc3RFdnQ6Y2hhbmdlZD0iLyIvPiA8L3JkZjpTZXE+IDwveG1wTU06SGlzdG9yeT4gPC9yZGY6RGVzY3JpcHRpb24+IDwvcmRmOlJERj4gPC94OnhtcG1ldGE+IDw/eHBhY2tldCBlbmQ9InIiPz6bJKqNAAB4qklEQVR42tz9d5xdV3Xwj7/22af3mftemVGXZFnuveEGLhhMCyFAgIQkJCGN9EISSJ4QCCFACB0CBkxzw71gy7JsWb1Lo5HmnpnenXP2Xr8/ztGM5CbbKqvk/X7e13NvOWvvs/faa6/1WQq99NJLL7300ksvvfTSSy+99NJLL7300ksvvfTSSy+99NJLL7300ksvvfTSSy+99NJLL7300ksvvfTSSy+99NJLL7300ksvvfTSSy+99NJLL7300ksvvfTSSy+99NJLL7300ksvvfTSSy+99NJLL7300ksvvfTSSy+99NJLL7300ksvvfTSSy+99NJLL7300ksvvfTSSy+99NJLL7300ksvvfTSSy+99NJLL7300ksvvfTSSy+99NJLL7300ksvvfTSSy+99NJLL7300ksvvfTSSy+99NJLL7300ksvvfTSSy+99NJLL7300ksvvfTSSy+99NJLL7300ksvvfTSSy+99NJLL7300ksvvfTSSy+99NJLL7300ksvvfTSSy+99NJLL7300ksvvfTSSy+99NJLL7300ksvvfTSSy+99NJLL7300ksvvfTSSy+99NJLL7300ksvvfTSSy+99NJLL7300ksvvfTSSy+99NJLL7300ksvvfTSSy+99NJLL7300ksvvfTSSy+99NJLL7300ksvvfTSSy+99NJLL7300ksvvfTSSy+99NJLL7300ksvvfTSSy+99NJLL7300ksvvfTSSy+99NJLL7300ksvvfTSSy+99NJLL7300ksvvfTSSy+99NJLL7300ksvvfTSSy+99NJLL7300ksvvfTSSy+99NJLL7300ksvvfTSSy+99NJLL7300ksvvfTSSy+99NJLL7300ksvvfTSSy+99NJLL7300ksvvfTSSy+99NJLL7300ksvvfTSSy+99NJLL7300ksvvfTSSy+99NJLL7300ksvvfTSSy+99NJLL7300ksvvfTSSy+99NJLL7300ksvvfTSSy+99NJLL7300ksvvfTSSy+99NJLL7300ksvvfTSSy+99NJLL7300ksvvfTSSy+99NJLL7300ksvvfTSSy+99NJLL7300ksvvfTSSy+99NJLL7300ksvvfTSSy+99NJLL7300ksvvfTSSy+99NJLL7300ksvvfTSSy+99NJLL7300ksvvfTSSy+99NJLL7300ksvvfTSSy+99NJLL7300ksvvfTSSy+99NJLL7300ksvvfTSSy+99NJLL7300ksvvfTSSy+99NJLL7300ksvvfTSSy+99NJLL7300ksvvfTSSy+99NJLL7300ksvvfTSSy+99NJLL7300ksvvfTSSy+99NJLL7300ksvvfTSSy+99NJLL7300ksvvfTSSy+99NJLL7300ksvvfTSSy+99NJLL7300ksvvfTSSy+99NJLL7300ksvvfTSSy+99NJLL7300ksvvfTSSy+99NJLL7300ksvvfTSSy+99NJLL7300ksvvfTSSy+99NJLL7300ksvvfTSSy+99NJLL7300ksvvfTSSy+99NJLL7300ksvvfTSSy+99NJLL7300ksvvfTSSy+99NJLL7300ksvvfTSSy+99NJL";
+const LOGO_B64 = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAA8wAAAJ+CAYAAABi9vxiAAAACXBIWXMAABcSAAAXEgFnn9JSAAAFgWlUWHRYTUw6Y29tLmFkb2JlLnhtcAAAAAAAPD94cGFja2V0IGJlZ2luPSLvu78iIGlkPSJXNU0wTXBDZWhpSHpyZVN6TlRjemtjOWQiPz4gPHg6eG1wbWV0YSB4bWxuczp4PSJhZG9iZTpuczptZXRhLyIgeDp4bXB0az0iQWRvYmUgWE1QIENvcmUgNi4wLWMwMDIgNzkuMTY0MzUyLCAyMDIwLzAxLzMwLTE1OjUwOjM4ICAgICAgICAiPiA8cmRmOlJERiB4bWxuczpyZGY9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkvMDIvMjItcmRmLXN5bnRheC1ucyMiPiA8cmRmOkRlc2NyaXB0aW9uIHJkZjphYm91dD0iIiB4bWxuczp4bXA9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC8iIHhtbG5zOmRjPSJodHRwOi8vcHVybC5vcmcvZGMvZWxlbWVudHMvMS4xLyIgeG1sbnM6cGhvdG9zaG9wPSJodHRwOi8vbnMuYWRvYmUuY29tL3Bob3Rvc2hvcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RFdnQ9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZUV2ZW50IyIgeG1wOkNyZWF0b3JUb29sPSJBZG9iZSBQaG90b3Nob3AgMjEuMSAoTWFjaW50b3NoKSIgeG1wOkNyZWF0ZURhdGU9IjIwMTktMDYtMjhUMDU6MDk6MzgtMDM6MDAiIHhtcDpNb2RpZnlEYXRlPSIyMDIwLTA0LTExVDA0OjAzOjMzLTAzOjAwIiB4bXA6TWV0YWRhdGFEYXRlPSIyMDIwLTA0LTExVDA0OjAzOjMzLTAzOjAwIiBkYzpmb3JtYXQ9ImltYWdlL3BuZyIgcGhvdG9zaG9wOkNvbG9yTW9kZT0iMyIgcGhvdG9zaG9wOklDQ1Byb2ZpbGU9InNSR0IgSUVDNjE5NjYtMi4xIiB4bXBNTTpJbnN0YW5jZUlEPSJ4bXAuaWlkOjM4ZjJiOWM5LTZmYjItNDNlYy1hNTQ2LWNmMTJlZjVlYzRiMyIgeG1wTU06RG9jdW1lbnRJRD0iYWRvYmU6ZG9jaWQ6cGhvdG9zaG9wOjFlNWFkNjkxLTI3YmItOTU0OS05MmE2LTgxZmI2Nzk5ZTJjMSIgeG1wTU06T3JpZ2luYWxEb2N1bWVudElEPSJ4bXAuZGlkOmVmOWI5MDk0LTUwNTAtNGY5NC1iNGEzLWMyYTc3OTFmYjMzYyI+IDx4bXBNTTpIaXN0b3J5PiA8cmRmOlNlcT4gPHJkZjpsaSBzdEV2dDphY3Rpb249ImNyZWF0ZWQiIHN0RXZ0Omluc3RhbmNlSUQ9InhtcC5paWQ6ZWY5YjkwOTQtNTA1MC00Zjk0LWI0YTMtYzJhNzc5MWZiMzNjIiBzdEV2dDp3aGVuPSIyMDE5LTA2LTI4VDA1OjA5OjM4LTAzOjAwIiBzdEV2dDpzb2Z0d2FyZUFnZW50PSJBZG9iZSBQaG90b3Nob3AgMjEuMSAoTWFjaW50b3NoKSIvPiA8cmRmOmxpIHN0RXZ0OmFjdGlvbj0ic2F2ZWQiIHN0RXZ0Omluc3RhbmNlSUQ9InhtcC5paWQ6MzhmMmI5YzktNmZiMi00M2VjLWE1NDYtY2YxMmVmNWVjNGIzIiBzdEV2dDp3aGVuPSIyMDIwLTA0LTExVDA0OjAzOjMzLTAzOjAwIiBzdEV2dDpzb2Z0d2FyZUFnZW50PSJBZG9iZSBQaG90b3Nob3AgMjEuMSAoTWFjaW50b3NoKSIgc3RFdnQ6Y2hhbmdlZD0iLyIvPiA8L3JkZjpTZXE+IDwveG1wTU06SGlzdG9yeT4gPC9yZGY6RGVzY3JpcHRpb24+IDwvcmRmOlJERj4gPC94OnhtcG1ldGE+IDw/eHBhY2tldCBlbmQ9InIiPz6bJKqNAAB4qklEQVR42tz9d5xdV3Xwj7/22af3mftemVGXZFnuveEGLhhMCyFAgIQkJCGN9EISSJ4QCCFACB0CBkxzw71gy7JsWb1Lo5HmnpnenXP2Xr8/ztGM5CbbKqvk/X7e13NvOWvvs/faa6/1WQq99NJLL7300ksvvfTSSy+99NJLL7300ksvvfTSSy+99NJLL7300ksvvfTSSy+99NJLL7300ksvvfTSSy+99NJLL7300ksvvfTSSy+99NJLL7300ksvvfTSSy+99NJLL7300ksvvfTSSy+99NJLL7300ksvvfTSSy+99NJLL7300ksvvfTSSy+99NJLL7300ksvvfTSSy+99NJLL7300ksvvfTSSy+99NJLL7300ksvvfTSSy+99NJLL7300ksvvfTSSy+99NJLL7300ksvvfTSSy+99NJLL7300ksvvfTSSy+99NJLL7300ksvvfTSSy+99NJLL7300ksvvfTSSy+99NJLL7300ksvvfTSSy+99NJLL7300ksvvfTSSy+99NJLL7300ksvvfTSSy+99NJLL7300ksvvfTSSy+99NJLL7300ksvvfTSSy+99NJLL7300ksvvfTSSy+99NJLL7300ksvvfTSSy+99NJLL7300ksvvfTSSy+99NJLL7300ksvvfTSSy+99NJLL7300ksvvfTSSy+99NJLL7300ksvvfTSSy+99NJLL7300ksvvfTSSy+99NJLL7300ksvvfTSSy+99NJLL7300ksvvfTSSy+99NJLL7300ksvvfTSSy+99NJLL7300ksvvfTSSy+99NJLL7300ksvvfTSSy+99NJLL7300ksvvfTSSy+99NJLL7300ksvvfTSSy+99NJLL7300ksvvfTSSy+99NJLL7300ksvvfTSSy+99NJLL7300ksvvfTSSy+99NJLL7300ksvvfTSSy+99NJLL7300ksvvfTSSy+99NJLL7300ksvvfTSSy+99NJLL7300ksvvfTSSy+99NJLL7300ksvvfTSSy+99NJLL7300ksvvfTSSy+99NJLL7300ksvvfTSSy+99NJLL7300ksvvfTSSy+99NJLL7300ksvvfTSSy+99NJLL7300ksvvfTSSy+99NJLL7300ksvvfTSSy+99NJLL7300ksvvfTSSy+99NJLL7300ksvvfTSSy+99NJLL7300ksvvfTSSy+99NJLL7300ksvvfTSSy+99NJLL7300ksvvfTSSy+99NJLL7300ksvvfTSSy+99NJLL7300ksvvfTSSy+99NJLL7300ksvvfTSSy+99NJLL7300ksvvfTSSy+99NJLL7300ksvvfTSSy+99NJLL7300ksvvfTSSy+99NJLL7300ksvvfTSSy+99NJLL7300ksvvfTSSy+99NJLL7300ksvvfTSSy+99NJLL7300ksvvfTSSy+99NJLL7300ksvvfTSSy+99NJLL7300ksvvfTSSy+99NJLL7300ksvvfTSSy+99NJLL7300ksvvfTSSy+99NJLL7300ksvvfTSSy+99NJLL7300ksvvfTSSy+99NJLL7300ksvvfTSSy+99NJLL7300ksvvfTSSy+99NJLL7300ksvvfTSSy+99NJLL7300ksvvfTSSy+99NJLL7300ksvvfTSSy+99NJLL7300ksvvfTSSy+99NJLL7300ksvvfTSSy+99NJLL7300ksvvfTSSy+99NJLL7300ksvvfTSSy+99NJLL7300ksvvfTSSy+99NJLL7300ksvvfTSSy+99NJLL7300ksvvfTSSy+99NJLL7300ksvvfTSSy+99NJL";
 
 const WHATSAPP_NUMBER = "5491100000000";
+
+// ─── SISTEMA DEL CHATBOT ───────────────────────────────────────────────────
+const BOT_SYSTEM = `Sos el asistente virtual de TechnoStore, un servicio técnico especializado en Buenos Aires. Respondés en español rioplatense, de manera amigable, directa y concisa.
+
+SERVICIOS:
+• Reparación Apple: iPhone, iPad, MacBook. Pantallas OLED/LCD originales, baterías con ciclos reales, conectores Lightning/USB-C, Face ID, Touch ID, cámaras, microsoldadura de placa. Diagnóstico sin cargo.
+• Upgrade PC/Notebook: SSD NVMe y SATA, ampliación RAM DDR3/DDR4, limpieza profunda, pasta térmica, reinstalación de sistema. Tu vieja notebook puede ser hasta 100 veces más rápida.
+• Reparación de Consolas: PS4, PS5, Xbox One/Series, Nintendo Switch. Reballing de GPU, cambio de puerto HDMI (PS3/PS4/PS5), joystick drift, limpieza de ventilador, lector de disco, fuente de poder.
+• Reparación de Bisagras: todas las marcas (HP, Lenovo, Asus, Acer, Dell, Samsung, Toshiba). Reparación de marco de pantalla, cambio de bisagras, refuerzo estructural. Garantía de mano de obra.
+• Armado de PC a medida: presupuestos personalizados para gaming, diseño, edición de video o trabajo de oficina.
+
+DATOS DEL LOCAL:
+• Dirección: Av. Santa Fe 2844, Local TechnoStore, Buenos Aires
+• Horario: Lunes a Sábados de 12:00 a 20:00 hs
+• Email: tsbarrionuevo@gmail.com
+• Se recomienda reservar turno previamente
+
+POLÍTICAS:
+• Diagnóstico sin cargo para todos los equipos
+• Garantía de mano de obra en todas las reparaciones
+• Repuestos originales cuando es posible
+
+IMPORTANTE: Si no sabés algo con certeza, derivá al cliente por WhatsApp o email. Sé breve: máximo 3-4 oraciones. No inventes precios.`;
 
 function buildWhatsAppLink(name, device, brand, model, problem) {
   const text = `Hola TechnoStore! Te contacto desde el sitio web.\n\nNombre: ${name}\nEquipo: ${device}\nMarca y modelo: ${brand} ${model}\nProblema: ${problem}`;
@@ -59,8 +82,7 @@ const SERVICES = [
   },
 ];
 
-// ───────────────── COMPONENTES ─────────────────
-
+// ─── NAVBAR ───────────────────────────────────────────────────────────────────
 function NavBar({ activeSection }) {
   const [open, setOpen] = useState(false);
 
@@ -87,7 +109,6 @@ function NavBar({ activeSection }) {
           gap: 24,
         }}
       >
-        {/* Logo */}
         <a href="#inicio" style={{ display: "flex", alignItems: "center", gap: 12, textDecoration: "none" }}>
           <img src={LOGO_B64} alt="TechnoStore" style={{ height: 44 }} />
           <span
@@ -105,7 +126,6 @@ function NavBar({ activeSection }) {
           </span>
         </a>
 
-        {/* Desktop nav */}
         <nav style={{ display: "flex", gap: 32, alignItems: "center" }}>
           {NAV_LINKS.slice(0, 5).map((l) => (
             <a
@@ -125,7 +145,6 @@ function NavBar({ activeSection }) {
           ))}
         </nav>
 
-        {/* CTA */}
         <a
           href="#contacto"
           style={{
@@ -147,6 +166,7 @@ function NavBar({ activeSection }) {
   );
 }
 
+// ─── HERO ─────────────────────────────────────────────────────────────────────
 function Hero() {
   return (
     <section
@@ -160,7 +180,6 @@ function Hero() {
         overflow: "hidden",
       }}
     >
-      {/* Fondo de glow */}
       <div
         style={{
           position: "absolute",
@@ -183,7 +202,6 @@ function Hero() {
           position: "relative",
         }}
       >
-        {/* Left */}
         <div>
           <div
             style={{
@@ -273,7 +291,6 @@ function Hero() {
             </a>
           </div>
 
-          {/* Stats */}
           <div style={{ display: "flex", gap: 40, marginTop: 48 }}>
             {[
               { n: "10+", label: "Años de experiencia" },
@@ -298,9 +315,7 @@ function Hero() {
           </div>
         </div>
 
-        {/* Right — cards flotantes */}
         <div style={{ position: "relative", height: 500 }}>
-          {/* Card principal */}
           <div
             style={{
               position: "absolute",
@@ -316,7 +331,6 @@ function Hero() {
           >
             🛠️
           </div>
-          {/* Badge flotante */}
           <div
             style={{
               position: "absolute",
@@ -354,6 +368,7 @@ function Hero() {
   );
 }
 
+// ─── SERVICIOS GRID ───────────────────────────────────────────────────────────
 function Services() {
   return (
     <section id="servicios" style={{ padding: "100px 24px", background: "rgba(255,255,255,0.02)" }}>
@@ -458,6 +473,7 @@ function Services() {
   );
 }
 
+// ─── UPGRADE SECTION ──────────────────────────────────────────────────────────
 function UpgradeSection() {
   return (
     <section
@@ -477,7 +493,6 @@ function UpgradeSection() {
           alignItems: "center",
         }}
       >
-        {/* Visual */}
         <div
           style={{
             background: "rgba(45,252,82,0.07)",
@@ -488,13 +503,7 @@ function UpgradeSection() {
           }}
         >
           <div style={{ fontSize: 96, marginBottom: 24 }}>🖥️</div>
-          <div
-            style={{
-              display: "flex",
-              flexDirection: "column",
-              gap: 12,
-            }}
-          >
+          <div style={{ display: "flex", flexDirection: "column", gap: 12 }}>
             {[
               { label: "HDD lento", before: true },
               { label: "Instalamos SSD NVMe", arrow: true },
@@ -509,11 +518,7 @@ function UpgradeSection() {
                   gap: 12,
                   padding: "12px 20px",
                   borderRadius: 10,
-                  background: row.after
-                    ? "rgba(45,252,82,0.15)"
-                    : row.arrow
-                    ? "rgba(255,255,255,0.04)"
-                    : "rgba(255,255,255,0.04)",
+                  background: row.after ? "rgba(45,252,82,0.15)" : "rgba(255,255,255,0.04)",
                   border: row.after ? "1px solid rgba(45,252,82,0.4)" : "1px solid rgba(255,255,255,0.06)",
                 }}
               >
@@ -525,7 +530,6 @@ function UpgradeSection() {
           </div>
         </div>
 
-        {/* Content */}
         <div>
           <div
             style={{
@@ -613,6 +617,7 @@ function UpgradeSection() {
   );
 }
 
+// ─── SERVICE DETAIL ───────────────────────────────────────────────────────────
 function ServiceDetail({ id, icon, title, subtitle, desc, color, items }) {
   return (
     <section id={id} style={{ padding: "100px 24px" }}>
@@ -649,7 +654,6 @@ function ServiceDetail({ id, icon, title, subtitle, desc, color, items }) {
               {title}
             </h2>
             <p style={{ color: "rgba(255,255,255,0.6)", fontSize: 17, lineHeight: 1.7, maxWidth: 600 }}>{desc}</p>
-
             <div
               style={{
                 display: "grid",
@@ -676,7 +680,6 @@ function ServiceDetail({ id, icon, title, subtitle, desc, color, items }) {
                 </div>
               ))}
             </div>
-
             <a
               href="#contacto"
               style={{
@@ -701,13 +704,9 @@ function ServiceDetail({ id, icon, title, subtitle, desc, color, items }) {
   );
 }
 
+// ─── BUILD PC FORM ────────────────────────────────────────────────────────────
 function BuildPCForm() {
-  const [form, setForm] = useState({
-    name: "",
-    use: "",
-    budget: "",
-    peripherals: "",
-  });
+  const [form, setForm] = useState({ name: "", use: "", budget: "", peripherals: "" });
   const [sent, setSent] = useState(false);
 
   function handleChange(e) {
@@ -774,10 +773,7 @@ function BuildPCForm() {
             </h3>
             <p style={{ color: "rgba(255,255,255,0.6)", fontSize: 16 }}>
               Te redirigimos a WhatsApp. Si no se abrió,{" "}
-              <a href="#contacto" style={{ color: "#0d59f2" }}>
-                contactanos acá
-              </a>
-              .
+              <a href="#contacto" style={{ color: "#0d59f2" }}>contactanos acá</a>.
             </p>
           </div>
         ) : (
@@ -836,7 +832,6 @@ function BuildPCForm() {
                 />
               </div>
             ))}
-
             <button
               type="submit"
               style={{
@@ -866,14 +861,9 @@ function BuildPCForm() {
   );
 }
 
+// ─── FORMULARIO DE CONTACTO ───────────────────────────────────────────────────
 function ServiceRequestForm() {
-  const [form, setForm] = useState({
-    name: "",
-    device: "",
-    brand: "",
-    model: "",
-    problem: "",
-  });
+  const [form, setForm] = useState({ name: "", device: "", brand: "", model: "", problem: "" });
   const [sent, setSent] = useState(false);
 
   function handleChange(e) {
@@ -890,15 +880,9 @@ function ServiceRequestForm() {
   return (
     <section id="contacto" style={{ padding: "100px 24px" }}>
       <div style={{ maxWidth: 900, margin: "0 auto" }}>
-        <div
-          style={{
-            display: "grid",
-            gridTemplateColumns: "1fr 1fr",
-            gap: 64,
-            alignItems: "start",
-          }}
-        >
-          {/* Info */}
+        <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 64, alignItems: "start" }}>
+
+          {/* Info del local */}
           <div>
             <div
               style={{
@@ -928,7 +912,6 @@ function ServiceRequestForm() {
             >
               Vení a vernos o <span style={{ color: "#2dfc52" }}>escribinos</span>
             </h2>
-
             {[
               { icon: "📍", title: "Dirección", value: "Av. Santa Fe 2844 — Local TechnoStore" },
               { icon: "🕐", title: "Horario", value: "Lunes a Sábados 12:00 a 20:00 hs" },
@@ -957,7 +940,6 @@ function ServiceRequestForm() {
                 </div>
               </div>
             ))}
-
             <a
               href={`https://wa.me/${WHATSAPP_NUMBER}`}
               target="_blank"
@@ -981,23 +963,14 @@ function ServiceRequestForm() {
             </a>
           </div>
 
-          {/* Form */}
+          {/* Formulario */}
           <div>
-            <h3
-              style={{
-                fontFamily: "'Space Grotesk', sans-serif",
-                fontSize: 22,
-                fontWeight: 800,
-                color: "#fff",
-                margin: "0 0 24px",
-              }}
-            >
+            <h3 style={{ fontFamily: "'Space Grotesk', sans-serif", fontSize: 22, fontWeight: 800, color: "#fff", margin: "0 0 24px" }}>
               Solicitar servicio técnico
             </h3>
             <p style={{ color: "rgba(255,255,255,0.5)", fontSize: 14, marginBottom: 28 }}>
               Completá el formulario y se abrirá un chat de WhatsApp con toda la info precargada.
             </p>
-
             {sent ? (
               <div
                 style={{
@@ -1009,15 +982,10 @@ function ServiceRequestForm() {
                 }}
               >
                 <div style={{ fontSize: 48, marginBottom: 12 }}>✅</div>
-                <p style={{ color: "rgba(255,255,255,0.7)", fontSize: 15 }}>
-                  ¡Gracias! Te redirigimos a WhatsApp.
-                </p>
+                <p style={{ color: "rgba(255,255,255,0.7)", fontSize: 15 }}>¡Gracias! Te redirigimos a WhatsApp.</p>
               </div>
             ) : (
-              <form
-                onSubmit={handleSubmit}
-                style={{ display: "flex", flexDirection: "column", gap: 16 }}
-              >
+              <form onSubmit={handleSubmit} style={{ display: "flex", flexDirection: "column", gap: 16 }}>
                 {[
                   { name: "name", label: "Nombre", placeholder: "Tu nombre completo", type: "text" },
                   { name: "device", label: "Tipo de equipo", placeholder: "Ej: iPhone 13, Notebook, PS5", type: "text" },
@@ -1054,7 +1022,6 @@ function ServiceRequestForm() {
                     />
                   </div>
                 ))}
-
                 <div>
                   <label
                     htmlFor="req-problem"
@@ -1085,7 +1052,6 @@ function ServiceRequestForm() {
                     }}
                   />
                 </div>
-
                 <button
                   type="submit"
                   style={{
@@ -1115,6 +1081,7 @@ function ServiceRequestForm() {
   );
 }
 
+// ─── FOOTER ───────────────────────────────────────────────────────────────────
 function Footer() {
   return (
     <footer
@@ -1125,15 +1092,7 @@ function Footer() {
       }}
     >
       <div style={{ maxWidth: 1280, margin: "0 auto" }}>
-        <div
-          style={{
-            display: "grid",
-            gridTemplateColumns: "2fr 1fr 1fr 1fr",
-            gap: 48,
-            marginBottom: 48,
-          }}
-        >
-          {/* Brand */}
+        <div style={{ display: "grid", gridTemplateColumns: "2fr 1fr 1fr 1fr", gap: 48, marginBottom: 48 }}>
           <div>
             <a href="#inicio" style={{ display: "flex", alignItems: "center", gap: 10, textDecoration: "none", marginBottom: 16 }}>
               <img src={LOGO_B64} alt="TechnoStore" style={{ height: 40 }} />
@@ -1151,8 +1110,7 @@ function Footer() {
               </span>
             </a>
             <p style={{ color: "rgba(255,255,255,0.4)", fontSize: 14, lineHeight: 1.7, maxWidth: 280 }}>
-              Servicio técnico especializado con más de 10 años de experiencia. Reparamos Apple, PC,
-              consolas y notebooks.
+              Servicio técnico especializado con más de 10 años de experiencia. Reparamos Apple, PC, consolas y notebooks.
             </p>
             <div style={{ marginTop: 20 }}>
               <p style={{ color: "rgba(255,255,255,0.4)", fontSize: 13 }}>📍 Av. Santa Fe 2844</p>
@@ -1160,44 +1118,20 @@ function Footer() {
               <p style={{ color: "rgba(255,255,255,0.4)", fontSize: 13 }}>✉️ tsbarrionuevo@gmail.com</p>
             </div>
           </div>
-
-          {/* Servicios */}
           <div>
-            <h4 style={{ fontFamily: "'Space Grotesk', sans-serif", fontWeight: 700, color: "#fff", fontSize: 14, marginBottom: 20 }}>
-              Servicios
-            </h4>
+            <h4 style={{ fontFamily: "'Space Grotesk', sans-serif", fontWeight: 700, color: "#fff", fontSize: 14, marginBottom: 20 }}>Servicios</h4>
             {["Reparación Apple", "Upgrade PC/Notebook", "Consolas", "Bisagras", "Armado de PC"].map((l) => (
-              <a
-                key={l}
-                href="#servicios"
-                style={{ display: "block", color: "rgba(255,255,255,0.45)", fontSize: 14, marginBottom: 10, textDecoration: "none" }}
-              >
-                {l}
-              </a>
+              <a key={l} href="#servicios" style={{ display: "block", color: "rgba(255,255,255,0.45)", fontSize: 14, marginBottom: 10, textDecoration: "none" }}>{l}</a>
             ))}
           </div>
-
-          {/* Info */}
           <div>
-            <h4 style={{ fontFamily: "'Space Grotesk', sans-serif", fontWeight: 700, color: "#fff", fontSize: 14, marginBottom: 20 }}>
-              Información
-            </h4>
+            <h4 style={{ fontFamily: "'Space Grotesk', sans-serif", fontWeight: 700, color: "#fff", fontSize: 14, marginBottom: 20 }}>Información</h4>
             {["Cómo trabajamos", "Garantía", "Preguntas frecuentes", "Presupuesto PC"].map((l) => (
-              <a
-                key={l}
-                href="#contacto"
-                style={{ display: "block", color: "rgba(255,255,255,0.45)", fontSize: 14, marginBottom: 10, textDecoration: "none" }}
-              >
-                {l}
-              </a>
+              <a key={l} href="#contacto" style={{ display: "block", color: "rgba(255,255,255,0.45)", fontSize: 14, marginBottom: 10, textDecoration: "none" }}>{l}</a>
             ))}
           </div>
-
-          {/* Contacto */}
           <div>
-            <h4 style={{ fontFamily: "'Space Grotesk', sans-serif", fontWeight: 700, color: "#fff", fontSize: 14, marginBottom: 20 }}>
-              Contacto
-            </h4>
+            <h4 style={{ fontFamily: "'Space Grotesk', sans-serif", fontWeight: 700, color: "#fff", fontSize: 14, marginBottom: 20 }}>Contacto</h4>
             <a
               href={`https://wa.me/${WHATSAPP_NUMBER}`}
               target="_blank"
@@ -1218,12 +1152,9 @@ function Footer() {
             >
               💬 WhatsApp
             </a>
-            <p style={{ color: "rgba(255,255,255,0.4)", fontSize: 13, marginTop: 8 }}>
-              Recomendamos reservar turno
-            </p>
+            <p style={{ color: "rgba(255,255,255,0.4)", fontSize: 13, marginTop: 8 }}>Recomendamos reservar turno</p>
           </div>
         </div>
-
         <div
           style={{
             borderTop: "1px solid rgba(255,255,255,0.07)",
@@ -1235,24 +1166,416 @@ function Footer() {
             gap: 12,
           }}
         >
-          <p style={{ color: "rgba(255,255,255,0.3)", fontSize: 13 }}>
-            © 2024 TechnoStore. Todos los derechos reservados.
-          </p>
-          <p style={{ color: "rgba(255,255,255,0.3)", fontSize: 13 }}>
-            Av. Santa Fe 2844 — Buenos Aires, Argentina
-          </p>
+          <p style={{ color: "rgba(255,255,255,0.3)", fontSize: 13 }}>© 2024 TechnoStore. Todos los derechos reservados.</p>
+          <p style={{ color: "rgba(255,255,255,0.3)", fontSize: 13 }}>Av. Santa Fe 2844 — Buenos Aires, Argentina</p>
         </div>
       </div>
     </footer>
   );
 }
 
-// ───────────────── APP ─────────────────
+// ─── CHATBOT IA ───────────────────────────────────────────────────────────────
+function Chatbot() {
+  const [open, setOpen] = useState(false);
+  const [messages, setMessages] = useState([
+    {
+      role: "assistant",
+      content: "¡Hola! 👋 Soy el asistente de TechnoStore. Podés preguntarme sobre nuestros servicios, cómo llevar tu equipo, horarios o cualquier consulta técnica. ¿En qué te puedo ayudar?",
+    },
+  ]);
+  const [input, setInput] = useState("");
+  const [loading, setLoading] = useState(false);
+  const bottomRef = useRef(null);
+  const inputRef = useRef(null);
 
+  useEffect(() => {
+    if (open) {
+      setTimeout(() => bottomRef.current?.scrollIntoView({ behavior: "smooth" }), 50);
+      setTimeout(() => inputRef.current?.focus(), 100);
+    }
+  }, [messages, open]);
+
+  async function sendMessage(text) {
+    const msgText = text || input.trim();
+    if (!msgText || loading) return;
+
+    const newMessages = [...messages, { role: "user", content: msgText }];
+    setMessages(newMessages);
+    setInput("");
+    setLoading(true);
+
+    try {
+      const response = await fetch("https://api.anthropic.com/v1/messages", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          model: "claude-sonnet-4-6",
+          max_tokens: 400,
+          system: BOT_SYSTEM,
+          messages: newMessages.map((m) => ({ role: m.role, content: m.content })),
+        }),
+      });
+
+      const data = await response.json();
+      const reply =
+        data.content?.[0]?.text ||
+        "Disculpá, hubo un problema. Por favor contactanos por WhatsApp o email.";
+
+      setMessages((prev) => [...prev, { role: "assistant", content: reply }]);
+    } catch (err) {
+      setMessages((prev) => [
+        ...prev,
+        {
+          role: "assistant",
+          content: "Hubo un error de conexión. Podés contactarnos directamente por WhatsApp o al email tsbarrionuevo@gmail.com",
+        },
+      ]);
+    }
+
+    setLoading(false);
+  }
+
+  const QUICK_REPLIES = ["¿Qué servicios hacen?", "¿Dónde están ubicados?", "¿Cómo agendo un turno?", "Quiero reparar mi iPhone"];
+
+  return (
+    <>
+      {/* Botón flotante */}
+      <button
+        onClick={() => setOpen((o) => !o)}
+        style={{
+          position: "fixed",
+          bottom: 28,
+          right: 28,
+          zIndex: 200,
+          width: 60,
+          height: 60,
+          borderRadius: "50%",
+          background: open
+            ? "rgba(255,255,255,0.15)"
+            : "linear-gradient(135deg, #0d59f2 0%, #2dfc52 100%)",
+          border: open ? "1px solid rgba(255,255,255,0.2)" : "none",
+          cursor: "pointer",
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "center",
+          boxShadow: "0 8px 32px rgba(13,89,242,0.45)",
+          transition: "transform 0.2s, background 0.3s",
+          fontSize: 26,
+          color: "#fff",
+        }}
+        onMouseEnter={(e) => (e.currentTarget.style.transform = "scale(1.1)")}
+        onMouseLeave={(e) => (e.currentTarget.style.transform = "scale(1)")}
+        title="Chat con TechnoStore"
+        aria-label={open ? "Cerrar chat" : "Abrir chat"}
+      >
+        {open ? "✕" : "💬"}
+      </button>
+
+      {/* Panel del chat */}
+      {open && (
+        <div
+          style={{
+            position: "fixed",
+            bottom: 100,
+            right: 28,
+            zIndex: 199,
+            width: 348,
+            maxHeight: 540,
+            background: "rgba(8,13,24,0.97)",
+            backdropFilter: "blur(24px)",
+            border: "1px solid rgba(255,255,255,0.1)",
+            borderRadius: 20,
+            display: "flex",
+            flexDirection: "column",
+            overflow: "hidden",
+            boxShadow: "0 24px 80px rgba(0,0,0,0.65), 0 0 0 1px rgba(13,89,242,0.15)",
+            animation: "chatSlideUp 0.25s cubic-bezier(0.16, 1, 0.3, 1)",
+          }}
+        >
+          {/* Header */}
+          <div
+            style={{
+              padding: "14px 18px",
+              borderBottom: "1px solid rgba(255,255,255,0.08)",
+              display: "flex",
+              alignItems: "center",
+              gap: 12,
+              background: "rgba(13,89,242,0.08)",
+            }}
+          >
+            <div
+              style={{
+                width: 38,
+                height: 38,
+                borderRadius: "50%",
+                background: "linear-gradient(135deg, #0d59f2, #2dfc52)",
+                display: "flex",
+                alignItems: "center",
+                justifyContent: "center",
+                fontSize: 18,
+                flexShrink: 0,
+              }}
+            >
+              🤖
+            </div>
+            <div style={{ flex: 1 }}>
+              <div style={{ fontFamily: "'Space Grotesk', sans-serif", fontWeight: 700, fontSize: 14, color: "#fff" }}>
+                Asistente TechnoStore
+              </div>
+              <div style={{ display: "flex", alignItems: "center", gap: 5, marginTop: 2 }}>
+                <span
+                  style={{
+                    width: 7,
+                    height: 7,
+                    borderRadius: "50%",
+                    background: "#2dfc52",
+                    display: "inline-block",
+                    boxShadow: "0 0 6px #2dfc52",
+                  }}
+                />
+                <span style={{ fontSize: 11, color: "#2dfc52" }}>En línea · IA</span>
+              </div>
+            </div>
+            <button
+              onClick={() => setOpen(false)}
+              style={{
+                background: "none",
+                border: "none",
+                color: "rgba(255,255,255,0.4)",
+                cursor: "pointer",
+                fontSize: 18,
+                padding: 4,
+                lineHeight: 1,
+              }}
+            >
+              ✕
+            </button>
+          </div>
+
+          {/* Mensajes */}
+          <div
+            style={{
+              flex: 1,
+              overflowY: "auto",
+              padding: "16px 14px",
+              display: "flex",
+              flexDirection: "column",
+              gap: 10,
+            }}
+          >
+            {messages.map((m, i) => (
+              <div
+                key={i}
+                style={{
+                  display: "flex",
+                  justifyContent: m.role === "user" ? "flex-end" : "flex-start",
+                  alignItems: "flex-end",
+                  gap: 7,
+                }}
+              >
+                {m.role === "assistant" && (
+                  <div
+                    style={{
+                      width: 26,
+                      height: 26,
+                      borderRadius: "50%",
+                      background: "linear-gradient(135deg, #0d59f2, #2dfc52)",
+                      display: "flex",
+                      alignItems: "center",
+                      justifyContent: "center",
+                      fontSize: 12,
+                      flexShrink: 0,
+                      marginBottom: 2,
+                    }}
+                  >
+                    🤖
+                  </div>
+                )}
+                <div
+                  style={{
+                    maxWidth: "76%",
+                    padding: "10px 14px",
+                    borderRadius: 16,
+                    borderBottomRightRadius: m.role === "user" ? 4 : 16,
+                    borderBottomLeftRadius: m.role === "assistant" ? 4 : 16,
+                    background:
+                      m.role === "user"
+                        ? "linear-gradient(135deg, #0d59f2, #0a45c0)"
+                        : "rgba(255,255,255,0.07)",
+                    border: m.role === "assistant" ? "1px solid rgba(255,255,255,0.08)" : "none",
+                    fontSize: 13,
+                    color: "rgba(255,255,255,0.9)",
+                    lineHeight: 1.6,
+                    whiteSpace: "pre-wrap",
+                  }}
+                >
+                  {m.content}
+                </div>
+              </div>
+            ))}
+
+            {/* Indicador de escritura */}
+            {loading && (
+              <div style={{ display: "flex", justifyContent: "flex-start", alignItems: "flex-end", gap: 7 }}>
+                <div
+                  style={{
+                    width: 26,
+                    height: 26,
+                    borderRadius: "50%",
+                    background: "linear-gradient(135deg, #0d59f2, #2dfc52)",
+                    display: "flex",
+                    alignItems: "center",
+                    justifyContent: "center",
+                    fontSize: 12,
+                  }}
+                >
+                  🤖
+                </div>
+                <div
+                  style={{
+                    padding: "12px 16px",
+                    borderRadius: 16,
+                    borderBottomLeftRadius: 4,
+                    background: "rgba(255,255,255,0.07)",
+                    border: "1px solid rgba(255,255,255,0.08)",
+                    display: "flex",
+                    gap: 4,
+                    alignItems: "center",
+                  }}
+                >
+                  {[0, 1, 2].map((i) => (
+                    <span
+                      key={i}
+                      style={{
+                        width: 7,
+                        height: 7,
+                        borderRadius: "50%",
+                        background: "rgba(255,255,255,0.5)",
+                        display: "inline-block",
+                        animation: `typingDot 1.2s infinite ${i * 0.2}s`,
+                      }}
+                    />
+                  ))}
+                </div>
+              </div>
+            )}
+            <div ref={bottomRef} />
+          </div>
+
+          {/* Quick replies (solo al inicio) */}
+          {messages.length <= 1 && (
+            <div
+              style={{
+                padding: "0 12px 10px",
+                display: "flex",
+                flexWrap: "wrap",
+                gap: 6,
+              }}
+            >
+              {QUICK_REPLIES.map((q) => (
+                <button
+                  key={q}
+                  onClick={() => sendMessage(q)}
+                  style={{
+                    background: "rgba(13,89,242,0.15)",
+                    border: "1px solid rgba(13,89,242,0.35)",
+                    borderRadius: 99,
+                    padding: "5px 11px",
+                    fontSize: 11,
+                    color: "rgba(255,255,255,0.75)",
+                    cursor: "pointer",
+                    fontFamily: "'Space Grotesk', sans-serif",
+                    transition: "background 0.15s",
+                  }}
+                  onMouseEnter={(e) => (e.currentTarget.style.background = "rgba(13,89,242,0.28)")}
+                  onMouseLeave={(e) => (e.currentTarget.style.background = "rgba(13,89,242,0.15)")}
+                >
+                  {q}
+                </button>
+              ))}
+            </div>
+          )}
+
+          {/* Input */}
+          <div
+            style={{
+              padding: "10px 12px 14px",
+              borderTop: "1px solid rgba(255,255,255,0.07)",
+              display: "flex",
+              gap: 8,
+              alignItems: "center",
+            }}
+          >
+            <input
+              ref={inputRef}
+              value={input}
+              onChange={(e) => setInput(e.target.value)}
+              onKeyDown={(e) => {
+                if (e.key === "Enter" && !e.shiftKey) {
+                  e.preventDefault();
+                  sendMessage();
+                }
+              }}
+              placeholder="Escribí tu consulta..."
+              disabled={loading}
+              style={{
+                flex: 1,
+                background: "rgba(255,255,255,0.06)",
+                border: "1px solid rgba(255,255,255,0.1)",
+                borderRadius: 10,
+                padding: "9px 13px",
+                color: "#fff",
+                fontSize: 13,
+                outline: "none",
+                fontFamily: "'Space Grotesk', sans-serif",
+              }}
+            />
+            <button
+              onClick={() => sendMessage()}
+              disabled={loading || !input.trim()}
+              style={{
+                width: 38,
+                height: 38,
+                borderRadius: 10,
+                background:
+                  loading || !input.trim()
+                    ? "rgba(13,89,242,0.2)"
+                    : "#0d59f2",
+                border: "none",
+                cursor: loading || !input.trim() ? "not-allowed" : "pointer",
+                display: "flex",
+                alignItems: "center",
+                justifyContent: "center",
+                color: "#fff",
+                fontSize: 17,
+                flexShrink: 0,
+                transition: "background 0.2s",
+              }}
+            >
+              ➤
+            </button>
+          </div>
+        </div>
+      )}
+
+      <style>{`
+        @keyframes chatSlideUp {
+          from { opacity: 0; transform: translateY(20px) scale(0.97); }
+          to   { opacity: 1; transform: translateY(0)    scale(1);    }
+        }
+        @keyframes typingDot {
+          0%, 60%, 100% { opacity: 0.3; transform: scale(0.85); }
+          30%            { opacity: 1;   transform: scale(1.15); }
+        }
+      `}</style>
+    </>
+  );
+}
+
+// ─── APP PRINCIPAL ────────────────────────────────────────────────────────────
 export default function App() {
   return (
     <>
-      {/* Google Fonts */}
       <style>{`
         @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700;900&display=swap');
         *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -1268,9 +1591,10 @@ export default function App() {
           border-color: rgba(13,89,242,0.5) !important;
           box-shadow: 0 0 0 3px rgba(13,89,242,0.15) !important;
         }
+        ::-webkit-scrollbar { width: 5px; }
+        ::-webkit-scrollbar-track { background: transparent; }
+        ::-webkit-scrollbar-thumb { background: rgba(255,255,255,0.1); border-radius: 3px; }
         @media (max-width: 768px) {
-          .grid-2col { grid-template-columns: 1fr !important; }
-          .grid-4col { grid-template-columns: repeat(2, 1fr) !important; }
           nav { display: none !important; }
         }
       `}</style>
@@ -1279,7 +1603,6 @@ export default function App() {
       <Hero />
       <Services />
 
-      {/* Secciones detalle de cada servicio */}
       <ServiceDetail
         id="apple"
         icon="📱"
@@ -1315,6 +1638,9 @@ export default function App() {
       <BuildPCForm />
       <ServiceRequestForm />
       <Footer />
+
+      {/* Chatbot flotante con IA */}
+      <Chatbot />
     </>
   );
 }
