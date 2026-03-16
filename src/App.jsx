@@ -17,7 +17,7 @@ SERVICIOS:
 DATOS DEL LOCAL:
 • Dirección: Av. Santa Fe 2844, Local TechnoStore, Buenos Aires
 • Horario: Lunes a Sábados de 12:00 a 20:00 hs
-• Email: tsbarrionuevo@gmail.com
+• Email: tsbarrionorte@gmail.com
 • Se recomienda reservar turno previamente
 
 POLÍTICAS:
@@ -57,7 +57,7 @@ const SERVICES = [
     id: "upgrade",
     icon: "⚡",
     title: "No tires tu vieja compu",
-    subtitle: "La volvemos hasta 100× más rápida",
+    subtitle: "La volvemos hasta 100 veces más rápida",
     desc: "Instalación de SSD NVMe, RAM, limpieza profunda y optimización de sistema. Tu notebook del 2015 puede volar como nueva.",
     color: "#2dfc52",
     items: ["SSD NVMe / SATA 2.5\"", "Ampliación de RAM", "Limpieza profunda de polvo", "Renovación de pasta térmica", "Reinstalación de sistema"],
@@ -293,7 +293,7 @@ function Hero() {
 
           <div style={{ display: "flex", gap: 40, marginTop: 48 }}>
             {[
-              { n: "10+", label: "Años de experiencia" },
+              { n: "15+", label: "Años de experiencia" },
               { n: "+5.000", label: "Reparaciones" },
               { n: "100%", label: "Clientes satisfechos" },
             ].map((s) => (
@@ -507,7 +507,7 @@ function UpgradeSection() {
             {[
               { label: "HDD lento", before: true },
               { label: "Instalamos SSD NVMe", arrow: true },
-              { label: "100× más rápido", after: true },
+              { label: "100 veces más rápido", after: true },
             ].map((row, i) => (
               <div
                 key={i}
@@ -706,7 +706,7 @@ function ServiceDetail({ id, icon, title, subtitle, desc, color, items }) {
 
 // ─── BUILD PC FORM ────────────────────────────────────────────────────────────
 function BuildPCForm() {
-  const [form, setForm] = useState({ name: "", use: "", budget: "", peripherals: "" });
+  const [form, setForm] = useState({ name: "", use: "", budget: "", extraInfo: "" });
   const [sent, setSent] = useState(false);
 
   function handleChange(e) {
@@ -715,7 +715,7 @@ function BuildPCForm() {
 
   function handleSubmit(e) {
     e.preventDefault();
-    const text = `Hola TechnoStore! Quiero un presupuesto para armar una PC.\n\nNombre: ${form.name}\nUso principal: ${form.use}\nPresupuesto aproximado: $${form.budget}\nPeriféricos: ${form.peripherals}`;
+    const text = `Hola TechnoStore! Quiero un presupuesto para armar una PC.\n\nNombre: ${form.name}\nUso principal: ${form.use}\nPresupuesto aproximado: $${form.budget}\nInformación extra: ${form.extraInfo}`;
     window.open(`https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(text)}`, "_blank");
     setSent(true);
   }
@@ -793,7 +793,7 @@ function BuildPCForm() {
               { name: "name", label: "Tu nombre", placeholder: "Juan García", type: "text" },
               { name: "use", label: "Uso principal", placeholder: "Gaming, diseño gráfico, edición de video, trabajo de oficina...", type: "text" },
               { name: "budget", label: "Presupuesto aproximado (ARS)", placeholder: "Ej: 500000", type: "number" },
-              { name: "peripherals", label: "¿Necesitás periféricos? (monitor, teclado, mouse)", placeholder: "Ej: monitor 24\", teclado y mouse", type: "text" },
+              { name: "extraInfo", label: "Información extra que quieras agregar", placeholder: "Ej: Necesito monitor, para correr Cyberpunk...", type: "text" },
             ].map((field) => (
               <div key={field.name}>
                 <label
@@ -916,7 +916,7 @@ function ServiceRequestForm() {
               { icon: "📍", title: "Dirección", value: "Av. Santa Fe 2844 — Local TechnoStore" },
               { icon: "🕐", title: "Horario", value: "Lunes a Sábados 12:00 a 20:00 hs" },
               { icon: "📅", title: "Turnos", value: "Recomendamos reservar turno" },
-              { icon: "✉️", title: "Email", value: "tsbarrionuevo@gmail.com" },
+              { icon: "✉️", title: "Email", value: "tsbarrionorte@gmail.com" },
             ].map((info) => (
               <div
                 key={info.title}
@@ -1110,12 +1110,13 @@ function Footer() {
               </span>
             </a>
             <p style={{ color: "rgba(255,255,255,0.4)", fontSize: 14, lineHeight: 1.7, maxWidth: 280 }}>
-              Servicio técnico especializado con más de 10 años de experiencia. Reparamos Apple, PC, consolas y notebooks.
+              Servicio técnico especializado con más de 15 años de experiencia. Reparamos Apple, PC, consolas y notebooks.
             </p>
             <div style={{ marginTop: 20 }}>
               <p style={{ color: "rgba(255,255,255,0.4)", fontSize: 13 }}>📍 Av. Santa Fe 2844</p>
               <p style={{ color: "rgba(255,255,255,0.4)", fontSize: 13 }}>🕐 Lun–Sáb 12:00 a 20:00 hs</p>
-              <p style={{ color: "rgba(255,255,255,0.4)", fontSize: 13 }}>✉️ tsbarrionuevo@gmail.com</p>
+              <p style={{ color: "rgba(255,255,255,0.4)", fontSize: 13 }}>✉️ tsbarrionorte@gmail.com</p>
+              <p style={{ color: "rgba(255,255,255,0.4)", fontSize: 13, marginTop: 4 }}>📸 IG: @technostore_ts</p>
             </div>
           </div>
           <div>
@@ -1227,7 +1228,7 @@ function Chatbot() {
         ...prev,
         {
           role: "assistant",
-          content: "Hubo un error de conexión. Podés contactarnos directamente por WhatsApp o al email tsbarrionuevo@gmail.com",
+          content: "Hubo un error de conexión. Podés contactarnos directamente por WhatsApp o al email tsbarrionorte@gmail.com",
         },
       ]);
     }
