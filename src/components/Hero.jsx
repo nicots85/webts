@@ -85,7 +85,7 @@ export default function Hero() {
             }}
           >
             <span style={{ color: "#0d59f2", fontSize: 13, fontWeight: 800, letterSpacing: 1.5 }}>
-              LABORATORIO DE ALTA PRECISIÓN
+              TU LUGAR DE ENCUENTRO CON LA TECNOLOGÍA
             </span>
           </div>
 
@@ -100,12 +100,12 @@ export default function Hero() {
               letterSpacing: "-2px",
             }}
           >
-            Tecnología <br />
+            Servicio <br />
             <span style={{ 
               background: "linear-gradient(90deg, #0d59f2, #2dfc52)",
               WebkitBackgroundClip: "text",
               WebkitTextFillColor: "transparent",
-            }}>redefinida</span>
+            }}>Técnico</span>
           </h1>
 
           <p
@@ -119,7 +119,7 @@ export default function Hero() {
               letterSpacing: "-0.2px",
             }}
           >
-            Donde la ingeniería se encuentra con el detalle. Resolvemos lo que otros consideran imposible con estándares de fábrica y garantía total.
+            Somos un negocio con más de 15 años de experiencia en el rubro. Estamos en constante formación. Nuestro compromiso es con su satisfacción.
           </p>
 
           <div style={{ display: "flex", gap: 20, flexWrap: "wrap" }}>
