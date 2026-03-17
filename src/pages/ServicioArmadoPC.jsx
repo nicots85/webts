@@ -1,6 +1,7 @@
 // Landing page para Armado de PC
+// Optimizada para campañas de publicidad en Buenos Aires
 
-const WHATSAPP_NUMBER = "5491158586472";
+const WHATSAPP_NUMBER = "5491127650658";
 
 function getWhatsAppUrl(text) {
   return `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(text)}`;
@@ -8,7 +9,8 @@ function getWhatsAppUrl(text) {
 
 export default function ServicioArmadoPC({ imageUrl }) {
   return (
-    <div style={{ background: "#0a0f1a", minHeight: "100vh" }}>
+    <div style={{ background: "#0a0f1a", minHeight: "100vh", color: "#fff", fontFamily: "'Space Grotesk', sans-serif" }}>
+      {/* Hero Section */}
       <section
         style={{
           minHeight: "70vh",
@@ -25,6 +27,7 @@ export default function ServicioArmadoPC({ imageUrl }) {
             inset: 0,
             background: "linear-gradient(135deg, #00d4ff 0%, #1a1a2e 100%)",
             opacity: 0.9,
+            zIndex: 1
           }}
         />
         <div
@@ -35,6 +38,7 @@ export default function ServicioArmadoPC({ imageUrl }) {
             backgroundSize: "cover",
             backgroundPosition: "center",
             opacity: 0.3,
+            zIndex: 0
           }}
         />
 
@@ -46,7 +50,7 @@ export default function ServicioArmadoPC({ imageUrl }) {
             position: "relative",
             zIndex: 2,
             display: "grid",
-            gridTemplateColumns: "1fr 1fr",
+            gridTemplateColumns: "repeat(auto-fit, minmax(320px, 1fr))",
             gap: 64,
             alignItems: "center",
           }}
@@ -61,150 +65,154 @@ export default function ServicioArmadoPC({ imageUrl }) {
                 borderRadius: 99,
                 padding: "8px 16px",
                 marginBottom: 24,
+                border: "1px solid rgba(255,255,255,0.1)"
               }}
             >
-              <span style={{ fontSize: 24, marginRight: 8 }}>🖥️</span>
-              <span style={{ color: "#fff", fontSize: 14, fontWeight: 600, letterSpacing: 1 }}>
-                ARMADO PERSONALIZADO
+              <span style={{ fontSize: 20 }}>🖥️</span>
+              <span style={{ fontSize: 13, fontWeight: 700, letterSpacing: 1, textTransform: "uppercase" }}>
+                Armado de PC a Medida
               </span>
             </div>
 
             <h1
               style={{
-                fontSize: 52,
-                fontWeight: 700,
-                color: "#fff",
+                fontSize: "clamp(32px, 5vw, 56px)",
+                fontWeight: 900,
                 marginBottom: 20,
                 lineHeight: 1.1,
-                fontFamily: "'Space Grotesk', sans-serif",
+                letterSpacing: "-1px"
               }}
             >
-              Armamos la PC <span style={{ color: "#00d4ff" }}">que necesitás</span>
+              Armamos la PC <span style={{ color: "#00d4ff" }}>que necesitás</span>
             </h1>
 
             <p
               style={{
                 fontSize: 18,
-                color: "rgba(255,255,255,0.85)",
+                color: "rgba(255,255,255,0.7)",
                 marginBottom: 32,
                 maxWidth: 520,
-                lineHeight: 1.7,
-                fontFamily: "'DM Sans', sans-serif",
+                lineHeight: 1.6
               }}
             >
-              ¿Necesitás una PC para gaming, trabajo de oficina, diseño o edición de video? Te asesoramos y armamos la配置 perfecta para vos, con los mejores componentes y al mejor precio.
+              ¿Buscás una PC para gaming, diseño, edición o simplemente para trabajar rápido? Te asesoramos en la elección de cada componente para que tengas el mejor rendimiento por tu inversión.
             </p>
 
-            <div style={{ display: "flex", gap: 16, flexWrap: "wrap", marginBottom: 32 }}>
-              <div style={{ display: "flex", alignItems: "center", gap: 8, color: "#fff" }}>
-                <span style={{ color: "#2dfc52" }}>✓</span>
-                <span style={{ fontFamily: "'DM Sans', sans-serif" }}>Asesoría gratuita</span>
-              </div>
-              <div style={{ display: "flex", alignItems: "center", gap: 8, color: "#fff" }}>
-                <span style={{ color: "#2dfc52" }}>✓</span>
-                <span style={{ fontFamily: "'DM Sans', sans-serif" }}>Mejor precio en componentes</span>
-              </div>
-              <div style={{ display: "flex", alignItems: "center", gap: 8, color: "#fff" }}>
-                <span style={{ color: "#2dfc52" }}>✓</span>
-                <span style={{ fontFamily: "'DM Sans', sans-serif" }}>Garantía propia</span>
-              </div>
+            <div style={{ display: "flex", gap: 16, flexWrap: "wrap", marginBottom: 40 }}>
+              {["Asesoría profesional", "Presupuestos sin cargo", "Garantía escrita"].map(tag => (
+                <div key={tag} style={{ display: "flex", alignItems: "center", gap: 8 }}>
+                  <span style={{ color: "#2dfc52", fontSize: 18 }}>✓</span>
+                  <span style={{ color: "rgba(255,255,255,0.8)", fontSize: 15 }}>{tag}</span>
+                </div>
+              ))}
             </div>
 
             <a
-              href={getWhatsAppUrl("Hola, quiero armar una PC. Necesito asesoría sobre los componentes.")}
+              href={getWhatsAppUrl("Hola! Quiero armar una PC. ¿Me podrían pasar un presupuesto?")}
               target="_blank"
               rel="noopener noreferrer"
               style={{
                 background: "#00d4ff",
-                color: "#000",
-                fontWeight: 700,
+                color: "#0a0f1a",
+                fontWeight: 800,
                 fontSize: 16,
-                padding: "16px 32px",
-                borderRadius: 12,
+                padding: "18px 36px",
+                borderRadius: 14,
                 textDecoration: "none",
                 display: "inline-block",
-                fontFamily: "'DM Sans', sans-serif",
+                boxShadow: "0 8px 32px rgba(0,212,255,0.3)"
               }}
             >
-              Pedir Asesoría
+              Pedir Presupuesto Gratis
             </a>
           </div>
 
-          <div style={{ display: "flex", flexDirection: "column", gap: 16 }}>
+          <div style={{ display: "grid", gap: 16 }}>
             {[
-              { title: "Gaming", desc: "PC para jugar en alta calidad" },
-              { title: "Oficina", desc: "Equipos económicos y rápidos" },
-              { title: "Diseño/Edición", desc: "Potencia para trabajos exigentes" },
-              { title: "Básico", desc: "Ideal para tareas cotidianas" },
+              { title: "Gaming Pro", desc: "Máximo rendimiento para juegos competitivos y streaming.", icon: "🎮" },
+              { title: "Diseño & Edición", desc: "Potencia bruta para renders y procesamiento de video.", icon: "🎨" },
+              { title: "Home Office", desc: "Equipos rápidos y confiables para el trabajo diario.", icon: "🏠" },
             ].map((item, i) => (
               <div
                 key={i}
                 style={{
-                  background: "rgba(255,255,255,0.1)",
+                  background: "rgba(255,255,255,0.05)",
                   backdropFilter: "blur(20px)",
                   borderRadius: 20,
-                  padding: 28,
-                  border: "1px solid rgba(255,255,255,0.15)",
+                  padding: "24px 32px",
+                  border: "1px solid rgba(255,255,255,0.08)",
+                  display: "flex",
+                  gap: 20,
+                  alignItems: "center"
                 }}
               >
-                <h3 style={{ color: "#fff", fontSize: 22, fontWeight: 700, marginBottom: 8, fontFamily: "'Space Grotesk', sans-serif" }}>
-                  {item.title}
-                </h3>
-                <p style={{ color: "rgba(255,255,255,0.7)", fontFamily: "'DM Sans', sans-serif" }}>
-                  {item.desc}
-                </p>
+                <div style={{ fontSize: 32 }}>{item.icon}</div>
+                <div>
+                  <h3 style={{ fontSize: 20, fontWeight: 700, marginBottom: 4 }}>{item.title}</h3>
+                  <p style={{ color: "rgba(255,255,255,0.5)", fontSize: 14 }}>{item.desc}</p>
+                </div>
               </div>
             ))}
           </div>
         </div>
       </section>
 
-      <section style={{ padding: "80px 24px", background: "rgba(255,255,255,0.02)" }}>
+      {/* Características */}
+      <section style={{ padding: "100px 24px", background: "rgba(255,255,255,0.02)" }}>
         <div style={{ maxWidth: 1200, margin: "0 auto" }}>
-          <h2 style={{ color: "#fff", fontSize: 36, fontWeight: 700, marginBottom: 12, textAlign: "center", fontFamily: "'Space Grotesk', sans-serif" }}>
-            ¿Qué incluye el armado?
-          </h2>
-          <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))", gap: 20, marginTop: 40 }}>
+          <div style={{ textAlign: "center", marginBottom: 64 }}>
+            <h2 style={{ fontSize: "clamp(28px, 4vw, 42px)", fontWeight: 800, marginBottom: 16 }}>
+              ¿Por qué armarla en <span style={{ color: "#00d4ff" }}>TechnoStore</span>?
+            </h2>
+            <p style={{ color: "rgba(255,255,255,0.5)", fontSize: 18 }}>Más de 15 años de experiencia armando equipos de alto rendimiento</p>
+          </div>
+
+          <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))", gap: 24 }}>
             {[
-              "Asesoría personalizada según tu besoin",
-              "Selección de componentes de calidad",
-              "Armado profesional y prolijo",
-              "Instalación de Windows y drivers",
-              "Pruebas de rendimiento y estabilidad",
-              "Gestión de cables para mejor airflow",
-              "Garantía en el armado completo",
-              "Soporte post-venta",
-            ].map((servicio, i) => (
-              <div key={i} style={{ background: "rgba(255,255,255,0.05)", borderRadius: 16, padding: 24, border: "1px solid rgba(255,255,255,0.1)" }}>
-                <span style={{ color: "#00d4ff", marginRight: 8 }}>✓</span>
-                <span style={{ color: "#fff", fontFamily: "'DM Sans', sans-serif" }}>{servicio}</span>
+              { title: "Asesoría Real", desc: "No te vendemos lo más caro, sino lo que realmente necesitás para tu uso." },
+              { title: "Componentes Originales", desc: "Trabajamos con las mejores marcas del mercado con garantía oficial." },
+              { title: "Armado Premium", desc: "Gestión prolija de cables y optimización de flujo de aire para mayor vida útil." },
+              { title: "Software Listo", desc: "Te llevás la PC configurada con drivers actualizados y lista para usar." },
+            ].map((box, i) => (
+              <div key={i} style={{ padding: 32, background: "rgba(255,255,255,0.03)", borderRadius: 24, border: "1px solid rgba(255,255,255,0.05)" }}>
+                <h3 style={{ fontSize: 20, fontWeight: 700, marginBottom: 12, color: "#fff" }}>{box.title}</h3>
+                <p style={{ color: "rgba(255,255,255,0.45)", fontSize: 15, lineHeight: 1.6 }}>{box.desc}</p>
               </div>
             ))}
           </div>
         </div>
       </section>
 
-      <section style={{ padding: "80px 24px", background: "linear-gradient(135deg, #00d4ff 0%, #1a1a2e 100%)", textAlign: "center" }}>
-        <div style={{ maxWidth: 700, margin: "0 auto" }}>
-          <h2 style={{ color: "#fff", fontSize: 36, fontWeight: 700, marginBottom: 16, fontFamily: "'Space Grotesk', sans-serif" }}>
-            ¿Querés armarte una PC?
-          </h2>
-          <p style={{ color: "rgba(255,255,255,0.85)", marginBottom: 32, fontSize: 18, fontFamily: "'DM Sans', sans-serif" }}>
-            Te asesoramos sin cargo sobre qué配置 necesitás según tu presupuesto y uso.
+      {/* CTA Final */}
+      <section style={{ padding: "100px 24px", textAlign: "center", background: "linear-gradient(to bottom, transparent, rgba(0,212,255,0.05))" }}>
+        <div style={{ maxWidth: 800, margin: "0 auto" }}>
+          <h2 style={{ fontSize: 36, fontWeight: 900, marginBottom: 24 }}>¿Listo para dar el salto?</h2>
+          <p style={{ color: "rgba(255,255,255,0.6)", fontSize: 18, marginBottom: 40 }}>
+            Escribinos ahora y te pasamos un presupuesto detallado según lo que estés buscando.
           </p>
           <a
-            href={getWhatsAppUrl("Hola, quiero información para armar una PC. ¿Qué me recomiendan?")}
+            href={getWhatsAppUrl("Hola! Me gustaría armar una PC y quería ver qué opciones me recomiendan.")}
             target="_blank"
             rel="noopener noreferrer"
-            style={{ background: "#fff", color: "#000", fontWeight: 700, fontSize: 18, padding: "18px 40px", borderRadius: 12, textDecoration: "none", display: "inline-block", fontFamily: "'DM Sans', sans-serif" }}
+            style={{
+              background: "#2dfc52",
+              color: "#0a0f1a",
+              fontWeight: 800,
+              fontSize: 18,
+              padding: "20px 48px",
+              borderRadius: 16,
+              textDecoration: "none",
+              display: "inline-block",
+              boxShadow: "0 10px 40px rgba(45,252,82,0.2)"
+            }}
           >
-            Pedir Asesoría Gratis
+            Hablar con un técnico
           </a>
         </div>
       </section>
 
-      <footer style={{ padding: "40px 24px", background: "#050810", textAlign: "center" }}>
-        <p style={{ color: "rgba(255,255,255,0.5)", fontFamily: "'DM Sans', sans-serif" }}>© 2024 TechnoStore.</p>
+      <footer style={{ padding: "60px 24px", textAlign: "center", borderTop: "1px solid rgba(255,255,255,0.05)" }}>
+        <p style={{ color: "rgba(255,255,255,0.3)", fontSize: 14 }}>© 2024 TechnoStore — Av. Santa Fe 2844, CABA.</p>
       </footer>
     </div>
   );
