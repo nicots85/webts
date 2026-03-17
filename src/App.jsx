@@ -70,6 +70,8 @@ const NAV_LINKS = [
   { label: "Contacto", href: "#contacto" },
 ];
 
+const REPAIR_STATUS_URL = "#"; // URL pendiente del cliente
+
 const SERVICES = [
   {
     id: "apple",
@@ -78,7 +80,7 @@ const SERVICES = [
     subtitle: "MacBook · iPhone · iPad · iMac · Apple Watch",
     desc: "En TechnoStore trabajamos con productos Apple hace más de 10 años. Sabemos que tu MacBook o iPhone no es solo un equipo: es tu herramienta de trabajo, tus fotos, tus datos. Por eso los tratamos con el cuidado que merecen. Hacemos desde cambios de pantalla y batería hasta microsoldadura de componentes en placa lógica, reparación de Face ID, y ampliación de almacenamiento interno. Usamos repuestos de la más alta calidad disponible y, cuando es posible, originales Apple.",
     color: "#0d59f2",
-    img: "https://images.unsplash.com/photo-1517336714731-489689fd1ca8?w=800&q=80",
+    img: "/img/apple_service_1773640672618.png",
     items: ["Cambio de pantalla OLED/LCD con TrueTone", "Reemplazo de batería original y compatible", "Reparación de Face ID y Touch ID", "Microsoldadura en placa lógica (IC de carga, audio, etc.)", "Ampliación de almacenamiento NAND", "Diagnóstico gratuito · Reparaciones en el día"],
   },
   {
@@ -88,7 +90,7 @@ const SERVICES = [
     subtitle: "Samsung · Motorola · Xiaomi · Huawei · Todas las marcas",
     desc: "Se te rompió la pantalla, no carga, se apaga solo o le anda mal el audio? Traelo y en la gran mayoría de los casos te lo devolvemos reparado en el mismo día. Trabajamos con todas las marcas y modelos: Samsung Galaxy, Motorola, Xiaomi, Huawei y más. No hace falta turno previo para diagnóstico, es sin cargo y sin compromiso. Cuidamos tu información, siempre.",
     color: "#ff3b30",
-    img: "https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?w=800&q=80",
+    img: "/img/crea-una-imagen-para-un-banner-de-un-sitio-web-que-2.jpeg",
     items: ["Cambio de módulo de pantalla completo", "Reemplazo de batería gastada", "Reparación de pin de carga (USB-C / Lightning)", "Recuperación de equipos con daño por líquido", "Cámaras, micrófonos, parlantes y botones", "Diagnóstico sin cargo en el acto"],
   },
   {
@@ -98,7 +100,7 @@ const SERVICES = [
     subtitle: "PC de Escritorio · Notebooks · All in One",
     desc: "¿Tu compu no enciende, se cuelga o hace ruidos raros? Traela al local y te la revisamos. Reparamos computadoras de escritorio, notebooks de todas las marcas, y equipos All-in-One. Hacemos desde un simple formateo hasta reparación de motherboard, cambio de fuente, y solución de problemas de video. También hacemos backups de tus datos antes de cualquier intervención.",
     color: "#9c27b0",
-    img: "https://images.unsplash.com/photo-1591488320449-011701bb6704?w=800&q=80",
+    img: "/img/pc_general_1773640791199.png",
     items: ["Reparación de motherboard y componentes", "Mantenimiento térmico profundo (pasta térmica y limpieza)", "Solución a pantalla negra, reinicios y bluescreens", "Formateo con instalación limpia de Windows 10/11", "Backup seguro y recuperación de archivos", "Cambio de teclado, cargador y batería en notebooks"],
   },
   {
@@ -108,7 +110,7 @@ const SERVICES = [
     subtitle: "No tires tu compu vieja, nosotros la revivimos",
     desc: "¿Tu notebook tarda 10 minutos en arrancar? ¿Se traba con solo abrir el navegador? No la tires, traela. Con un cambio de disco rígido a SSD y una ampliación de memoria RAM, tu equipo puede quedar hasta 100 veces más rápido, sin exagerar. Clonamos tu disco para que no pierdas absolutamente nada: programas, archivos, contraseñas, todo queda igual pero volando.",
     color: "#2dfc52",
-    img: "https://images.unsplash.com/photo-1597838816882-4435b1977fbe?w=800&q=80",
+    img: "/img/upgrade_speed_1773640834807.png",
     items: ["Instalación de disco SSD (SATA o NVMe M.2)", "Ampliación de memoria RAM (DDR3 / DDR4 / DDR5)", "Clonación de disco (no perdés nada)", "Optimización completa del sistema operativo", "Limpieza de programas innecesarios y malware", "Te asesoramos sobre qué conviene para tu equipo"],
   },
   {
@@ -118,7 +120,7 @@ const SERVICES = [
     subtitle: "El problema más común en notebooks",
     desc: "Las bisagras rotas son de los problemas más frecuentes que vemos en el taller. Se rompen por el uso diario, por abrirla de un solo lado, o simplemente porque el plástico cede con el tiempo. No hace falta cambiar la notebook entera: nosotros reparamos o reemplazamos las bisagras, reconstruimos los plásticos rotos y reforzamos la estructura para que no vuelva a pasar.",
     color: "#ff9500",
-    img: "https://images.unsplash.com/photo-1496181133206-80ce9b88a853?w=800&q=80",
+    img: "/img/crea-una-imagen-para-un-banner-de-un-sitio-web-que-3.jpeg",
     items: ["Bisagras para HP, Lenovo, Asus, Acer, Dell y más", "Reconstrucción de plásticos y anclajes rotos", "Refuerzo estructural con resina de alta resistencia", "Reparación del marco y tapa de pantalla", "Repuestos de la más alta calidad disponible", "Garantía de 90 días en mano de obra"],
   },
   {
@@ -128,7 +130,7 @@ const SERVICES = [
     subtitle: "PlayStation · Xbox · Nintendo Switch",
     desc: "¿Tu PS4 suena como una turbina? ¿Tu PS5 se apaga sola? ¿Los joysticks de tu Switch hacen drift? Reparamos todo tipo de consolas de videojuegos. Hacemos mantenimiento preventivo, limpieza de metal líquido (el talón de Aquiles de la PS5), reballing de GPU, cambio de puerto HDMI, y reparación de lectora. Usamos las mejores herramientas y repuestos para que vuelvas a jugar tranquilo.",
     color: "#f20d59",
-    img: "https://images.unsplash.com/photo-1606144042614-b2417e99c4e3?w=800&q=80",
+    img: "/img/console_repair_1773640849993.png",
     items: ["Mantenimiento preventivo completo (limpieza + pasta térmica)", "Reballing profesional de GPU / APU", "Cambio de puerto HDMI (PS4 / PS5 / Xbox)", "Reparación de drift en joysticks (Switch / PS5)", "Cambio de metal líquido y pad térmico", "Reparación de lectora y problemas de software"],
   },
   {
@@ -138,7 +140,7 @@ const SERVICES = [
     subtitle: "iPad · Samsung Tab · Lenovo · Todas las marcas",
     desc: "Ya sea la tablet de tus hijos que se cayó al piso o el iPad que usás para trabajar, la reparamos. Cambiamos táctiles rotos, displays completos, baterías agotadas, y solucionamos problemas de software y carga. Trabajamos con iPads de todas las generaciones, Samsung Galaxy Tab, Lenovo y otras marcas.",
     color: "#0df2a6",
-    img: "https://images.unsplash.com/photo-1544244015-0df4b3ffc6b0?w=800&q=80",
+    img: "/img/crea-una-imagen-para-un-banner-de-un-sitio-web-que-4.jpeg",
     items: ["Cambio de cristal táctil (glass)", "Reemplazo de display LCD / OLED completo", "Baterías nuevas de alta duración", "Reparación de conector de carga", "Solución a bloqueos y problemas de software", "Diagnóstico sin cargo para todas las marcas"],
   },
   {
@@ -148,14 +150,28 @@ const SERVICES = [
     subtitle: "Epson · HP · Brother · Canon",
     desc: "¿Tu impresora mancha, no toma papel o directamente dejó de imprimir? Hacemos mantenimiento y reparación de impresoras hogareñas y de oficina. Destapamos cabezales, reseteamos almohadillas de tinta, instalamos sistemas continuos alternativos y solucionamos atascos de papel. Si estás pensando en instalar un sistema de tinta continua, también lo hacemos.",
     color: "#e6e6e6",
-    img: "https://images.unsplash.com/photo-1585776245991-cf89dd7fc73a?w=800&q=80",
+    img: "/img/crea-una-imagen-para-un-banner-de-un-sitio-web-que.jpeg",
     items: ["Destape de cabezales por ultrasonido y líquido", "Reseteo de almohadillas (waste ink pad)", "Instalación de sistema de tinta continua", "Reparación de toma/arrastre de papel", "Limpieza de rodillos y engranajes", "Calibración y alineación de inyectores"],
   },
 ];
 
 // ─── NAVBAR ───────────────────────────────────────────────────────────────────
 function NavBar({ activeSection }) {
-  const [open, setOpen] = useState(false);
+  const [mobileOpen, setMobileOpen] = useState(false);
+  const [servicesOpen, setServicesOpen] = useState(false);
+  const servicesTimeoutRef = useRef(null);
+
+  const SERVICE_NAV = NAV_LINKS.filter(l => 
+    !["#inicio", "#servicios", "#contacto"].includes(l.href)
+  );
+
+  function handleServicesEnter() {
+    if (servicesTimeoutRef.current) clearTimeout(servicesTimeoutRef.current);
+    setServicesOpen(true);
+  }
+  function handleServicesLeave() {
+    servicesTimeoutRef.current = setTimeout(() => setServicesOpen(false), 200);
+  }
 
   return (
     <header
@@ -177,49 +193,235 @@ function NavBar({ activeSection }) {
           display: "flex",
           alignItems: "center",
           justifyContent: "space-between",
-          gap: 24,
+          gap: 16,
         }}
       >
         <a href="#inicio" style={{ display: "flex", alignItems: "center", textDecoration: "none" }}>
           <img src="/img/LOGO BLANCO.png" alt="TechnoStore" style={{ height: 44, width: "auto" }} />
         </a>
 
-        <nav style={{ display: "flex", gap: 32, alignItems: "center" }}>
-          {NAV_LINKS.slice(0, 5).map((l) => (
+        <nav className="desktop-nav" style={{ display: "flex", gap: 24, alignItems: "center" }}>
+          <a
+            href="#inicio"
+            style={{
+              fontFamily: "'Space Grotesk', sans-serif",
+              fontSize: 14,
+              fontWeight: 500,
+              color: activeSection === "inicio" ? "#0d59f2" : "rgba(255,255,255,0.7)",
+              textDecoration: "none",
+              transition: "color 0.2s",
+            }}
+          >
+            Inicio
+          </a>
+
+          {/* Dropdown Servicios */}
+          <div
+            style={{ position: "relative" }}
+            onMouseEnter={handleServicesEnter}
+            onMouseLeave={handleServicesLeave}
+          >
             <a
-              key={l.href}
-              href={l.href}
+              href="#servicios"
               style={{
                 fontFamily: "'Space Grotesk', sans-serif",
                 fontSize: 14,
                 fontWeight: 500,
-                color: activeSection === l.href.replace("#", "") ? "#0d59f2" : "rgba(255,255,255,0.7)",
+                color: activeSection === "servicios" ? "#0d59f2" : "rgba(255,255,255,0.7)",
                 textDecoration: "none",
                 transition: "color 0.2s",
+                display: "flex",
+                alignItems: "center",
+                gap: 4,
+              }}
+            >
+              Servicios
+              <span style={{ fontSize: 10, transition: "transform 0.2s", transform: servicesOpen ? "rotate(180deg)" : "rotate(0)" }}>▼</span>
+            </a>
+            {servicesOpen && (
+              <div
+                style={{
+                  position: "absolute",
+                  top: "100%",
+                  left: "50%",
+                  transform: "translateX(-50%)",
+                  paddingTop: 12,
+                  zIndex: 100,
+                }}
+              >
+                <div
+                  style={{
+                    background: "rgba(10,15,26,0.97)",
+                    backdropFilter: "blur(20px)",
+                    border: "1px solid rgba(255,255,255,0.1)",
+                    borderRadius: 16,
+                    padding: "12px 8px",
+                    display: "grid",
+                    gridTemplateColumns: "1fr 1fr",
+                    gap: "4px 8px",
+                    minWidth: 380,
+                    boxShadow: "0 16px 48px rgba(0,0,0,0.5)",
+                    animation: "chatSlideUp 0.2s cubic-bezier(0.16, 1, 0.3, 1)",
+                  }}
+                >
+                  {SERVICE_NAV.map((l) => {
+                    const svc = SERVICES.find(s => `#${s.id}` === l.href);
+                    return (
+                      <a
+                        key={l.href}
+                        href={l.href}
+                        onClick={() => setServicesOpen(false)}
+                        style={{
+                          display: "flex",
+                          alignItems: "center",
+                          gap: 10,
+                          padding: "10px 14px",
+                          borderRadius: 10,
+                          textDecoration: "none",
+                          transition: "background 0.15s",
+                          color: "rgba(255,255,255,0.8)",
+                          fontSize: 13,
+                          fontFamily: "'Space Grotesk', sans-serif",
+                          fontWeight: 500,
+                        }}
+                        onMouseEnter={(e) => e.currentTarget.style.background = "rgba(255,255,255,0.06)"}
+                        onMouseLeave={(e) => e.currentTarget.style.background = "transparent"}
+                      >
+                        <span style={{ fontSize: 18 }}>{svc?.icon || "•"}</span>
+                        <span>{l.label}</span>
+                      </a>
+                    );
+                  })}
+                </div>
+              </div>
+            )}
+          </div>
+
+          <a
+            href="#contacto"
+            style={{
+              fontFamily: "'Space Grotesk', sans-serif",
+              fontSize: 14,
+              fontWeight: 500,
+              color: activeSection === "contacto" ? "#0d59f2" : "rgba(255,255,255,0.7)",
+              textDecoration: "none",
+              transition: "color 0.2s",
+            }}
+          >
+            Contacto
+          </a>
+        </nav>
+
+        <div style={{ display: "flex", gap: 10, alignItems: "center" }}>
+          <a
+            href={REPAIR_STATUS_URL}
+            target="_blank"
+            rel="noreferrer"
+            style={{
+              fontFamily: "'Space Grotesk', sans-serif",
+              background: "rgba(45,252,82,0.12)",
+              color: "#2dfc52",
+              fontWeight: 700,
+              fontSize: 13,
+              padding: "9px 18px",
+              borderRadius: 10,
+              textDecoration: "none",
+              whiteSpace: "nowrap",
+              border: "1px solid rgba(45,252,82,0.3)",
+              transition: "background 0.2s",
+            }}
+            onMouseEnter={(e) => e.currentTarget.style.background = "rgba(45,252,82,0.22)"}
+            onMouseLeave={(e) => e.currentTarget.style.background = "rgba(45,252,82,0.12)"}
+          >
+            🔍 Estado de Reparación
+          </a>
+          <a
+            href="#contacto"
+            style={{
+              fontFamily: "'Space Grotesk', sans-serif",
+              background: "#0d59f2",
+              color: "#fff",
+              fontWeight: 700,
+              fontSize: 14,
+              padding: "10px 22px",
+              borderRadius: 10,
+              textDecoration: "none",
+              whiteSpace: "nowrap",
+            }}
+          >
+            Agendar Turno
+          </a>
+        </div>
+
+        {/* Mobile hamburger */}
+        <button
+          className="mobile-menu-btn"
+          onClick={() => setMobileOpen(o => !o)}
+          style={{
+            display: "none",
+            background: "none",
+            border: "none",
+            color: "#fff",
+            fontSize: 24,
+            cursor: "pointer",
+            padding: 4,
+          }}
+        >
+          {mobileOpen ? "✕" : "☰"}
+        </button>
+      </div>
+
+      {/* Mobile menu */}
+      {mobileOpen && (
+        <div
+          className="mobile-menu"
+          style={{
+            display: "none",
+            background: "rgba(10,15,26,0.98)",
+            borderTop: "1px solid rgba(255,255,255,0.07)",
+            padding: "16px 24px 24px",
+          }}
+        >
+          {NAV_LINKS.map((l) => (
+            <a
+              key={l.href}
+              href={l.href}
+              onClick={() => setMobileOpen(false)}
+              style={{
+                display: "block",
+                padding: "10px 0",
+                fontSize: 15,
+                color: "rgba(255,255,255,0.75)",
+                textDecoration: "none",
+                fontFamily: "'Space Grotesk', sans-serif",
+                borderBottom: "1px solid rgba(255,255,255,0.05)",
               }}
             >
               {l.label}
             </a>
           ))}
-        </nav>
-
-        <a
-          href="#contacto"
-          style={{
-            fontFamily: "'Space Grotesk', sans-serif",
-            background: "#0d59f2",
-            color: "#fff",
-            fontWeight: 700,
-            fontSize: 14,
-            padding: "10px 22px",
-            borderRadius: 10,
-            textDecoration: "none",
-            whiteSpace: "nowrap",
-          }}
-        >
-          Agendar Turno
-        </a>
-      </div>
+          <a
+            href={REPAIR_STATUS_URL}
+            target="_blank"
+            rel="noreferrer"
+            style={{
+              display: "block",
+              textAlign: "center",
+              marginTop: 16,
+              background: "rgba(45,252,82,0.12)",
+              color: "#2dfc52",
+              fontWeight: 700,
+              fontSize: 14,
+              padding: "12px",
+              borderRadius: 10,
+              textDecoration: "none",
+              border: "1px solid rgba(45,252,82,0.3)",
+            }}
+          >
+            🔍 Estado de Reparación
+          </a>
+        </div>
+      )}
     </header>
   );
 }
@@ -347,6 +549,25 @@ function Hero() {
             >
               WhatsApp
             </a>
+            <a
+              href={REPAIR_STATUS_URL}
+              target="_blank"
+              rel="noreferrer"
+              style={{
+                fontFamily: "'Space Grotesk', sans-serif",
+                background: "rgba(45,252,82,0.1)",
+                color: "#2dfc52",
+                fontWeight: 700,
+                fontSize: 16,
+                padding: "14px 32px",
+                borderRadius: 12,
+                textDecoration: "none",
+                border: "1px solid rgba(45,252,82,0.3)",
+                boxShadow: "0 8px 32px rgba(45,252,82,0.15)",
+              }}
+            >
+              🔍 Consultar Reparación
+            </a>
           </div>
 
           <div style={{ display: "flex", gap: 40, marginTop: 48 }}>
@@ -384,10 +605,10 @@ function Hero() {
             }}
           >
             {[
-              "https://images.unsplash.com/photo-1517336714731-489689fd1ca8?w=1200&q=80",
-              "https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?w=1200&q=80",
-              "https://images.unsplash.com/photo-1591488320449-011701bb6704?w=1200&q=80",
-              "https://images.unsplash.com/photo-1606144042614-b2417e99c4e3?w=1200&q=80"
+              "/img/hero_lab_1_1773640631102.png",
+              "/img/hero_lab_2_1773640646478.png",
+              "/img/apple_service_1773640672618.png",
+              "/img/console_repair_1773640849993.png"
             ].map((src, i) => (
               <div key={i} style={{ width: "25%", height: "100%", position: "relative" }}>
                 <img
@@ -764,7 +985,7 @@ function SalesSection() {
         
         <div style={{ width: "100%", height: 500, background: "rgba(255,255,255,0.05)", borderRadius: 24, padding: 8, border: "1px solid rgba(255,255,255,0.1)", position: "relative", overflow: "hidden" }}>
           <img 
-            src="https://images.unsplash.com/photo-1601784551446-20c9e07cdbff?auto=format&fit=crop&q=80&w=1200" 
+            src="/img/realistic-modern-photo-of-a-modest-neighborhood-co-2.jpeg" 
             alt="Venta de equipos e insumos" 
             style={{ width: "100%", height: "100%", objectFit: "cover", borderRadius: 16 }}
           />
@@ -1382,8 +1603,15 @@ export default function App() {
         ::-webkit-scrollbar { width: 5px; }
         ::-webkit-scrollbar-track { background: transparent; }
         ::-webkit-scrollbar-thumb { background: rgba(255,255,255,0.1); border-radius: 3px; }
-        @media (max-width: 768px) {
-          nav { display: none !important; }
+        @media (max-width: 900px) {
+          .desktop-nav { display: none !important; }
+          .mobile-menu-btn { display: flex !important; }
+          .mobile-menu { display: block !important; }
+          div:has(> a[href='${REPAIR_STATUS_URL}']) > a { display: none !important; }
+        }
+        @media (min-width: 901px) {
+          .mobile-menu-btn { display: none !important; }
+          .mobile-menu { display: none !important; }
         }
         @keyframes slide {
           0% { transform: translateX(0); }
