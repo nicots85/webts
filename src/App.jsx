@@ -756,31 +756,44 @@ export default function App() {
           <>
             <style>{`
               @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700;900&display=swap');
+              @import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&display=swap');
+              
               *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
               html { scroll-behavior: smooth; }
-              body { background: #0a0f1a; color: #fff; font-family: 'Space Grotesk', sans-serif; min-height: 100vh; }
+              body { background: #0a0f1a; color: #fff; font-family: 'Space Grotesk', sans-serif; min-height: 100vh; overflow-x: hidden; }
               input::placeholder, textarea::placeholder { color: rgba(255,255,255,0.3); }
               ::-webkit-scrollbar { width: 5px; }
               ::-webkit-scrollbar-track { background: transparent; }
               ::-webkit-scrollbar-thumb { background: rgba(255,255,255,0.1); border-radius: 3px; }
+
+              /* Responsive Core */
               @media (max-width: 900px) {
                 .desktop-nav { display: none !important; }
                 .mobile-menu-btn { display: flex !important; }
-                .mobile-menu { display: block !important; }
+                .hero-container { grid-template-columns: 1fr !important; gap: 48px !important; text-align: center; }
+                .hero-content { display: flex; flexDirection: column; align-items: center; }
+                .hero-stats-grid { grid-template-columns: repeat(2, 1fr) !important; gap: 12px !important; }
+                .hero-actions { justify-content: center; }
+                section { padding: 60px 20px !important; }
+                .service-row { flex-direction: column !important; gap: 32px !important; }
+                .service-info { text-align: center; }
+                .service-items { grid-template-columns: 1fr !important; }
+                .service-img { height: 300px !important; }
               }
+
+              @media (max-width: 480px) {
+                .hero-stats-grid { grid-template-columns: 1fr !important; }
+                .hero-actions a { width: 100%; text-align: center; }
+                .service-img { height: 240px !important; }
+              }
+
               @media (min-width: 901px) {
                 .mobile-menu-btn { display: none !important; }
                 .mobile-menu { display: none !important; }
               }
+
               @keyframes slide {
                 0% { transform: translateX(0); }
-                20% { transform: translateX(0); }
-                25% { transform: translateX(-25%); }
-                45% { transform: translateX(-25%); }
-                50% { transform: translateX(-50%); }
-                70% { transform: translateX(-50%); }
-                75% { transform: translateX(-75%); }
-                95% { transform: translateX(-75%); }
                 100% { transform: translateX(0); }
               }
             `}</style>
@@ -792,32 +805,33 @@ export default function App() {
             {SERVICES.map((s, index) => (
               <section key={s.id} id={s.id} style={{ padding: "100px 24px", background: index % 2 === 0 ? "rgba(255,255,255,0.01)" : "transparent" }}>
                 <div style={{ maxWidth: 1000, margin: "0 auto" }}>
-                  <div style={{ display: "flex", flexDirection: index % 2 === 0 ? "row" : "row-reverse", alignItems: "center", gap: 64, flexWrap: "wrap" }}>
+                  <div className="service-row" style={{ display: "flex", flexDirection: index % 2 === 0 ? "row" : "row-reverse", alignItems: "center", gap: 64, flexWrap: "wrap" }}>
                     
-                    <div style={{ flex: 1, minWidth: 320 }}>
+                    <div className="service-info" style={{ flex: 1, minWidth: 280 }}>
                       <p style={{ color: s.color, fontWeight: 700, fontSize: 13, letterSpacing: 1, margin: "0 0 8px", background: `${s.color}15`, display: "inline-block", padding: "6px 14px", borderRadius: 99 }}>
                         {s.icon} {s.subtitle}
                       </p>
-                      <h2 style={{ fontFamily: "'Space Grotesk', sans-serif", fontSize: "clamp(32px, 4vw, 52px)", fontWeight: 900, color: "#fff", letterSpacing: "-1px", margin: "12px 0 20px", lineHeight: 1.1 }}>
+                      <h2 style={{ fontFamily: "'Space Grotesk', sans-serif", fontSize: "clamp(28px, 4vw, 52px)", fontWeight: 900, color: "#fff", letterSpacing: "-1px", margin: "12px 0 20px", lineHeight: 1.1 }}>
                         {s.title}
                       </h2>
-                      <p style={{ color: "rgba(255,255,255,0.65)", fontSize: 17, lineHeight: 1.7, marginBottom: 32 }}>{s.desc}</p>
-                      <ul style={{ listStyle: "none", padding: 0, margin: 0, display: "grid", gridTemplateColumns: "1fr 1fr", gap: "16px 24px" }}>
+                      <p style={{ color: "rgba(255,255,255,0.65)", fontSize: 16, lineHeight: 1.7, marginBottom: 32 }}>{s.desc}</p>
+                      <ul className="service-items" style={{ listStyle: "none", padding: 0, margin: 0, display: "grid", gridTemplateColumns: "1fr 1fr", gap: "12px 20px" }}>
                         {s.items.map((item) => (
-                          <li key={item} style={{ display: "flex", alignItems: "flex-start", gap: 10, color: "rgba(255,255,255,0.8)", fontSize: 14, lineHeight: 1.4 }}>
+                          <li key={item} style={{ display: "flex", alignItems: "flex-start", gap: 10, color: "rgba(255,255,255,0.8)", fontSize: 13.5, lineHeight: 1.4, textAlign: "left" }}>
                             <span style={{ color: s.color, fontSize: 16, marginTop: -2 }}>✓</span>
                             {item}
                           </li>
                         ))}
                       </ul>
-                      <a href="#contacto" style={{ display: "inline-block", background: s.color, color: ["#2dfc52"].includes(s.color) ? "#0a0f1a" : "#fff", fontFamily: "'Space Grotesk', sans-serif", fontWeight: 800, fontSize: 16, padding: "16px 36px", borderRadius: 14, textDecoration: "none", marginTop: 48, boxShadow: `0 8px 32px ${s.color}35` }}>
+                      <a href="#contacto" style={{ display: "inline-block", background: s.color, color: ["#2dfc52", "#e6e6e6"].includes(s.color.toLowerCase()) ? "#0a0f1a" : "#fff", fontFamily: "'Space Grotesk', sans-serif", fontWeight: 800, fontSize: 16, padding: "16px 36px", borderRadius: 14, textDecoration: "none", marginTop: 40, boxShadow: `0 8px 32px ${s.color}35` }}>
                         Agendar turno →
                       </a>
                     </div>
 
-                    <div style={{ flex: 1, minWidth: 320, position: "relative" }}>
+                    <div style={{ flex: 1, minWidth: 280, position: "relative" }}>
                       <div style={{ position: "absolute", inset: -20, background: `radial-gradient(circle at center, ${s.color}20 0%, transparent 70%)`, filter: "blur(40px)" }} />
                       <img 
+                        className="service-img"
                         src={s.img} 
                         alt={s.title}
                         style={{ width: "100%", height: 400, objectFit: "cover", borderRadius: 24, border: `1px solid ${s.color}40`, boxShadow: `0 24px 64px rgba(0,0,0,0.4), 0 0 0 1px rgba(255,255,255,0.05)`, position: "relative", zIndex: 1 }} 
