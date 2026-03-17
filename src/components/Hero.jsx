@@ -1,3 +1,5 @@
+import { REPAIR_STATUS_URL } from "../data/services";
+
 export default function Hero() {
   return (
     <section
@@ -95,20 +97,25 @@ export default function Hero() {
               Solicitar Diagnóstico
             </a>
             <a
-              href="#servicios"
+              href={REPAIR_STATUS_URL}
+              target="_blank"
+              rel="noreferrer"
               style={{
-                background: "rgba(255,255,255,0.08)",
-                color: "#fff",
-                fontWeight: 500,
+                background: "rgba(45,252,82,0.12)",
+                color: "#2dfc52",
+                fontWeight: 600,
                 fontSize: 16,
                 padding: "14px 28px",
                 borderRadius: 12,
                 textDecoration: "none",
                 fontFamily: "'DM Sans', sans-serif",
-                border: "1px solid rgba(255,255,255,0.15)",
+                border: "1px solid rgba(45,252,82,0.3)",
+                transition: "background 0.2s",
               }}
+              onMouseEnter={(e) => e.currentTarget.style.background = "rgba(45,252,82,0.22)"}
+              onMouseLeave={(e) => (e.currentTarget.style.background = "rgba(45,252,82,0.12)")}
             >
-              Ver Servicios
+              🔍 Consultar Reparación
             </a>
           </div>
         </div>

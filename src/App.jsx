@@ -14,9 +14,10 @@ import ServicioArmadoPC from "./pages/ServicioArmadoPC";
 import ServicioVentas from "./pages/ServicioVentas";
 import { IMAGENES_SERVICIOS } from "./data/images";
 
-const LOGO_B64 = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAA8wAAAJ+CAYAAABi9vxiAAAACXBIWXMAABcSAAAXEgFnn9JSAAAFgWlUWHRYTUw6Y29tLmFkb2JlLnhtcAAAAAAAPD94cGFja2V0IGJlZ2luPSLvu78iIGlkPSJXNU0wTXBDZWhpSHpyZVN6TlRjemtjOWQiPz4gPHg6eG1wbWV0YSB4bWxuczp4PSJhZG9iZTpuczptZXRhLyIgeDp4bXB0az0iQWRvYmUgWE1QIENvcmUgNi4wLWMwMDIgNzkuMTY0MzUyLCAyMDIwLzAxLzMwLTE1OjUwOjM4ICAgICAgICAiPiA8cmRmOlJERiB4bWxuczpyZGY9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkvMDIvMjItcmRmLXN5bnRheC1ucyMiPiA8cmRmOkRlc2NyaXB0aW9uIHJkZjphYm91dD0iIiB4bWxuczp4bXA9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC8iIHhtbG5zOmRjPSJodHRwOi8vcHVybC5vcmcvZGMvZWxlbWVudHMvMS4xLyIgeG1sbnM6cGhvdG9zaG9wPSJodHRwOi8vbnMuYWRvYmUuY29tL3Bob3Rvc2hvcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RFdnQ9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZUV2ZW50IyIgeG1wOkNyZWF0b3JUb29sPSJBZG9iZSBQaG90b3Nob3AgMjEuMSAoTWFjaW50b3NoKSIgeG1wOkNyZWF0ZURhdGU9IjIwMTktMDYtMjhUMDU6MDk6MzgtMDM6MDAiIHhtcDpNb2RpZnlEYXRlPSIyMDIwLTA0LTExVDA0OjAzOjMzLTAzOjAwIiB4bXA6TWV0YWRhdGFEYXRlPSIyMDIwLTA0LTExVDA0OjAzOjMzLTAzOjAwIiBkYzpmb3JtYXQ9ImltYWdlL3BuZyIgcGhvdG9zaG9wOkNvbG9yTW9kZT0iMyIgcGhvdG9zaG9wOklDQ1Byb2ZpbGU9InNSR0IgSUVDNjE5NjYtMi4xIiB4bXBNTTpJbnN0YW5jZUlEPSJ4bXAuaWlkOjM4ZjJiOWM5LTZmYjItNDNlYy1hNTQ2LWNmMTJlZjVlYzRiMyIgeG1wTU06RG9jdW1lbnRJRD0iYWRvYmU6ZG9jaWQ6cGhvdG9zaG9wOjFlNWFkNjkxLTI3YmItOTU0OS05MmE2LTgxZmI2Nzk5ZTJjMSIgeG1wTU06T3JpZ2luYWxEb2N1bWVudElEPSJ4bXAuZGlkOmVmOWI5MDk0LTUwNTAtNGY5NC1iNGEzLWMyYTc3OTFmYjMzYyI+IDx4bXBNTTpIaXN0b3J5PiA8cmRmOlNlcT4gPHJkZjpsaSBzdEV2dDphY3Rpb249ImNyZWF0ZWQiIHN0RXZ0Omluc3RhbmNlSUQ9InhtcC5paWQ6ZWY5YjkwOTQtNTA1MC00Zjk0LWI0YTMtYzJhNzc5MWZiMzNjIiBzdEV2dDp3aGVuPSIyMDE5LTA2LTI4VDA1OjA5OjM4LTAzOjAwIiBzdEV2dDpzb2Z0d2FyZUFnZW50PSJBZG9iZSBQaG90b3Nob3AgMjEuMSAoTWFjaW50b3NoKSIvPiA8cmRmOmxpIHN0RXZ0OmFjdGlvbj0ic2F2ZWQiIHN0RXZ0Omluc3RhbmNlSUQ9InhtcC5paWQ6MzhmMmI5YzktNmZiMi00M2VjLWE1NDYtY2YxMmVmNWVjNGIzIiBzdEV2dDp3aGVuPSIyMDIwLTA0LTExVDA0OjAzOjMzLTAzOjAwIiBzdEV2dDpzb2Z0d2FyZUFnZW50PSJBZG9iZSBQaG90b3Nob3AgMjEuMSAoTWFjaW50b3NoKSIgc3RFdnQ6Y2hhbmdlZD0iLyIvPiA8L3JkZjpTZXE+IDwveG1wTU06SGlzdG9yeT4gPC9yZGY6RGVzY3JpcHRpb24+IDwvcmRmOlJERj4gPC94OnhtcG1ldGE+IDw/eHBhY2tldCBlbmQ9InIiPz6bJKqNAAB4qklEQVR42tz9d5xdV3Xwj7/22af3mftemVGXZFnuveEGLhhMCyFAgIQkJCGN9EISSJ4QCCFACB0CBkxzw71gy7JsWb1Lo5HmnpnenXP2Xr8/ztGM5CbbKqvk/X7e13NvOWvvs/faa6/1WQq99NJLL7300ksvvfTSSy+99NJLL7300ksvvfTSSy+99NJLL7300ksvvfTSSy+99NJLL7300ksvvfTSSy+99NJLL7300ksvvfTSSy+99NJLL7300ksvvfTSSy+99NJLL7300ksvvfTSSy+99NJLL7300ksvvfTSSy+99NJLL7300ksvvfTSSy+99NJLL7300ksvvfTSSy+99NJLL7300ksvvfTSSy+99NJLL7300ksvvfTSSy+99NJLL7300ksvvfTSSy+99NJLL7300ksvvfTSSy+99NJLL7300ksvvfTSSy+99NJLL7300ksvvfTSSy+99NJLL7300ksvvfTSSy+99NJLL7300ksvvfTSSy+99NJLL7300ksvvfTSSy+99NJLL7300ksvvfTSSy+99NJLL7300ksvvfTSSy+99NJLL7300ksvvfTSSy+99NJLL7300ksvvfTSSy+99NJLL7300ksvvfTSSy+99NJLL7300ksvvfTSSy+99NJLL7300ksvvfTSSy+99NJLL7300ksvvfTSSy+99NJLL7300ksvvfTSSy+99NJLL7300ksvvfTSSy+99NJLL7300ksvvfTSSy+99NJLL7300ksvvfTSSy+99NJLL7300ksvvfTSSy+99NJLL7300ksvvfTSSy+99NJLL7300ksvvfTSSy+99NJLL7300ksvvfTSSy+99NJLL7300ksvvfTSSy+99NJLL7300ksvvfTSSy+99NJLL7300ksvvfTSSy+99NJLL7300ksvvfTSSy+99NJLL7300ksvvfTSSy+99NJLL7300ksvvfTSSy+99NJLL7300ksvvfTSSy+99NJLL7300ksvvfTSSy+99NJLL7300ksvvfTSSy+99NJLL7300ksvvfTSSy+99NJLL7300ksvvfTSSy+99NJLL7300ksvvfTSSy+99NJLL7300ksvvfTSSy+99NJLL7300ksvvfTSSy+99NJLL7300ksvvfTSSy+99NJLL7300ksvvfTSSy+99NJLL7300ksvvfTSSy+99NJLL7300ksvvfTSSy+99NJLL7300ksvvfTSSy+99NJLL7300ksvvfTSSy+99NJLL7300ksvvfTSSy+99NJLL7300ksvvfTSSy+99NJLL7300ksvvfTSSy+99NJLL7300ksvvfTSSy+99NJLL7300ksvvfTSSy+99NJLL7300ksvvfTSSy+99NJLL7300ksvvfTSSy+99NJLL7300ksvvfTSSy+99NJLL7300ksvvfTSSy+99NJLL7300ksvvfTSSy+99NJLL7300ksvvfTSSy+99NJLL7300ksvvfTSSy+99NJLL7300ksvvfTSSy+99NJLL7300ksvvfTSSy+99NJLL7300ksvvfTSSy+99NJLL7300ksvvfTSSy+99NJLL7300ksvvfTSSy+99NJLL7300ksvvfTSSy+99NJLL7300ksvvfTSSy+99NJLL7300ksvvfTSSy+99NJLL7300ksvvfTSSy+99NJLL7300ksvvfTSSy+99NJLL7300ksvvfTSSy+99NJLL7300ksvvfTSSy+99NJLL7300ksvvfTSSy+99NJLL7300ksvvfTSSy+99NJLL7300ksvvfTSSy+99NJLL7300ksvvfTSSy+99NJLL7300ksvvfTSSy+99NJL";
-
-const WHATSAPP_NUMBER = "5491127650658";
+// Importar Componentes y Datos centralizados
+import NavBar from "./components/Navbar";
+import Hero from "./components/Hero";
+import { SERVICES, REPAIR_STATUS_URL, WHATSAPP_NUMBER } from "./data/services";
 
 // ─── SISTEMA DEL CHATBOT ───────────────────────────────────────────────────
 const BOT_SYSTEM = `Sos el asistente virtual de TechnoStore, un servicio técnico de barrio con más de 15 años de experiencia en Buenos Aires. Respondés en español rioplatense, de manera amigable, directa y concisa.
@@ -54,611 +55,8 @@ function buildWhatsAppLink(name, device, brand, model, problem) {
   return `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(text)}`;
 }
 
-const NAV_LINKS = [
-  { label: "Inicio", href: "#inicio" },
-  { label: "Servicios", href: "#servicios" },
-  { label: "Apple", href: "#apple" },
-  { label: "Celulares", href: "#celulares" },
-  { label: "Computadoras", href: "#computadoras" },
-  { label: "Upgrades", href: "#upgrades" },
-  { label: "Bisagras", href: "#bisagras" },
-  { label: "Consolas", href: "#consolas" },
-  { label: "Tablets", href: "#tablets" },
-  { label: "Impresoras", href: "#impresoras" },
-  { label: "Armado PC", href: "#armado" },
-  { label: "Ventas", href: "#ventas" },
-  { label: "Contacto", href: "#contacto" },
-];
+// ─── COMPONENTES SECUNDARIOS ───────────────────────────────────────────────────
 
-const REPAIR_STATUS_URL = "#"; // URL pendiente del cliente
-
-const SERVICES = [
-  {
-    id: "apple",
-    icon: "🍏",
-    title: "Servicio Técnico Apple",
-    subtitle: "MacBook · iPhone · iPad · iMac · Apple Watch",
-    desc: "En TechnoStore trabajamos con productos Apple hace más de 10 años. Sabemos que tu MacBook o iPhone no es solo un equipo: es tu herramienta de trabajo, tus fotos, tus datos. Por eso los tratamos con el cuidado que merecen. Hacemos desde cambios de pantalla y batería hasta microsoldadura de componentes en placa lógica, reparación de Face ID, y ampliación de almacenamiento interno. Usamos repuestos de la más alta calidad disponible y, cuando es posible, originales Apple.",
-    color: "#0d59f2",
-    img: "/img/apple_service_1773640672618.png",
-    items: ["Cambio de pantalla OLED/LCD con TrueTone", "Reemplazo de batería original y compatible", "Reparación de Face ID y Touch ID", "Microsoldadura en placa lógica (IC de carga, audio, etc.)", "Ampliación de almacenamiento NAND", "Diagnóstico gratuito · Reparaciones en el día"],
-  },
-  {
-    id: "celulares",
-    icon: "📱",
-    title: "Reparación de Celulares",
-    subtitle: "Samsung · Motorola · Xiaomi · Huawei · Todas las marcas",
-    desc: "Se te rompió la pantalla, no carga, se apaga solo o le anda mal el audio? Traelo y en la gran mayoría de los casos te lo devolvemos reparado en el mismo día. Trabajamos con todas las marcas y modelos: Samsung Galaxy, Motorola, Xiaomi, Huawei y más. No hace falta turno previo para diagnóstico, es sin cargo y sin compromiso. Cuidamos tu información, siempre.",
-    color: "#ff3b30",
-    img: "/img/crea-una-imagen-para-un-banner-de-un-sitio-web-que-2.jpeg",
-    items: ["Cambio de módulo de pantalla completo", "Reemplazo de batería gastada", "Reparación de pin de carga (USB-C / Lightning)", "Recuperación de equipos con daño por líquido", "Cámaras, micrófonos, parlantes y botones", "Diagnóstico sin cargo en el acto"],
-  },
-  {
-    id: "computadoras",
-    icon: "💻",
-    title: "Computadoras y Notebooks",
-    subtitle: "PC de Escritorio · Notebooks · All in One",
-    desc: "¿Tu compu no enciende, se cuelga o hace ruidos raros? Traela al local y te la revisamos. Reparamos computadoras de escritorio, notebooks de todas las marcas, y equipos All-in-One. Hacemos desde un simple formateo hasta reparación de motherboard, cambio de fuente, y solución de problemas de video. También hacemos backups de tus datos antes de cualquier intervención.",
-    color: "#9c27b0",
-    img: "/img/pc_general_1773640791199.png",
-    items: ["Reparación de motherboard y componentes", "Mantenimiento térmico profundo (pasta térmica y limpieza)", "Solución a pantalla negra, reinicios y bluescreens", "Formateo con instalación limpia de Windows 10/11", "Backup seguro y recuperación de archivos", "Cambio de teclado, cargador y batería en notebooks"],
-  },
-  {
-    id: "upgrades",
-    icon: "⚡",
-    title: "Upgrade de Velocidad",
-    subtitle: "No tires tu compu vieja, nosotros la revivimos",
-    desc: "¿Tu notebook tarda 10 minutos en arrancar? ¿Se traba con solo abrir el navegador? No la tires, traela. Con un cambio de disco rígido a SSD y una ampliación de memoria RAM, tu equipo puede quedar hasta 100 veces más rápido, sin exagerar. Clonamos tu disco para que no pierdas absolutamente nada: programas, archivos, contraseñas, todo queda igual pero volando.",
-    color: "#2dfc52",
-    img: "/img/upgrade_speed_1773640834807.png",
-    items: ["Instalación de disco SSD (SATA o NVMe M.2)", "Ampliación de memoria RAM (DDR3 / DDR4 / DDR5)", "Clonación de disco (no perdés nada)", "Optimización completa del sistema operativo", "Limpieza de programas innecesarios y malware", "Te asesoramos sobre qué conviene para tu equipo"],
-  },
-  {
-    id: "bisagras",
-    icon: "🔧",
-    title: "Reparación de Bisagras",
-    subtitle: "El problema más común en notebooks",
-    desc: "Las bisagras rotas son de los problemas más frecuentes que vemos en el taller. Se rompen por el uso diario, por abrirla de un solo lado, o simplemente porque el plástico cede con el tiempo. No hace falta cambiar la notebook entera: nosotros reparamos o reemplazamos las bisagras, reconstruimos los plásticos rotos y reforzamos la estructura para que no vuelva a pasar.",
-    color: "#ff9500",
-    img: "/img/crea-una-imagen-para-un-banner-de-un-sitio-web-que-3.jpeg",
-    items: ["Bisagras para HP, Lenovo, Asus, Acer, Dell y más", "Reconstrucción de plásticos y anclajes rotos", "Refuerzo estructural con resina de alta resistencia", "Reparación del marco y tapa de pantalla", "Repuestos de la más alta calidad disponible", "Garantía de 90 días en mano de obra"],
-  },
-  {
-    id: "consolas",
-    icon: "🎮",
-    title: "Reparación de Consolas",
-    subtitle: "PlayStation · Xbox · Nintendo Switch",
-    desc: "¿Tu PS4 suena como una turbina? ¿Tu PS5 se apaga sola? ¿Los joysticks de tu Switch hacen drift? Reparamos todo tipo de consolas de videojuegos. Hacemos mantenimiento preventivo, limpieza de metal líquido (el talón de Aquiles de la PS5), reballing de GPU, cambio de puerto HDMI, y reparación de lectora. Usamos las mejores herramientas y repuestos para que vuelvas a jugar tranquilo.",
-    color: "#f20d59",
-    img: "/img/console_repair_1773640849993.png",
-    items: ["Mantenimiento preventivo completo (limpieza + pasta térmica)", "Reballing profesional de GPU / APU", "Cambio de puerto HDMI (PS4 / PS5 / Xbox)", "Reparación de drift en joysticks (Switch / PS5)", "Cambio de metal líquido y pad térmico", "Reparación de lectora y problemas de software"],
-  },
-  {
-    id: "tablets",
-    icon: "📱",
-    title: "Tablets e iPads",
-    subtitle: "iPad · Samsung Tab · Lenovo · Todas las marcas",
-    desc: "Ya sea la tablet de tus hijos que se cayó al piso o el iPad que usás para trabajar, la reparamos. Cambiamos táctiles rotos, displays completos, baterías agotadas, y solucionamos problemas de software y carga. Trabajamos con iPads de todas las generaciones, Samsung Galaxy Tab, Lenovo y otras marcas.",
-    color: "#0df2a6",
-    img: "/img/crea-una-imagen-para-un-banner-de-un-sitio-web-que-4.jpeg",
-    items: ["Cambio de cristal táctil (glass)", "Reemplazo de display LCD / OLED completo", "Baterías nuevas de alta duración", "Reparación de conector de carga", "Solución a bloqueos y problemas de software", "Diagnóstico sin cargo para todas las marcas"],
-  },
-  {
-    id: "impresoras",
-    icon: "🖨️",
-    title: "Servicio de Impresoras",
-    subtitle: "Epson · HP · Brother · Canon",
-    desc: "¿Tu impresora mancha, no toma papel o directamente dejó de imprimir? Hacemos mantenimiento y reparación de impresoras hogareñas y de oficina. Destapamos cabezales, reseteamos almohadillas de tinta, instalamos sistemas continuos alternativos y solucionamos atascos de papel. Si estás pensando en instalar un sistema de tinta continua, también lo hacemos.",
-    color: "#e6e6e6",
-    img: "/img/crea-una-imagen-para-un-banner-de-un-sitio-web-que.jpeg",
-    items: ["Destape de cabezales por ultrasonido y líquido", "Reseteo de almohadillas (waste ink pad)", "Instalación de sistema de tinta continua", "Reparación de toma/arrastre de papel", "Limpieza de rodillos y engranajes", "Calibración y alineación de inyectores"],
-  },
-];
-
-// ─── NAVBAR ───────────────────────────────────────────────────────────────────
-function NavBar({ activeSection }) {
-  const [mobileOpen, setMobileOpen] = useState(false);
-  const [servicesOpen, setServicesOpen] = useState(false);
-  const servicesTimeoutRef = useRef(null);
-
-  const SERVICE_NAV = NAV_LINKS.filter(l => 
-    !["#inicio", "#servicios", "#contacto"].includes(l.href)
-  );
-
-  function handleServicesEnter() {
-    if (servicesTimeoutRef.current) clearTimeout(servicesTimeoutRef.current);
-    setServicesOpen(true);
-  }
-  function handleServicesLeave() {
-    servicesTimeoutRef.current = setTimeout(() => setServicesOpen(false), 200);
-  }
-
-  return (
-    <header
-      style={{
-        position: "sticky",
-        top: 0,
-        zIndex: 50,
-        background: "rgba(10,15,26,0.85)",
-        backdropFilter: "blur(16px)",
-        borderBottom: "1px solid rgba(255,255,255,0.07)",
-      }}
-    >
-      <div
-        style={{
-          maxWidth: 1280,
-          margin: "0 auto",
-          padding: "0 24px",
-          height: 64,
-          display: "flex",
-          alignItems: "center",
-          justifyContent: "space-between",
-          gap: 16,
-        }}
-      >
-        <a href="#inicio" style={{ display: "flex", alignItems: "center", textDecoration: "none" }}>
-          <img src="/img/LOGO BLANCO.png" alt="TechnoStore" style={{ height: 44, width: "auto" }} />
-        </a>
-
-        <nav className="desktop-nav" style={{ display: "flex", gap: 24, alignItems: "center" }}>
-          <a
-            href="#inicio"
-            style={{
-              fontFamily: "'Space Grotesk', sans-serif",
-              fontSize: 14,
-              fontWeight: 500,
-              color: activeSection === "inicio" ? "#0d59f2" : "rgba(255,255,255,0.7)",
-              textDecoration: "none",
-              transition: "color 0.2s",
-            }}
-          >
-            Inicio
-          </a>
-
-          {/* Dropdown Servicios */}
-          <div
-            style={{ position: "relative" }}
-            onMouseEnter={handleServicesEnter}
-            onMouseLeave={handleServicesLeave}
-          >
-            <a
-              href="#servicios"
-              style={{
-                fontFamily: "'Space Grotesk', sans-serif",
-                fontSize: 14,
-                fontWeight: 500,
-                color: activeSection === "servicios" ? "#0d59f2" : "rgba(255,255,255,0.7)",
-                textDecoration: "none",
-                transition: "color 0.2s",
-                display: "flex",
-                alignItems: "center",
-                gap: 4,
-              }}
-            >
-              Servicios
-              <span style={{ fontSize: 10, transition: "transform 0.2s", transform: servicesOpen ? "rotate(180deg)" : "rotate(0)" }}>▼</span>
-            </a>
-            {servicesOpen && (
-              <div
-                style={{
-                  position: "absolute",
-                  top: "100%",
-                  left: "50%",
-                  transform: "translateX(-50%)",
-                  paddingTop: 12,
-                  zIndex: 100,
-                }}
-              >
-                <div
-                  style={{
-                    background: "rgba(10,15,26,0.97)",
-                    backdropFilter: "blur(20px)",
-                    border: "1px solid rgba(255,255,255,0.1)",
-                    borderRadius: 16,
-                    padding: "12px 8px",
-                    display: "grid",
-                    gridTemplateColumns: "1fr 1fr",
-                    gap: "4px 8px",
-                    minWidth: 380,
-                    boxShadow: "0 16px 48px rgba(0,0,0,0.5)",
-                    animation: "chatSlideUp 0.2s cubic-bezier(0.16, 1, 0.3, 1)",
-                  }}
-                >
-                  {SERVICE_NAV.map((l) => {
-                    const svc = SERVICES.find(s => `#${s.id}` === l.href);
-                    return (
-                      <a
-                        key={l.href}
-                        href={l.href}
-                        onClick={() => setServicesOpen(false)}
-                        style={{
-                          display: "flex",
-                          alignItems: "center",
-                          gap: 10,
-                          padding: "10px 14px",
-                          borderRadius: 10,
-                          textDecoration: "none",
-                          transition: "background 0.15s",
-                          color: "rgba(255,255,255,0.8)",
-                          fontSize: 13,
-                          fontFamily: "'Space Grotesk', sans-serif",
-                          fontWeight: 500,
-                        }}
-                        onMouseEnter={(e) => e.currentTarget.style.background = "rgba(255,255,255,0.06)"}
-                        onMouseLeave={(e) => e.currentTarget.style.background = "transparent"}
-                      >
-                        <span style={{ fontSize: 18 }}>{svc?.icon || "•"}</span>
-                        <span>{l.label}</span>
-                      </a>
-                    );
-                  })}
-                </div>
-              </div>
-            )}
-          </div>
-
-          <a
-            href="#contacto"
-            style={{
-              fontFamily: "'Space Grotesk', sans-serif",
-              fontSize: 14,
-              fontWeight: 500,
-              color: activeSection === "contacto" ? "#0d59f2" : "rgba(255,255,255,0.7)",
-              textDecoration: "none",
-              transition: "color 0.2s",
-            }}
-          >
-            Contacto
-          </a>
-        </nav>
-
-        <div style={{ display: "flex", gap: 10, alignItems: "center" }}>
-          <a
-            href={REPAIR_STATUS_URL}
-            target="_blank"
-            rel="noreferrer"
-            style={{
-              fontFamily: "'Space Grotesk', sans-serif",
-              background: "rgba(45,252,82,0.12)",
-              color: "#2dfc52",
-              fontWeight: 700,
-              fontSize: 13,
-              padding: "9px 18px",
-              borderRadius: 10,
-              textDecoration: "none",
-              whiteSpace: "nowrap",
-              border: "1px solid rgba(45,252,82,0.3)",
-              transition: "background 0.2s",
-            }}
-            onMouseEnter={(e) => e.currentTarget.style.background = "rgba(45,252,82,0.22)"}
-            onMouseLeave={(e) => e.currentTarget.style.background = "rgba(45,252,82,0.12)"}
-          >
-            🔍 Estado de Reparación
-          </a>
-          <a
-            href="#contacto"
-            style={{
-              fontFamily: "'Space Grotesk', sans-serif",
-              background: "#0d59f2",
-              color: "#fff",
-              fontWeight: 700,
-              fontSize: 14,
-              padding: "10px 22px",
-              borderRadius: 10,
-              textDecoration: "none",
-              whiteSpace: "nowrap",
-            }}
-          >
-            Agendar Turno
-          </a>
-        </div>
-
-        {/* Mobile hamburger */}
-        <button
-          className="mobile-menu-btn"
-          onClick={() => setMobileOpen(o => !o)}
-          style={{
-            display: "none",
-            background: "none",
-            border: "none",
-            color: "#fff",
-            fontSize: 24,
-            cursor: "pointer",
-            padding: 4,
-          }}
-        >
-          {mobileOpen ? "✕" : "☰"}
-        </button>
-      </div>
-
-      {/* Mobile menu */}
-      {mobileOpen && (
-        <div
-          className="mobile-menu"
-          style={{
-            display: "none",
-            background: "rgba(10,15,26,0.98)",
-            borderTop: "1px solid rgba(255,255,255,0.07)",
-            padding: "16px 24px 24px",
-          }}
-        >
-          {NAV_LINKS.map((l) => (
-            <a
-              key={l.href}
-              href={l.href}
-              onClick={() => setMobileOpen(false)}
-              style={{
-                display: "block",
-                padding: "10px 0",
-                fontSize: 15,
-                color: "rgba(255,255,255,0.75)",
-                textDecoration: "none",
-                fontFamily: "'Space Grotesk', sans-serif",
-                borderBottom: "1px solid rgba(255,255,255,0.05)",
-              }}
-            >
-              {l.label}
-            </a>
-          ))}
-          <a
-            href={REPAIR_STATUS_URL}
-            target="_blank"
-            rel="noreferrer"
-            style={{
-              display: "block",
-              textAlign: "center",
-              marginTop: 16,
-              background: "rgba(45,252,82,0.12)",
-              color: "#2dfc52",
-              fontWeight: 700,
-              fontSize: 14,
-              padding: "12px",
-              borderRadius: 10,
-              textDecoration: "none",
-              border: "1px solid rgba(45,252,82,0.3)",
-            }}
-          >
-            🔍 Estado de Reparación
-          </a>
-        </div>
-      )}
-    </header>
-  );
-}
-
-// ─── HERO ─────────────────────────────────────────────────────────────────────
-function Hero() {
-  return (
-    <section
-      id="inicio"
-      style={{
-        minHeight: "90vh",
-        display: "flex",
-        alignItems: "center",
-        padding: "80px 24px",
-        position: "relative",
-        overflow: "hidden",
-      }}
-    >
-      <div
-        style={{
-          position: "absolute",
-          inset: 0,
-          background:
-            "radial-gradient(ellipse 60% 50% at 30% 50%, rgba(13,89,242,0.18) 0%, transparent 70%), radial-gradient(ellipse 40% 40% at 80% 30%, rgba(45,252,82,0.12) 0%, transparent 70%)",
-          pointerEvents: "none",
-        }}
-      />
-
-      <div
-        style={{
-          maxWidth: 1280,
-          margin: "0 auto",
-          display: "grid",
-          gridTemplateColumns: "1fr 1fr",
-          gap: 64,
-          alignItems: "center",
-          width: "100%",
-          position: "relative",
-        }}
-      >
-        <div>
-          <div
-            style={{
-              display: "inline-flex",
-              alignItems: "center",
-              gap: 8,
-              background: "rgba(13,89,242,0.12)",
-              border: "1px solid rgba(13,89,242,0.3)",
-              borderRadius: 99,
-              padding: "6px 16px",
-              marginBottom: 28,
-            }}
-          >
-            <span style={{ color: "#0d59f2", fontSize: 12, fontWeight: 700, letterSpacing: 1 }}>
-              ✓ SERVICIO TÉCNICO ESPECIALIZADO
-            </span>
-          </div>
-
-          <h1
-            style={{
-              fontFamily: "'Space Grotesk', sans-serif",
-              fontWeight: 900,
-              fontSize: "clamp(38px, 5vw, 68px)",
-              lineHeight: 1.05,
-              letterSpacing: "-2px",
-              color: "#fff",
-              margin: "0 0 24px",
-            }}
-          >
-            Tu tecnología,{" "}
-            <span
-              style={{
-                background: "linear-gradient(90deg, #0d59f2 20%, #2dfc52 80%)",
-                WebkitBackgroundClip: "text",
-                WebkitTextFillColor: "transparent",
-              }}
-            >
-              reparada y mejorada
-            </span>
-          </h1>
-
-          <p
-            style={{
-              color: "rgba(255,255,255,0.65)",
-              fontSize: 18,
-              lineHeight: 1.7,
-              maxWidth: 480,
-              margin: "0 0 36px",
-            }}
-          >
-            Más de 15 años reparando celulares, computadoras, consolas, tablets e impresoras en el barrio.
-            Instalamos SSD, ampliamos RAM y le devolvemos la vida a tu equipo. Diagnóstico sin cargo.
-          </p>
-
-          <div style={{ display: "flex", gap: 16, flexWrap: "wrap" }}>
-            <a
-              href="#servicios"
-              style={{
-                fontFamily: "'Space Grotesk', sans-serif",
-                background: "#0d59f2",
-                color: "#fff",
-                fontWeight: 700,
-                fontSize: 16,
-                padding: "14px 32px",
-                borderRadius: 12,
-                textDecoration: "none",
-                boxShadow: "0 8px 32px rgba(13,89,242,0.35)",
-              }}
-            >
-              Ver Servicios
-            </a>
-            <a
-              href="#contacto"
-              style={{
-                fontFamily: "'Space Grotesk', sans-serif",
-                background: "rgba(255,255,255,0.07)",
-                color: "#fff",
-                fontWeight: 700,
-                fontSize: 16,
-                padding: "14px 32px",
-                borderRadius: 12,
-                textDecoration: "none",
-                border: "1px solid rgba(255,255,255,0.15)",
-              }}
-            >
-              WhatsApp
-            </a>
-            <a
-              href={REPAIR_STATUS_URL}
-              target="_blank"
-              rel="noreferrer"
-              style={{
-                fontFamily: "'Space Grotesk', sans-serif",
-                background: "rgba(45,252,82,0.1)",
-                color: "#2dfc52",
-                fontWeight: 700,
-                fontSize: 16,
-                padding: "14px 32px",
-                borderRadius: 12,
-                textDecoration: "none",
-                border: "1px solid rgba(45,252,82,0.3)",
-                boxShadow: "0 8px 32px rgba(45,252,82,0.15)",
-              }}
-            >
-              🔍 Consultar Reparación
-            </a>
-          </div>
-
-          <div style={{ display: "flex", gap: 40, marginTop: 48 }}>
-            {[
-              { n: "15+", label: "Años de experiencia" },
-              { n: "+15.000", label: "Equipos Reparados" },
-              { n: "100%", label: "Clientes satisfechos" },
-            ].map((s) => (
-              <div key={s.label}>
-                <div
-                  style={{
-                    fontFamily: "'Space Grotesk', sans-serif",
-                    fontSize: 28,
-                    fontWeight: 900,
-                    color: "#0d59f2",
-                    lineHeight: 1,
-                  }}
-                >
-                  {s.n}
-                </div>
-                <div style={{ fontSize: 13, color: "rgba(255,255,255,0.5)", marginTop: 4 }}>{s.label}</div>
-              </div>
-            ))}
-          </div>
-        </div>
-
-        <div style={{ position: "relative", height: 500, width: "100%", overflow: "hidden", borderRadius: 24, border: "1px solid rgba(255,255,255,0.1)", boxShadow: "0 20px 40px rgba(0,0,0,0.4)" }}>
-          <div
-            style={{
-              position: "absolute",
-              inset: 0,
-              display: "flex",
-              width: "400%",
-              animation: "slide 16s infinite cubic-bezier(0.8, 0, 0.2, 1)",
-            }}
-          >
-            {[
-              "/img/hero_lab_1_1773640631102.png",
-              "/img/hero_lab_2_1773640646478.png",
-              "/img/apple_service_1773640672618.png",
-              "/img/console_repair_1773640849993.png"
-            ].map((src, i) => (
-              <div key={i} style={{ width: "25%", height: "100%", position: "relative" }}>
-                <img
-                  src={src}
-                  alt={`TechnoStore Servicio ${i + 1}`}
-                  style={{ width: "100%", height: "100%", objectFit: "cover" }}
-                />
-                <div style={{ position: "absolute", inset: 0, background: "linear-gradient(to top, rgba(10,15,26,0.9) 0%, transparent 60%)" }} />
-              </div>
-            ))}
-          </div>
-
-          <div
-            style={{
-              position: "absolute",
-              bottom: 32,
-              left: 24,
-              right: 24,
-              background: "rgba(10,15,26,0.75)",
-              backdropFilter: "blur(12px)",
-              border: "1px solid rgba(45,252,82,0.3)",
-              borderRadius: 16,
-              padding: "16px 20px",
-              display: "flex",
-              alignItems: "center",
-              gap: 16,
-            }}
-          >
-            <span style={{ fontSize: 32 }}>⚡</span>
-            <div>
-              <div
-                style={{
-                  fontFamily: "'Space Grotesk', sans-serif",
-                  fontWeight: 700,
-                  color: "#2dfc52",
-                  fontSize: 14,
-                }}
-              >
-                Servicio Técnico Multimarca
-              </div>
-              <div style={{ fontSize: 12, color: "rgba(255,255,255,0.7)" }}>Reparaciones pensadas a cada medida</div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-  );
-}
-
-// ─── SERVICIOS GRID ───────────────────────────────────────────────────────────
 function Services() {
   return (
     <section id="servicios" style={{ padding: "100px 24px", background: "rgba(255,255,255,0.02)" }}>
@@ -763,9 +161,6 @@ function Services() {
   );
 }
 
-// ─── BUILD PC FORM ────────────────────────────────────────────────────────────
-
-// ─── BUILD PC FORM ────────────────────────────────────────────────────────────
 function BuildPCForm() {
   const [form, setForm] = useState({ name: "", use: "", budget: "", extraInfo: "" });
   const [sent, setSent] = useState(false);
@@ -977,7 +372,6 @@ function BuildPCForm() {
   );
 }
 
-// ─── SALES SECTION ───────────────────────────────────────────────────────────
 function SalesSection() {
   return (
     <section id="ventas" style={{ padding: "100px 24px", background: "rgba(255,255,255,0.02)" }}>
@@ -1031,7 +425,6 @@ function SalesSection() {
   );
 }
 
-// ─── CONTACT SECTION ──────────────────────────────────────────────────────────
 function ContactSection() {
   return (
     <section id="contacto" style={{ padding: "100px 24px", background: "rgba(255,255,255,0.01)" }}>
@@ -1081,7 +474,6 @@ function ContactSection() {
   );
 }
 
-// ─── FOOTER ───────────────────────────────────────────────────────────────────
 function Footer() {
   return (
     <footer
@@ -1172,7 +564,6 @@ function Footer() {
   );
 }
 
-// ─── CHATBOT IA ───────────────────────────────────────────────────────────────
 function Chatbot() {
   const [open, setOpen] = useState(false);
   const [messages, setMessages] = useState([
@@ -1207,7 +598,7 @@ function Chatbot() {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
-          model: "claude-sonnet-4-6",
+          model: "claude-3-5-sonnet-20240620",
           max_tokens: 400,
           system: BOT_SYSTEM,
           messages: newMessages.map((m) => ({ role: m.role, content: m.content })),
@@ -1233,18 +624,8 @@ function Chatbot() {
     setLoading(false);
   }
 
-  const QUICK_REPLIES = [
-    "Reparación Apple",
-    "Celulares Multimarca",
-    "Computadoras & Notebooks",
-    "Tablets e iPads",
-    "Impresoras Epson/HP",
-    "Otra consulta",
-  ];
-
   return (
     <>
-      {/* Botón flotante */}
       <button
         onClick={() => setOpen((o) => !o)}
         style={{
@@ -1270,13 +651,10 @@ function Chatbot() {
         }}
         onMouseEnter={(e) => (e.currentTarget.style.transform = "scale(1.1)")}
         onMouseLeave={(e) => (e.currentTarget.style.transform = "scale(1)")}
-        title="Chat con TechnoStore"
-        aria-label={open ? "Cerrar chat" : "Abrir chat"}
       >
         {open ? "✕" : "💬"}
       </button>
 
-      {/* Panel del chat */}
       {open && (
         <div
           style={{
@@ -1294,10 +672,8 @@ function Chatbot() {
             flexDirection: "column",
             overflow: "hidden",
             boxShadow: "0 24px 80px rgba(0,0,0,0.65), 0 0 0 1px rgba(13,89,242,0.15)",
-            animation: "chatSlideUp 0.25s cubic-bezier(0.16, 1, 0.3, 1)",
           }}
         >
-          {/* Header */}
           <div
             style={{
               padding: "14px 18px",
@@ -1328,396 +704,139 @@ function Chatbot() {
                 Asistente TechnoStore
               </div>
               <div style={{ display: "flex", alignItems: "center", gap: 5, marginTop: 2 }}>
-                <span
-                  style={{
-                    width: 7,
-                    height: 7,
-                    borderRadius: "50%",
-                    background: "#2dfc52",
-                    display: "inline-block",
-                    boxShadow: "0 0 6px #2dfc52",
-                  }}
-                />
+                <span style={{ width: 7, height: 7, borderRadius: "50%", background: "#2dfc52", display: "inline-block", boxShadow: "0 0 6px #2dfc52" }} />
                 <span style={{ fontSize: 11, color: "#2dfc52" }}>En línea · IA</span>
               </div>
             </div>
-            <button
-              onClick={() => setOpen(false)}
-              style={{
-                background: "none",
-                border: "none",
-                color: "rgba(255,255,255,0.4)",
-                cursor: "pointer",
-                fontSize: 18,
-                padding: 4,
-                lineHeight: 1,
-              }}
-            >
-              ✕
-            </button>
+            <button onClick={() => setOpen(false)} style={{ background: "none", border: "none", color: "rgba(255,255,255,0.4)", cursor: "pointer", fontSize: 18, padding: 4 }}>✕</button>
           </div>
 
-          {/* Mensajes */}
-          <div
-            style={{
-              flex: 1,
-              overflowY: "auto",
-              padding: "16px 14px",
-              display: "flex",
-              flexDirection: "column",
-              gap: 10,
-            }}
-          >
+          <div style={{ flex: 1, overflowY: "auto", padding: "16px 14px", display: "flex", flexDirection: "column", gap: 10 }}>
             {messages.map((m, i) => (
-              <div
-                key={i}
-                style={{
-                  display: "flex",
-                  justifyContent: m.role === "user" ? "flex-end" : "flex-start",
-                  alignItems: "flex-end",
-                  gap: 7,
-                }}
-              >
+              <div key={i} style={{ display: "flex", justifyContent: m.role === "user" ? "flex-end" : "flex-start", alignItems: "flex-end", gap: 7 }}>
                 {m.role === "assistant" && (
-                  <div
-                    style={{
-                      width: 26,
-                      height: 26,
-                      borderRadius: "50%",
-                      background: "linear-gradient(135deg, #0d59f2, #2dfc52)",
-                      display: "flex",
-                      alignItems: "center",
-                      justifyContent: "center",
-                      fontSize: 12,
-                      flexShrink: 0,
-                      marginBottom: 2,
-                    }}
-                  >
-                    🤖
-                  </div>
+                  <div style={{ width: 26, height: 26, borderRadius: "50%", background: "linear-gradient(135deg, #0d59f2, #2dfc52)", display: "flex", alignItems: "center", justifyContent: "center", fontSize: 12, flexShrink: 0, marginBottom: 2 }}>🤖</div>
                 )}
-                <div
-                  style={{
-                    maxWidth: "76%",
-                    padding: "10px 14px",
-                    borderRadius: 16,
-                    borderBottomRightRadius: m.role === "user" ? 4 : 16,
-                    borderBottomLeftRadius: m.role === "assistant" ? 4 : 16,
-                    background:
-                      m.role === "user"
-                        ? "linear-gradient(135deg, #0d59f2, #0a45c0)"
-                        : "rgba(255,255,255,0.07)",
-                    border: m.role === "assistant" ? "1px solid rgba(255,255,255,0.08)" : "none",
-                    fontSize: 13,
-                    color: "rgba(255,255,255,0.9)",
-                    lineHeight: 1.6,
-                    whiteSpace: "pre-wrap",
-                  }}
-                >
-                  {m.content}
-                </div>
+                <div style={{ background: m.role === "user" ? "#0d59f2" : "rgba(255,255,255,0.08)", color: "#fff", padding: "10px 14px", borderRadius: m.role === "user" ? "16px 16px 4px 16px" : "16px 16px 16px 4px", fontSize: 14, lineHeight: 1.5, maxWidth: "80%", border: m.role === "assistant" ? "1px solid rgba(255,255,255,0.1)" : "none" }}>{m.content}</div>
               </div>
             ))}
-
-            {/* Indicador de escritura */}
             {loading && (
-              <div style={{ display: "flex", justifyContent: "flex-start", alignItems: "flex-end", gap: 7 }}>
-                <div
-                  style={{
-                    width: 26,
-                    height: 26,
-                    borderRadius: "50%",
-                    background: "linear-gradient(135deg, #0d59f2, #2dfc52)",
-                    display: "flex",
-                    alignItems: "center",
-                    justifyContent: "center",
-                    fontSize: 12,
-                  }}
-                >
-                  🤖
-                </div>
-                <div
-                  style={{
-                    padding: "12px 16px",
-                    borderRadius: 16,
-                    borderBottomLeftRadius: 4,
-                    background: "rgba(255,255,255,0.07)",
-                    border: "1px solid rgba(255,255,255,0.08)",
-                    display: "flex",
-                    gap: 4,
-                    alignItems: "center",
-                  }}
-                >
-                  {[0, 1, 2].map((i) => (
-                    <span
-                      key={i}
-                      style={{
-                        width: 7,
-                        height: 7,
-                        borderRadius: "50%",
-                        background: "rgba(255,255,255,0.5)",
-                        display: "inline-block",
-                        animation: `typingDot 1.2s infinite ${i * 0.2}s`,
-                      }}
-                    />
-                  ))}
-                </div>
+              <div style={{ display: "flex", gap: 7, alignItems: "center", padding: "8px 12px", background: "rgba(255,255,255,0.05)", borderRadius: 12, width: "fit-content" }}>
+                <span style={{ fontSize: 12, color: "rgba(255,255,255,0.5)" }}>Escribiendo...</span>
               </div>
             )}
             <div ref={bottomRef} />
           </div>
 
-          {/* Quick replies (solo al inicio) */}
-          {messages.length <= 1 && (
-            <div
-              style={{
-                padding: "0 12px 10px",
-                display: "flex",
-                flexWrap: "wrap",
-                gap: 6,
-              }}
-            >
-              {QUICK_REPLIES.map((q) => (
-                <button
-                  key={q}
-                  onClick={() => sendMessage(q)}
-                  style={{
-                    background: "rgba(13,89,242,0.15)",
-                    border: "1px solid rgba(13,89,242,0.35)",
-                    borderRadius: 99,
-                    padding: "5px 11px",
-                    fontSize: 11,
-                    color: "rgba(255,255,255,0.75)",
-                    cursor: "pointer",
-                    fontFamily: "'Space Grotesk', sans-serif",
-                    transition: "background 0.15s",
-                  }}
-                  onMouseEnter={(e) => (e.currentTarget.style.background = "rgba(13,89,242,0.28)")}
-                  onMouseLeave={(e) => (e.currentTarget.style.background = "rgba(13,89,242,0.15)")}
-                >
-                  {q}
-                </button>
-              ))}
-            </div>
-          )}
-
-          {/* Input */}
-          <div
-            style={{
-              padding: "10px 12px 14px",
-              borderTop: "1px solid rgba(255,255,255,0.07)",
-              display: "flex",
-              gap: 8,
-              alignItems: "center",
-            }}
+          <form
+            onSubmit={(e) => { e.preventDefault(); sendMessage(); }}
+            style={{ padding: "16px", borderTop: "1px solid rgba(255,255,255,0.08)", background: "rgba(10,15,26,0.5)", display: "flex", gap: 10 }}
           >
             <input
               ref={inputRef}
               value={input}
               onChange={(e) => setInput(e.target.value)}
-              onKeyDown={(e) => {
-                if (e.key === "Enter" && !e.shiftKey) {
-                  e.preventDefault();
-                  sendMessage();
-                }
-              }}
               placeholder="Escribí tu consulta..."
-              disabled={loading}
-              style={{
-                flex: 1,
-                background: "rgba(255,255,255,0.06)",
-                border: "1px solid rgba(255,255,255,0.1)",
-                borderRadius: 10,
-                padding: "9px 13px",
-                color: "#fff",
-                fontSize: 13,
-                outline: "none",
-                fontFamily: "'Space Grotesk', sans-serif",
-              }}
+              style={{ flex: 1, background: "rgba(255,255,255,0.06)", border: "1px solid rgba(255,255,255,0.12)", borderRadius: 12, padding: "10px 14px", color: "#fff", outline: "none", fontSize: 14 }}
             />
-            <button
-              onClick={() => sendMessage()}
-              disabled={loading || !input.trim()}
-              style={{
-                width: 38,
-                height: 38,
-                borderRadius: 10,
-                background:
-                  loading || !input.trim()
-                    ? "rgba(13,89,242,0.2)"
-                    : "#0d59f2",
-                border: "none",
-                cursor: loading || !input.trim() ? "not-allowed" : "pointer",
-                display: "flex",
-                alignItems: "center",
-                justifyContent: "center",
-                color: "#fff",
-                fontSize: 17,
-                flexShrink: 0,
-                transition: "background 0.2s",
-              }}
-            >
-              ➤
-            </button>
-          </div>
+            <button type="submit" style={{ width: 40, height: 40, borderRadius: 10, background: "#0d59f2", border: "none", color: "#fff", cursor: "pointer", display: "flex", alignItems: "center", justifyContent: "center" }}>✈️</button>
+          </form>
         </div>
       )}
-
-      <style>{`
-        @keyframes chatSlideUp {
-          from { opacity: 0; transform: translateY(20px) scale(0.97); }
-          to   { opacity: 1; transform: translateY(0)    scale(1);    }
-        }
-        @keyframes typingDot {
-          0%, 60%, 100% { opacity: 0.3; transform: scale(0.85); }
-          30%            { opacity: 1;   transform: scale(1.15); }
-        }
-      `}</style>
     </>
   );
 }
 
-// ─── APP PRINCIPAL CON ROUTING ─────────────────────────────────────────────────
+// ─── APP PRINCIPAL ─────────────────────────────────────────────────────────────
 export default function App() {
   return (
     <BrowserRouter>
       <Routes>
-        {/* Página principal */}
         <Route path="/" element={
           <>
             <style>{`
-        @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700;900&display=swap');
-        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-        html { scroll-behavior: smooth; }
-        body {
-          background: #0a0f1a;
-          color: #fff;
-          font-family: 'Space Grotesk', sans-serif;
-          min-height: 100vh;
-        }
-        input::placeholder, textarea::placeholder { color: rgba(255,255,255,0.3); }
-        input:focus, textarea:focus {
-          border-color: rgba(13,89,242,0.5) !important;
-          box-shadow: 0 0 0 3px rgba(13,89,242,0.15) !important;
-        }
-        ::-webkit-scrollbar { width: 5px; }
-        ::-webkit-scrollbar-track { background: transparent; }
-        ::-webkit-scrollbar-thumb { background: rgba(255,255,255,0.1); border-radius: 3px; }
-        @media (max-width: 900px) {
-          .desktop-nav { display: none !important; }
-          .mobile-menu-btn { display: flex !important; }
-          .mobile-menu { display: block !important; }
-          div:has(> a[href='${REPAIR_STATUS_URL}']) > a { display: none !important; }
-        }
-        @media (min-width: 901px) {
-          .mobile-menu-btn { display: none !important; }
-          .mobile-menu { display: none !important; }
-        }
-        @keyframes slide {
-          0% { transform: translateX(0); }
-          20% { transform: translateX(0); }
-          25% { transform: translateX(-25%); }
-          45% { transform: translateX(-25%); }
-          50% { transform: translateX(-50%); }
-          70% { transform: translateX(-50%); }
-          75% { transform: translateX(-75%); }
-          95% { transform: translateX(-75%); }
-          100% { transform: translateX(0); }
-        }
-      `}</style>
+              @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700;900&display=swap');
+              *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+              html { scroll-behavior: smooth; }
+              body { background: #0a0f1a; color: #fff; font-family: 'Space Grotesk', sans-serif; min-height: 100vh; }
+              input::placeholder, textarea::placeholder { color: rgba(255,255,255,0.3); }
+              ::-webkit-scrollbar { width: 5px; }
+              ::-webkit-scrollbar-track { background: transparent; }
+              ::-webkit-scrollbar-thumb { background: rgba(255,255,255,0.1); border-radius: 3px; }
+              @media (max-width: 900px) {
+                .desktop-nav { display: none !important; }
+                .mobile-menu-btn { display: flex !important; }
+                .mobile-menu { display: block !important; }
+              }
+              @media (min-width: 901px) {
+                .mobile-menu-btn { display: none !important; }
+                .mobile-menu { display: none !important; }
+              }
+              @keyframes slide {
+                0% { transform: translateX(0); }
+                20% { transform: translateX(0); }
+                25% { transform: translateX(-25%); }
+                45% { transform: translateX(-25%); }
+                50% { transform: translateX(-50%); }
+                70% { transform: translateX(-50%); }
+                75% { transform: translateX(-75%); }
+                95% { transform: translateX(-75%); }
+                100% { transform: translateX(0); }
+              }
+            `}</style>
 
-      <NavBar activeSection="inicio" />
-      <Hero />
-      <Services />
+            <NavBar activeSection="inicio" />
+            <Hero />
+            <Services />
 
-      {SERVICES.map((s, index) => (
-        <section key={s.id} id={s.id} style={{ padding: "100px 24px", background: index % 2 === 0 ? "rgba(255,255,255,0.01)" : "transparent" }}>
-          <div style={{ maxWidth: 1000, margin: "0 auto" }}>
-            <div style={{ display: "flex", flexDirection: index % 2 === 0 ? "row" : "row-reverse", alignItems: "center", gap: 64, flexWrap: "wrap" }}>
-              
-              <div style={{ flex: 1, minWidth: 320 }}>
-                <p style={{ color: s.color, fontWeight: 700, fontSize: 13, letterSpacing: 1, margin: "0 0 8px", background: `${s.color}15`, display: "inline-block", padding: "6px 14px", borderRadius: 99 }}>
-                  {s.icon} {s.subtitle}
-                </p>
-                <h2
-                  style={{
-                    fontFamily: "'Space Grotesk', sans-serif",
-                    fontSize: "clamp(32px, 4vw, 48px)",
-                    fontWeight: 900,
-                    color: "#fff",
-                    letterSpacing: "-1px",
-                    margin: "12px 0 20px",
-                    lineHeight: 1.1
-                  }}
-                >
-                  {s.title}
-                </h2>
-                <p style={{ color: "rgba(255,255,255,0.65)", fontSize: 17, lineHeight: 1.7, marginBottom: 32 }}>{s.desc}</p>
-                <ul style={{ listStyle: "none", padding: 0, margin: 0, display: "grid", gridTemplateColumns: "1fr 1fr", gap: "16px 24px" }}>
-                  {s.items.map((item) => (
-                    <li
-                      key={item}
-                      style={{ display: "flex", alignItems: "flex-start", gap: 10, color: "rgba(255,255,255,0.8)", fontSize: 14, lineHeight: 1.4 }}
-                    >
-                      <span style={{ color: s.color, fontSize: 16, marginTop: -2 }}>✓</span>
-                      {item}
-                    </li>
-                  ))}
-                </ul>
-                <a
-                  href="#contacto"
-                  style={{
-                    display: "inline-block",
-                    background: s.color,
-                    color: ["#2dfc52"].includes(s.color) ? "#0a0f1a" : "#fff",
-                    fontFamily: "'Space Grotesk', sans-serif",
-                    fontWeight: 800,
-                    fontSize: 16,
-                    padding: "16px 36px",
-                    borderRadius: 14,
-                    textDecoration: "none",
-                    marginTop: 48,
-                    boxShadow: `0 8px 32px ${s.color}35`,
-                  }}
-                >
-                  Agendar turno →
-                </a>
-              </div>
+            {SERVICES.map((s, index) => (
+              <section key={s.id} id={s.id} style={{ padding: "100px 24px", background: index % 2 === 0 ? "rgba(255,255,255,0.01)" : "transparent" }}>
+                <div style={{ maxWidth: 1000, margin: "0 auto" }}>
+                  <div style={{ display: "flex", flexDirection: index % 2 === 0 ? "row" : "row-reverse", alignItems: "center", gap: 64, flexWrap: "wrap" }}>
+                    
+                    <div style={{ flex: 1, minWidth: 320 }}>
+                      <p style={{ color: s.color, fontWeight: 700, fontSize: 13, letterSpacing: 1, margin: "0 0 8px", background: `${s.color}15`, display: "inline-block", padding: "6px 14px", borderRadius: 99 }}>
+                        {s.icon} {s.subtitle}
+                      </p>
+                      <h2 style={{ fontFamily: "'Space Grotesk', sans-serif", fontSize: "clamp(32px, 4vw, 52px)", fontWeight: 900, color: "#fff", letterSpacing: "-1px", margin: "12px 0 20px", lineHeight: 1.1 }}>
+                        {s.title}
+                      </h2>
+                      <p style={{ color: "rgba(255,255,255,0.65)", fontSize: 17, lineHeight: 1.7, marginBottom: 32 }}>{s.desc}</p>
+                      <ul style={{ listStyle: "none", padding: 0, margin: 0, display: "grid", gridTemplateColumns: "1fr 1fr", gap: "16px 24px" }}>
+                        {s.items.map((item) => (
+                          <li key={item} style={{ display: "flex", alignItems: "flex-start", gap: 10, color: "rgba(255,255,255,0.8)", fontSize: 14, lineHeight: 1.4 }}>
+                            <span style={{ color: s.color, fontSize: 16, marginTop: -2 }}>✓</span>
+                            {item}
+                          </li>
+                        ))}
+                      </ul>
+                      <a href="#contacto" style={{ display: "inline-block", background: s.color, color: ["#2dfc52"].includes(s.color) ? "#0a0f1a" : "#fff", fontFamily: "'Space Grotesk', sans-serif", fontWeight: 800, fontSize: 16, padding: "16px 36px", borderRadius: 14, textDecoration: "none", marginTop: 48, boxShadow: `0 8px 32px ${s.color}35` }}>
+                        Agendar turno →
+                      </a>
+                    </div>
 
-              <div style={{ flex: 1, minWidth: 320, position: "relative" }}>
-                <div style={{ position: "absolute", inset: -20, background: `radial-gradient(circle at center, ${s.color}20 0%, transparent 70%)`, filter: "blur(40px)" }} />
-                <img 
-                  src={s.img} 
-                  alt={s.title}
-                  style={{ 
-                    width: "100%", 
-                    height: 400, 
-                    objectFit: "cover", 
-                    borderRadius: 24, 
-                    border: `1px solid ${s.color}40`,
-                    boxShadow: `0 24px 64px rgba(0,0,0,0.4), 0 0 0 1px rgba(255,255,255,0.05)`,
-                    position: "relative",
-                    zIndex: 1
-                  }} 
-                />
-              </div>
+                    <div style={{ flex: 1, minWidth: 320, position: "relative" }}>
+                      <div style={{ position: "absolute", inset: -20, background: `radial-gradient(circle at center, ${s.color}20 0%, transparent 70%)`, filter: "blur(40px)" }} />
+                      <img 
+                        src={s.img} 
+                        alt={s.title}
+                        style={{ width: "100%", height: 400, objectFit: "cover", borderRadius: 24, border: `1px solid ${s.color}40`, boxShadow: `0 24px 64px rgba(0,0,0,0.4), 0 0 0 1px rgba(255,255,255,0.05)`, position: "relative", zIndex: 1 }} 
+                        onError={(e) => { e.target.src = "/img/crea-una-imagen-para-un-banner-de-un-sitio-web-que.jpeg"; }}
+                      />
+                    </div>
+                  </div>
+                </div>
+              </section>
+            ))}
 
-            </div>
-          </div>
-        </section>
-      ))}
-
-      <BuildPCForm />
-      <SalesSection />
-      <ContactSection />
-      <Footer />
-
-      {/* Chatbot flotante con IA */}
-      <Chatbot />
+            <BuildPCForm />
+            <SalesSection />
+            <ContactSection />
+            <Footer />
+            <Chatbot />
           </>
-        )}
+        } />
 
-        {/* Landing pages individuales */}
         <Route path="/apple" element={<ServicioApple imageUrl={IMAGENES_SERVICIOS.apple.hero} />} />
         <Route path="/celulares" element={<ServicioCelulares imageUrl={IMAGENES_SERVICIOS.celulares.hero} />} />
         <Route path="/computadoras" element={<ServicioComputadoras imageUrl={IMAGENES_SERVICIOS.computadoras.hero} />} />
