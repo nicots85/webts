@@ -8,7 +8,7 @@ export const IMAGENES_SERVICIOS = {
   },
   celulares: {
     hero: "https://images.unsplash.com/photo-1597740985671-2a8a3b80502e?auto=format&fit=crop&q=80&w=1200",
-    desc: "Smartphone de alta gama ultra nítido"
+    desc: "Smartphone de alta gama desarmado ultra nítido"
   },
   computadoras: {
     hero: "https://images.unsplash.com/photo-1588872657578-7efd1f1555ed?auto=format&fit=crop&q=80&w=1200",
@@ -19,8 +19,8 @@ export const IMAGENES_SERVICIOS = {
     desc: "Módulos de memoria y procesador"
   },
   bisagras: {
-    hero: "https://images.unsplash.com/photo-1589114420063-4ba6fccce566?auto=format&fit=crop&q=80&w=1200",
-    desc: "Detalle técnico de mecanismo de notebook"
+    hero: "https://images.unsplash.com/photo-1593642632559-0c6d3df62b39?auto=format&fit=crop&q=80&w=1200",
+    desc: "Laptop con detalle de estructura mecánica avanzada"
   },
   consolas: {
     hero: "https://images.unsplash.com/photo-1606144042614-b2417e99c4e3?auto=format&fit=crop&q=80&w=1200",
