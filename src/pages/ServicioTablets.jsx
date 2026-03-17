@@ -1,6 +1,6 @@
 // Landing page para Tablets e iPads
 
-const WHATSAPP_NUMBER = "5491158586472";
+const WHATSAPP_NUMBER = "5491127650658";
 
 function getWhatsAppUrl(text) {
   return `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(text)}`;
@@ -186,7 +186,7 @@ export default function ServicioTablets({ imageUrl }) {
             ¿Tu tablet necesita reparación?
           </h2>
           <p style={{ color: "rgba(255,255,255,0.85)", marginBottom: 32, fontSize: 18, fontFamily: "'DM Sans', sans-serif" }}>
-            Diagnóstico gratuito. Escribinos y te tellinguemos qué necesita.
+            Diagnóstico gratuito. Escribinos y te diremos qué necesita.
           </p>
           <a
             href={getWhatsAppUrl("Hola, necesito reparar mi tablet/iPad. ¿Cuánto cuesta?")}

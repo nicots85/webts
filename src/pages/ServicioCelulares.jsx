@@ -3,7 +3,7 @@
 
 import { useState } from "react";
 
-const WHATSAPP_NUMBER = "5491158586472";
+const WHATSAPP_NUMBER = "5491127650658";
 
 function getWhatsAppUrl(text) {
   return `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(text)}`;
@@ -258,7 +258,7 @@ export default function ServicioCelulares({ imageUrl }) {
             ¿Tu celular tiene algún problema?
           </h2>
           <p style={{ color: "rgba(255,255,255,0.85)", marginBottom: 32, fontSize: 18, fontFamily: "'DM Sans', sans-serif" }}>
-            Traélo para un diagnóstico gratuito. Sin compromiso, te tellinguemos exactamente qué tiene y cuánto cuesta la reparación.
+            Traélo para un diagnóstico gratuito. Sin compromiso, te diremos exactamente qué tiene y cuánto cuesta la reparación.
           </p>
           <a
             href={getWhatsAppUrl("Hola, tengo un problema con mi celular. Quiero saber más sobre la reparación.")}

@@ -1,6 +1,6 @@
 // Landing page para Reparación de Consolas
 
-const WHATSAPP_NUMBER = "5491158586472";
+const WHATSAPP_NUMBER = "5491127650658";
 
 function getWhatsAppUrl(text) {
   return `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(text)}`;

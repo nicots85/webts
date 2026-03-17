@@ -1,6 +1,6 @@
 // Landing page para Servicio de Impresoras
 
-const WHATSAPP_NUMBER = "5491158586472";
+const WHATSAPP_NUMBER = "5491127650658";
 
 function getWhatsAppUrl(text) {
   return `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(text)}`;
@@ -193,7 +193,7 @@ export default function ServicioImpresoras({ imageUrl }) {
             ¿Tu impresora no funciona bien?
           </h2>
           <p style={{ color: "#666", marginBottom: 32, fontSize: 18, fontFamily: "'DM Sans', sans-serif" }}>
-            Escribinos y te tellinguemos qué necesita tu impresora.
+            Escribinos y te diremos qué necesita tu impresora.
           </p>
           <a
             href={getWhatsAppUrl("Hola, necesito servicio para mi impresora. ¿Qué marcas trabajan?")}

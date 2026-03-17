@@ -1,6 +1,6 @@
 // Landing page para Reparación de Bisagras
 
-const WHATSAPP_NUMBER = "5491158586472";
+const WHATSAPP_NUMBER = "5491127650658";
 
 function getWhatsAppUrl(text) {
   return `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(text)}`;
@@ -246,7 +246,7 @@ export default function ServicioBisagras({ imageUrl }) {
             ¿Las bisagras de tu notebook están rotas?
           </h2>
           <p style={{ color: "rgba(255,255,255,0.85)", marginBottom: 32, fontSize: 18, fontFamily: "'DM Sans', sans-serif" }}>
-            No arriesgues romper la pantalla. Traéla para un diagnóstico gratuito y te tellinguemos qué necesita.
+            No arriesgues romper la pantalla. Traéla para un diagnóstico gratuito y te diremos qué necesita.
           </p>
           <a
             href={getWhatsAppUrl("Hola, necesito reparar las bisagras de mi notebook. ¿Cuánto cuesta?")}

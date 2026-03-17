@@ -3,7 +3,7 @@
 
 import { useState } from "react";
 
-const WHATSAPP_NUMBER = "5491158586472";
+const WHATSAPP_NUMBER = "5491127650658";
 
 function getWhatsAppUrl(text) {
   return `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(text)}`;
@@ -321,7 +321,7 @@ export default function ServicioApple({ imageUrl }) {
             ¿Tu equipo Apple necesita reparación?
           </h2>
           <p style={{ color: "rgba(255,255,255,0.85)", marginBottom: 32, fontSize: 18, fontFamily: "'DM Sans', sans-serif" }}>
-            No arriesgues tu equipo en cualquier lugar. Escribinos para un diagnóstico gratuito y te tellinguemos exactamente qué tiene tu MacBook, iPhone o iPad.
+            No arriesgues tu equipo en cualquier lugar. Escribinos para un diagnóstico gratuito y te diremos exactamente qué tiene tu MacBook, iPhone o iPad.
           </p>
           <a
             href={getWhatsAppUrl("Hola, tengo un MacBook/iPhone/iPad que necesita reparación. Quiero más información.")}
