@@ -7,7 +7,7 @@ export const IMAGENES_SERVICIOS = {
     desc: "MacBook Pro en detalle de hardware"
   },
   celulares: {
-    hero: "https://images.unsplash.com/photo-1511707171634-5f897ff02597?auto=format&fit=crop&q=80&w=1200",
+    hero: "https://images.unsplash.com/photo-1597740985671-2a8a3b80502e?auto=format&fit=crop&q=80&w=1200",
     desc: "Smartphone de alta gama ultra nítido"
   },
   computadoras: {
@@ -19,7 +19,7 @@ export const IMAGENES_SERVICIOS = {
     desc: "Módulos de memoria y procesador"
   },
   bisagras: {
-    hero: "https://images.unsplash.com/photo-1581092160562-40aa08e78837?auto=format&fit=crop&q=80&w=1200",
+    hero: "https://images.unsplash.com/photo-1589114420063-4ba6fccce566?auto=format&fit=crop&q=80&w=1200",
     desc: "Detalle técnico de mecanismo de notebook"
   },
   consolas: {
