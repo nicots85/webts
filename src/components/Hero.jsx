@@ -148,8 +148,7 @@ export default function Hero() {
             }}
           >
             <div style={{ fontSize: 48, marginBottom: 12 }}>⚡</div>
-            <div style={{ fontSize: 28, fontWeight: 700, color: "#fff", marginBottom: 4 }}>En el día</div>
-            <div style={{ fontSize: 14, color: "rgba(255,255,255,0.6)", fontFamily: "'DM Sans', sans-serif" }}>La mayoría de reparaciones</div>
+            <div style={{ fontSize: 22, fontWeight: 700, color: "#fff", lineHeight: 1.2 }}>Reparaciones <br/> en el día</div>
           </div>
           <div
             style={{
