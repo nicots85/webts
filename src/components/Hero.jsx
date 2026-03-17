@@ -4,6 +4,7 @@ export default function Hero() {
   return (
     <section
       id="inicio"
+      className="hero-section"
       style={{
         minHeight: "100vh",
         display: "flex",
@@ -73,10 +74,11 @@ export default function Hero() {
       >
         <div className="hero-content" style={{ animation: "fadeInUp 0.8s ease-out" }}>
           <div
+            className="hero-tag"
             style={{
               display: "inline-flex",
               alignItems: "center",
-              gap: 10,
+              textAlign: "center",
               background: "rgba(13,89,242,0.1)",
               backdropFilter: "blur(8px)",
               border: "1px solid rgba(13,89,242,0.2)",
@@ -85,14 +87,14 @@ export default function Hero() {
               marginBottom: 32,
             }}
           >
-            <span style={{ color: "#0d59f2", fontSize: 13, fontWeight: 800, letterSpacing: 1.5 }}>
+            <span style={{ color: "#0d59f2", fontSize: "clamp(10px, 2.5vw, 13px)", fontWeight: 800, letterSpacing: 1.5 }}>
               TU LUGAR DE ENCUENTRO CON LA TECNOLOGÍA
             </span>
           </div>
 
           <h1
             style={{
-              fontSize: "clamp(42px, 7vw, 72px)",
+              fontSize: "clamp(42px, 8vw, 72px)",
               fontWeight: 950,
               color: "#fff",
               marginBottom: 24,
@@ -111,7 +113,7 @@ export default function Hero() {
 
           <p
             style={{
-              fontSize: "clamp(17px, 2vw, 20px)",
+              fontSize: "clamp(16px, 1.8vw, 20px)",
               color: "rgba(255,255,255,0.7)",
               marginBottom: 48,
               maxWidth: 540,
@@ -230,16 +232,6 @@ export default function Hero() {
       <style>{`
         @keyframes fadeInUp {
           from { opacity: 0; transform: translateY(20px); }
-          to { opacity: 1; transform: translateY(0); }
-        }
-      `}</style>
-    </section>
-  );
-}
-
-      <style>{`
-        @keyframes fadeInUp {
-          from { opacity: 0; transform: translateY(30px); }
           to { opacity: 1; transform: translateY(0); }
         }
       `}</style>

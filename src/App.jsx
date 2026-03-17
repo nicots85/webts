@@ -770,13 +770,13 @@ export default function App() {
               @media (max-width: 900px) {
                 .desktop-nav { display: none !important; }
                 .mobile-menu-btn { display: flex !important; }
-                .hero-container { grid-template-columns: 1fr !important; gap: 48px !important; text-align: center; }
-                .hero-content { display: flex; flexDirection: column; align-items: center; }
-                .hero-stats-grid { grid-template-columns: repeat(2, 1fr) !important; gap: 12px !important; }
-                .hero-actions { justify-content: center; }
-                section { padding: 60px 20px !important; }
-                .service-row { flex-direction: column !important; gap: 32px !important; }
-                .service-info { text-align: center; }
+                .hero-container { grid-template-columns: 1fr !important; gap: 40px !important; text-align: center; width: 100% !important; max-width: 100% !important; }
+                .hero-content { display: flex; flex-direction: column; align-items: center; width: 100%; }
+                .hero-stats-grid { grid-template-columns: repeat(2, 1fr) !important; gap: 12px !important; width: 100%; }
+                .hero-actions { justify-content: center; width: 100%; }
+                section { padding: 60px 20px !important; overflow-x: hidden; }
+                .service-row { flex-direction: column !important; gap: 32px !important; width: 100%; }
+                .service-info { text-align: center; width: 100%; }
                 .service-items { grid-template-columns: 1fr !important; }
                 .service-img { height: 300px !important; }
               }
