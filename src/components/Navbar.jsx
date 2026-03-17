@@ -58,7 +58,15 @@ export default function NavBar({ activeSection }) {
         }}
       >
         <a href="#inicio" style={{ display: "flex", alignItems: "center", textDecoration: "none" }}>
-          <img src="/img/LOGO BLANCO.png" alt="TechnoStore" style={{ height: 44, width: "auto" }} />
+          <img 
+            src="/img/LOGO BLANCO.png" 
+            alt="TechnoStore" 
+            style={{ 
+              height: 44, 
+              width: "auto",
+              filter: "drop-shadow(0 0 8px rgba(13,89,242,0.4)) drop-shadow(0 0 2px rgba(45,252,82,0.3))"
+            }} 
+          />
         </a>
 
         <nav className="desktop-nav" style={{ display: "flex", gap: 24, alignItems: "center" }}>
