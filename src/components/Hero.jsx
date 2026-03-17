@@ -148,6 +148,7 @@ export default function Hero() {
             }}
           >
             <div style={{ fontSize: 48, marginBottom: 12 }}>⚡</div>
+            {/* Refined text for TechnoStore V5 */}
             <div style={{ fontSize: 22, fontWeight: 700, color: "#fff", lineHeight: 1.2 }}>Reparaciones <br/> en el día</div>
           </div>
           <div

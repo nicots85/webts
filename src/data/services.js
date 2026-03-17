@@ -49,7 +49,7 @@ export const SERVICES = [
     subtitle: "El problema más común en notebooks",
     desc: "Las bisagras rotas son de los problemas más frecuentes que vemos en el taller. Se rompen por el uso diario, por abrirla de un solo lado, o simplemente porque el plástico cede con el tiempo. No hace falta cambiar la notebook entera: nosotros reparamos o reemplazamos las bisagras, reconstruimos los plásticos rotos y reforzamos la estructura para que no vuelva a pasar.",
     color: "#ff9500",
-    img: "https://images.unsplash.com/photo-1593642632559-0c6d3df62b39?auto=format&fit=crop&q=80&w=1200",
+    img: "/img/bisagra_rota.png",
     items: ["Bisagras para HP, Lenovo, Asus, Acer, Dell y más", "Reconstrucción de plásticos y anclajes rotos", "Refuerzo estructural con resina de alta resistencia", "Reparación del marco y tapa de pantalla", "Repuestos de la más alta calidad disponible", "Garantía de 90 días en mano de obra"],
   },
   {

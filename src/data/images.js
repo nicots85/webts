@@ -19,8 +19,8 @@ export const IMAGENES_SERVICIOS = {
     desc: "Módulos de memoria y procesador"
   },
   bisagras: {
-    hero: "https://images.unsplash.com/photo-1593642632559-0c6d3df62b39?auto=format&fit=crop&q=80&w=1200",
-    desc: "Laptop con detalle de estructura mecánica avanzada"
+    hero: "/img/bisagra_rota.png",
+    desc: "Laptop con bisagra rota - Reparación técnica"
   },
   consolas: {
     hero: "https://images.unsplash.com/photo-1606144042614-b2417e99c4e3?auto=format&fit=crop&q=80&w=1200",
