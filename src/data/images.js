@@ -7,8 +7,8 @@ export const IMAGENES_SERVICIOS = {
     desc: "MacBook Pro en detalle de hardware"
   },
   celulares: {
-    hero: "https://images.unsplash.com/photo-1556656793-062ff9f1b58e?auto=format&fit=crop&q=80&w=1200",
-    desc: "Componentes internos de smartphone"
+    hero: "https://images.unsplash.com/photo-1511707171634-5f897ff02597?auto=format&fit=crop&q=80&w=1200",
+    desc: "Smartphone de alta gama ultra nítido"
   },
   computadoras: {
     hero: "https://images.unsplash.com/photo-1588872657578-7efd1f1555ed?auto=format&fit=crop&q=80&w=1200",
@@ -19,12 +19,12 @@ export const IMAGENES_SERVICIOS = {
     desc: "Módulos de memoria y procesador"
   },
   bisagras: {
-    hero: "https://images.unsplash.com/photo-1593642702821-c8da6771f0c6?auto=format&fit=crop&q=80&w=1200",
-    desc: "Estructura mecánica de laptop"
+    hero: "https://images.unsplash.com/photo-1581092160562-40aa08e78837?auto=format&fit=crop&q=80&w=1200",
+    desc: "Detalle técnico de mecanismo de notebook"
   },
   consolas: {
-    hero: "https://images.unsplash.com/photo-1605906302474-f60df68a64dd?auto=format&fit=crop&q=80&w=1200",
-    desc: "Detalle de consola de videojuegos premium"
+    hero: "https://images.unsplash.com/photo-1606144042614-b2417e99c4e3?auto=format&fit=crop&q=80&w=1200",
+    desc: "Consola PlayStation 5 en primer plano"
   },
   tablets: {
     hero: "https://images.unsplash.com/photo-1544244015-0df4b3ffc6b0?auto=format&fit=crop&q=80&w=1200",
@@ -39,7 +39,7 @@ export const IMAGENES_SERVICIOS = {
     desc: "Placa base y componentes de PC Gaming"
   },
   ventas: {
-    hero: "https://images.unsplash.com/photo-1601524345197-6a5c21051930?auto=format&fit=crop&q=80&w=1200",
-    desc: "Accesorios y periféricos tecnológicos"
+    hero: "https://images.unsplash.com/photo-1550009158-9ebf69173e03?auto=format&fit=crop&q=80&w=1200",
+    desc: "Productos tecnológicos nuevos en exhibición"
   }
 };

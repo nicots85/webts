@@ -19,7 +19,7 @@ export const SERVICES = [
     subtitle: "Samsung · Motorola · Xiaomi · Huawei · Todas las marcas",
     desc: "Se te rompió la pantalla, no carga, se apaga solo o le anda mal el audio? Traelo y en la gran mayoría de los casos te lo devolvemos reparado en el mismo día. Trabajamos con todas las marcas y modelos: Samsung Galaxy, Motorola, Xiaomi, Huawei y más. No hace falta turno previo para diagnóstico, es sin cargo y sin compromiso. Cuidamos tu información, siempre.",
     color: "#ff3b30",
-    img: "https://images.unsplash.com/photo-1556656793-062ff9f1b58e?auto=format&fit=crop&q=80&w=1200",
+    img: "https://images.unsplash.com/photo-1511707171634-5f897ff02597?auto=format&fit=crop&q=80&w=1200",
     items: ["Cambio de módulo de pantalla completo", "Reemplazo de batería gastada", "Reparación de pin de carga (USB-C / Lightning)", "Recuperación de equipos con daño por líquido", "Cámaras, micrófonos, parlantes y botones", "Diagnóstico sin cargo en el acto"],
   },
   {
@@ -49,7 +49,7 @@ export const SERVICES = [
     subtitle: "El problema más común en notebooks",
     desc: "Las bisagras rotas son de los problemas más frecuentes que vemos en el taller. Se rompen por el uso diario, por abrirla de un solo lado, o simplemente porque el plástico cede con el tiempo. No hace falta cambiar la notebook entera: nosotros reparamos o reemplazamos las bisagras, reconstruimos los plásticos rotos y reforzamos la estructura para que no vuelva a pasar.",
     color: "#ff9500",
-    img: "https://images.unsplash.com/photo-1593642702821-c8da6771f0c6?auto=format&fit=crop&q=80&w=1200",
+    img: "https://images.unsplash.com/photo-1581092160562-40aa08e78837?auto=format&fit=crop&q=80&w=1200",
     items: ["Bisagras para HP, Lenovo, Asus, Acer, Dell y más", "Reconstrucción de plásticos y anclajes rotos", "Refuerzo estructural con resina de alta resistencia", "Reparación del marco y tapa de pantalla", "Repuestos de la más alta calidad disponible", "Garantía de 90 días en mano de obra"],
   },
   {
@@ -59,7 +59,7 @@ export const SERVICES = [
     subtitle: "PlayStation · Xbox · Nintendo Switch",
     desc: "¿Tu PS4 suena como una turbina? ¿Tu PS5 se apaga sola? ¿Los joysticks de tu Switch hacen drift? Reparamos todo tipo de consolas de videojuegos. Hacemos mantenimiento preventivo, limpieza de metal líquido (el talón de Aquiles de la PS5), reballing de GPU, cambio de puerto HDMI, y reparación de lectora. Usamos las mejores herramientas y repuestos para que vuelvas a jugar tranquilo.",
     color: "#f20d59",
-    img: "https://images.unsplash.com/photo-1605906302474-f60df68a64dd?auto=format&fit=crop&q=80&w=1200",
+    img: "https://images.unsplash.com/photo-1606144042614-b2417e99c4e3?auto=format&fit=crop&q=80&w=1200",
     items: ["Mantenimiento preventivo completo (limpieza + pasta térmica)", "Reballing profesional de GPU / APU", "Cambio de puerto HDMI (PS4 / PS5 / Xbox)", "Reparación de drift en joysticks (Switch / PS5)", "Cambio de metal líquido and pad térmico", "Reparación de lectora y problemas de software"],
   },
   {

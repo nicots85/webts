@@ -379,7 +379,7 @@ function SalesSection() {
         
         <div style={{ width: "100%", height: 500, background: "rgba(255,255,255,0.05)", borderRadius: 24, padding: 8, border: "1px solid rgba(255,255,255,0.1)", position: "relative", overflow: "hidden" }}>
           <img 
-            src="https://images.unsplash.com/photo-1601524345197-6a5c21051930?auto=format&fit=crop&q=80&w=1200" 
+            src="https://images.unsplash.com/photo-1550009158-9ebf69173e03?auto=format&fit=crop&q=80&w=1200" 
             alt="Venta de equipos e insumos" 
             style={{ width: "100%", height: "100%", objectFit: "cover", borderRadius: 16 }}
           />
