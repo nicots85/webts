@@ -1,45 +1,45 @@
 // URLs de imágenes para cada servicio
-// Imágenes de alta calidad de Unsplash
+// Imágenes de alta calidad de Unsplash (Sin personas, estilo cinematográfico y profesional)
 
 export const IMAGENES_SERVICIOS = {
   apple: {
-    hero: "/img/apple_service_1773640672618.png",
-    desc: "MacBook y tecnología Apple"
+    hero: "https://images.unsplash.com/photo-1517336714731-489689fd1ca8?auto=format&fit=crop&q=80&w=1200",
+    desc: "MacBook Pro en detalle de hardware"
   },
   celulares: {
-    hero: "/img/crea-una-imagen-para-un-banner-de-un-sitio-web-que-2.jpeg",
-    desc: "Smartphones de todas las marcas"
+    hero: "https://images.unsplash.com/photo-1556656793-062ff9f1b58e?auto=format&fit=crop&q=80&w=1200",
+    desc: "Componentes internos de smartphone"
   },
   computadoras: {
-    hero: "/img/pc_general_1773640791199.png",
-    desc: "Computadoras y notebooks"
+    hero: "https://images.unsplash.com/photo-1588872657578-7efd1f1555ed?auto=format&fit=crop&q=80&w=1200",
+    desc: "Hardware de notebook profesional"
   },
   upgrades: {
-    hero: "/img/upgrade_speed_1773640834807.png",
-    desc: "Mejora el rendimiento de tu equipo"
+    hero: "https://images.unsplash.com/photo-1591799264318-7e6ef8ddb7ea?auto=format&fit=crop&q=80&w=1200",
+    desc: "Módulos de memoria y procesador"
   },
   bisagras: {
-    hero: "/img/crea-una-imagen-para-un-banner-de-un-sitio-web-que-3.jpeg",
-    desc: "Reparación de laptops"
+    hero: "https://images.unsplash.com/photo-1593642702821-c8da6771f0c6?auto=format&fit=crop&q=80&w=1200",
+    desc: "Estructura mecánica de laptop"
   },
   consolas: {
-    hero: "/img/console_repair_1773640849993.png",
-    desc: "Consolas de videojuegos"
+    hero: "https://images.unsplash.com/photo-1605906302474-f60df68a64dd?auto=format&fit=crop&q=80&w=1200",
+    desc: "Detalle de consola de videojuegos premium"
   },
   tablets: {
-    hero: "/img/crea-una-imagen-para-un-banner-de-un-sitio-web-que-4.jpeg",
-    desc: "Tablets e iPads"
+    hero: "https://images.unsplash.com/photo-1544244015-0df4b3ffc6b0?auto=format&fit=crop&q=80&w=1200",
+    desc: "iPad y tecnología tablet"
   },
   impresoras: {
-    hero: "/img/crea-una-imagen-para-un-banner-de-un-sitio-web-que.jpeg",
-    desc: "Impresoras y multifunción"
+    hero: "https://images.unsplash.com/photo-1612815154858-60aa4c59eaa6?auto=format&fit=crop&q=80&w=1200",
+    desc: "Mecanismo de impresión de alta precisión"
   },
   armado: {
-    hero: "/img/hero_lab_1_1773640631102.png",
-    desc: "Armado de PCs personalizadas"
+    hero: "https://images.unsplash.com/photo-1547082299-de196ea013d6?auto=format&fit=crop&q=80&w=1200",
+    desc: "Placa base y componentes de PC Gaming"
   },
   ventas: {
-    hero: "/img/realistic-modern-photo-of-a-modest-neighborhood-co-2.jpeg",
-    desc: "Tecnología y accesorios"
+    hero: "https://images.unsplash.com/photo-1601524345197-6a5c21051930?auto=format&fit=crop&q=80&w=1200",
+    desc: "Accesorios y periféricos tecnológicos"
   }
 };

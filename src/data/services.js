@@ -9,7 +9,7 @@ export const SERVICES = [
     subtitle: "MacBook · iPhone · iPad · iMac · Apple Watch",
     desc: "En TechnoStore trabajamos con productos Apple hace más de 10 años. Sabemos que tu MacBook o iPhone no es solo un equipo: es tu herramienta de trabajo, tus fotos, tus datos. Por eso los tratamos con el cuidado que merecen. Hacemos desde cambios de pantalla y batería hasta microsoldadura de componentes en placa lógica, reparación de Face ID, y ampliación de almacenamiento interno. Usamos repuestos de la más alta calidad disponible y, cuando es posible, originales Apple.",
     color: "#0d59f2",
-    img: "/img/apple_service_1773640672618.png",
+    img: "https://images.unsplash.com/photo-1517336714731-489689fd1ca8?auto=format&fit=crop&q=80&w=1200",
     items: ["Cambio de pantalla OLED/LCD con TrueTone", "Reemplazo de batería original y compatible", "Reparación de Face ID y Touch ID", "Microsoldadura en placa lógica (IC de carga, audio, etc.)", "Ampliación de almacenamiento NAND", "Diagnóstico gratuito · Reparaciones en el día"],
   },
   {
@@ -19,7 +19,7 @@ export const SERVICES = [
     subtitle: "Samsung · Motorola · Xiaomi · Huawei · Todas las marcas",
     desc: "Se te rompió la pantalla, no carga, se apaga solo o le anda mal el audio? Traelo y en la gran mayoría de los casos te lo devolvemos reparado en el mismo día. Trabajamos con todas las marcas y modelos: Samsung Galaxy, Motorola, Xiaomi, Huawei y más. No hace falta turno previo para diagnóstico, es sin cargo y sin compromiso. Cuidamos tu información, siempre.",
     color: "#ff3b30",
-    img: "/img/crea-una-imagen-para-un-banner-de-un-sitio-web-que-2.jpeg",
+    img: "https://images.unsplash.com/photo-1556656793-062ff9f1b58e?auto=format&fit=crop&q=80&w=1200",
     items: ["Cambio de módulo de pantalla completo", "Reemplazo de batería gastada", "Reparación de pin de carga (USB-C / Lightning)", "Recuperación de equipos con daño por líquido", "Cámaras, micrófonos, parlantes y botones", "Diagnóstico sin cargo en el acto"],
   },
   {
@@ -29,7 +29,7 @@ export const SERVICES = [
     subtitle: "PC de Escritorio · Notebooks · All in One",
     desc: "¿Tu compu no enciende, se cuelga o hace ruidos raros? Traela al local y te la revisamos. Reparamos computadoras de escritorio, notebooks de todas las marcas, y equipos All-in-One. Hacemos desde un simple formateo hasta reparación de motherboard, cambio de fuente, y solución de problemas de video. También hacemos backups de tus datos antes de cualquier intervención.",
     color: "#9c27b0",
-    img: "/img/pc_general_1773640791199.png",
+    img: "https://images.unsplash.com/photo-1588872657578-7efd1f1555ed?auto=format&fit=crop&q=80&w=1200",
     items: ["Reparación de motherboard y componentes", "Mantenimiento térmico profundo (pasta térmica y limpieza)", "Solución a pantalla negra, reinicios y bluescreens", "Formateo con instalación limpia de Windows 10/11", "Backup seguro y recuperación de archivos", "Cambio de teclado, cargador y batería en notebooks"],
   },
   {
@@ -39,7 +39,7 @@ export const SERVICES = [
     subtitle: "No tires tu compu vieja, nosotros la revivimos",
     desc: "¿Tu notebook tarda 10 minutos en arrancar? ¿Se traba con solo abrir el navegador? No la tires, traela. Con un cambio de disco rígido a SSD y una ampliación de memoria RAM, tu equipo puede quedar hasta 100 veces más rápido, sin exagerar. Clonamos tu disco para que no pierdas absolutamente nada: programas, archivos, contraseñas, todo queda igual pero volando.",
     color: "#2dfc52",
-    img: "/img/upgrade_speed_1773640834807.png",
+    img: "https://images.unsplash.com/photo-1591799264318-7e6ef8ddb7ea?auto=format&fit=crop&q=80&w=1200",
     items: ["Instalación de disco SSD (SATA o NVMe M.2)", "Ampliación de memoria RAM (DDR3 / DDR4 / DDR5)", "Clonación de disco (no perdés nada)", "Optimización completa del sistema operativo", "Limpieza de programas innecesarios y malware", "Te asesoramos sobre qué conviene para tu equipo"],
   },
   {
@@ -49,7 +49,7 @@ export const SERVICES = [
     subtitle: "El problema más común en notebooks",
     desc: "Las bisagras rotas son de los problemas más frecuentes que vemos en el taller. Se rompen por el uso diario, por abrirla de un solo lado, o simplemente porque el plástico cede con el tiempo. No hace falta cambiar la notebook entera: nosotros reparamos o reemplazamos las bisagras, reconstruimos los plásticos rotos y reforzamos la estructura para que no vuelva a pasar.",
     color: "#ff9500",
-    img: "/img/crea-una-imagen-para-un-banner-de-un-sitio-web-que-3.jpeg",
+    img: "https://images.unsplash.com/photo-1593642702821-c8da6771f0c6?auto=format&fit=crop&q=80&w=1200",
     items: ["Bisagras para HP, Lenovo, Asus, Acer, Dell y más", "Reconstrucción de plásticos y anclajes rotos", "Refuerzo estructural con resina de alta resistencia", "Reparación del marco y tapa de pantalla", "Repuestos de la más alta calidad disponible", "Garantía de 90 días en mano de obra"],
   },
   {
@@ -59,8 +59,8 @@ export const SERVICES = [
     subtitle: "PlayStation · Xbox · Nintendo Switch",
     desc: "¿Tu PS4 suena como una turbina? ¿Tu PS5 se apaga sola? ¿Los joysticks de tu Switch hacen drift? Reparamos todo tipo de consolas de videojuegos. Hacemos mantenimiento preventivo, limpieza de metal líquido (el talón de Aquiles de la PS5), reballing de GPU, cambio de puerto HDMI, y reparación de lectora. Usamos las mejores herramientas y repuestos para que vuelvas a jugar tranquilo.",
     color: "#f20d59",
-    img: "/img/console_repair_1773640849993.png",
-    items: ["Mantenimiento preventivo completo (limpieza + pasta térmica)", "Reballing profesional de GPU / APU", "Cambio de puerto HDMI (PS4 / PS5 / Xbox)", "Reparación de drift en joysticks (Switch / PS5)", "Cambio de metal líquido y pad térmico", "Reparación de lectora y problemas de software"],
+    img: "https://images.unsplash.com/photo-1605906302474-f60df68a64dd?auto=format&fit=crop&q=80&w=1200",
+    items: ["Mantenimiento preventivo completo (limpieza + pasta térmica)", "Reballing profesional de GPU / APU", "Cambio de puerto HDMI (PS4 / PS5 / Xbox)", "Reparación de drift en joysticks (Switch / PS5)", "Cambio de metal líquido and pad térmico", "Reparación de lectora y problemas de software"],
   },
   {
     id: "tablets",
@@ -69,7 +69,7 @@ export const SERVICES = [
     subtitle: "iPad · Samsung Tab · Lenovo · Todas las marcas",
     desc: "Ya sea la tablet de tus hijos que se cayó al piso o el iPad que usás para trabajar, la reparamos. Cambiamos táctiles rotos, displays completos, baterías agotadas, y solucionamos problemas de software y carga. Trabajamos con iPads de todas las generaciones, Samsung Galaxy Tab, Lenovo y otras marcas.",
     color: "#0df2a6",
-    img: "/img/crea-una-imagen-para-un-banner-de-un-sitio-web-que-4.jpeg",
+    img: "https://images.unsplash.com/photo-1544244015-0df4b3ffc6b0?auto=format&fit=crop&q=80&w=1200",
     items: ["Cambio de cristal táctil (glass)", "Reemplazo de display LCD / OLED completo", "Baterías nuevas de alta duración", "Reparación de conector de carga", "Solución a bloqueos y problemas de software", "Diagnóstico sin cargo para todas las marcas"],
   },
   {
@@ -79,7 +79,7 @@ export const SERVICES = [
     subtitle: "Epson · HP · Brother · Canon",
     desc: "¿Tu impresora mancha, no toma papel o directamente dejó de imprimir? Hacemos mantenimiento y reparación de impresoras hogareñas y de oficina. Destapamos cabezales, reseteamos almohadillas de tinta, instalamos sistemas continuos alternativos y solucionamos atascos de papel. Si estás pensando en instalar un sistema de tinta continua, también lo hacemos.",
     color: "#e6e6e6",
-    img: "/img/crea-una-imagen-para-un-banner-de-un-sitio-web-que.jpeg",
+    img: "https://images.unsplash.com/photo-1612815154858-60aa4c59eaa6?auto=format&fit=crop&q=80&w=1200",
     items: ["Destape de cabezales por ultrasonido y líquido", "Reseteo de almohadillas (waste ink pad)", "Instalación de sistema de tinta continua", "Reparación de toma/arrastre de papel", "Limpieza de rodillos y engranajes", "Calibración y alineación de inyectores"],
   },
 ];

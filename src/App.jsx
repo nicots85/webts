@@ -379,7 +379,7 @@ function SalesSection() {
         
         <div style={{ width: "100%", height: 500, background: "rgba(255,255,255,0.05)", borderRadius: 24, padding: 8, border: "1px solid rgba(255,255,255,0.1)", position: "relative", overflow: "hidden" }}>
           <img 
-            src="/img/realistic-modern-photo-of-a-modest-neighborhood-co-2.jpeg" 
+            src="https://images.unsplash.com/photo-1601524345197-6a5c21051930?auto=format&fit=crop&q=80&w=1200" 
             alt="Venta de equipos e insumos" 
             style={{ width: "100%", height: "100%", objectFit: "cover", borderRadius: 16 }}
           />
@@ -821,7 +821,7 @@ export default function App() {
                         src={s.img} 
                         alt={s.title}
                         style={{ width: "100%", height: 400, objectFit: "cover", borderRadius: 24, border: `1px solid ${s.color}40`, boxShadow: `0 24px 64px rgba(0,0,0,0.4), 0 0 0 1px rgba(255,255,255,0.05)`, position: "relative", zIndex: 1 }} 
-                        onError={(e) => { e.target.src = "/img/crea-una-imagen-para-un-banner-de-un-sitio-web-que.jpeg"; }}
+                        onError={(e) => { e.target.src = "https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&q=80&w=1200"; }}
                       />
                     </div>
                   </div>
