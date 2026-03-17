@@ -768,13 +768,15 @@ export default function App() {
 
               /* Responsive Core */
               @media (max-width: 900px) {
+                .desktop-only { display: none !important; }
+                .mobile-only { display: block !important; }
                 .desktop-nav { display: none !important; }
                 .mobile-menu-btn { display: flex !important; }
                 .hero-container { grid-template-columns: 1fr !important; gap: 40px !important; text-align: center; width: 100% !important; max-width: 100% !important; }
                 .hero-content { display: flex; flex-direction: column; align-items: center; width: 100%; }
                 .hero-stats-grid { grid-template-columns: repeat(2, 1fr) !important; gap: 12px !important; width: 100%; }
                 .hero-actions { justify-content: center; width: 100%; }
-                section { padding: 60px 20px !important; overflow-x: hidden; }
+                section { padding: 60px 16px !important; overflow-x: hidden; }
                 .service-row { flex-direction: column !important; gap: 32px !important; width: 100%; }
                 .service-info { text-align: center; width: 100%; }
                 .service-items { grid-template-columns: 1fr !important; }
@@ -783,11 +785,13 @@ export default function App() {
 
               @media (max-width: 480px) {
                 .hero-stats-grid { grid-template-columns: 1fr !important; }
-                .hero-actions a { width: 100%; text-align: center; }
+                .hero-actions a { width: 100%; text-align: center; padding: 14px 20px !important; }
                 .service-img { height: 240px !important; }
+                h2 { font-size: 28px !important; }
               }
 
               @media (min-width: 901px) {
+                .mobile-only { display: none !important; }
                 .mobile-menu-btn { display: none !important; }
                 .mobile-menu { display: none !important; }
               }

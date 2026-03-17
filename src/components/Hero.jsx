@@ -4,12 +4,11 @@ export default function Hero() {
   return (
     <section
       id="inicio"
-      className="hero-section"
       style={{
         minHeight: "100vh",
         display: "flex",
         alignItems: "center",
-        padding: "100px 24px",
+        padding: "80px 16px",
         position: "relative",
         overflow: "hidden",
         background: "#05080f",
@@ -87,14 +86,14 @@ export default function Hero() {
               marginBottom: 32,
             }}
           >
-            <span style={{ color: "#0d59f2", fontSize: "clamp(10px, 2.5vw, 13px)", fontWeight: 800, letterSpacing: 1.5 }}>
+            <span style={{ color: "#0d59f2", fontSize: "clamp(10px, 2.5vw, 12px)", fontWeight: 800, letterSpacing: 1.2 }}>
               TU LUGAR DE ENCUENTRO CON LA TECNOLOGÍA
             </span>
           </div>
 
           <h1
             style={{
-              fontSize: "clamp(42px, 8vw, 72px)",
+              fontSize: "clamp(36px, 9vw, 72px)",
               fontWeight: 950,
               color: "#fff",
               marginBottom: 24,
@@ -113,19 +112,19 @@ export default function Hero() {
 
           <p
             style={{
-              fontSize: "clamp(16px, 1.8vw, 20px)",
+              fontSize: "clamp(16px, 2.2vw, 20px)",
               color: "rgba(255,255,255,0.7)",
-              marginBottom: 48,
+              marginBottom: 40,
               maxWidth: 540,
               lineHeight: 1.7,
               fontFamily: "'DM Sans', sans-serif",
-              letterSpacing: "-0.2px",
+              letterSpacing: "-0.1px",
             }}
           >
             Somos un negocio con más de 15 años de experiencia en el rubro. Estamos en constante formación. Nuestro compromiso es con su satisfacción.
           </p>
 
-          <div className="hero-actions" style={{ display: "flex", gap: 20, flexWrap: "wrap" }}>
+          <div className="hero-actions" style={{ display: "flex", gap: 16, flexWrap: "wrap" }}>
             <a
               href="#contacto"
               style={{
@@ -205,7 +204,7 @@ export default function Hero() {
                 border: "1px solid rgba(255,255,255,0.08)",
                 display: "flex",
                 flexDirection: "column",
-                transition: "transform 0.3s, border-color 0.3s",
+                transition: "all 0.3s",
               }}
             >
               <div style={{ 
@@ -221,9 +220,9 @@ export default function Hero() {
               }}>
                 {item.tag}
               </div>
-              <div style={{ fontSize: 24, marginBottom: 8 }}>{item.icon}</div>
-              <div style={{ fontSize: 24, fontWeight: 900, color: "#fff", marginBottom: 2, letterSpacing: "-0.5px" }}>{item.val}</div>
-              <div style={{ fontSize: 12, color: "rgba(255,255,255,0.5)", fontWeight: 500 }}>{item.label}</div>
+              <div style={{ fontSize: 24, marginBottom: 8, filter: "grayscale(10%)" }}>{item.icon}</div>
+              <div style={{ fontSize: 22, fontWeight: 900, color: "#fff", marginBottom: 2, letterSpacing: "-0.5px" }}>{item.val}</div>
+              <div style={{ fontSize: 11, color: "rgba(255,255,255,0.5)", fontWeight: 500 }}>{item.label}</div>
             </div>
           ))}
         </div>

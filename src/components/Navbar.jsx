@@ -180,7 +180,7 @@ export default function NavBar({ activeSection }) {
           </a>
         </nav>
 
-        <div style={{ display: "flex", gap: 10, alignItems: "center" }}>
+        <div className="desktop-only" style={{ display: "flex", gap: 10, alignItems: "center" }}>
           <a
             href={REPAIR_STATUS_URL}
             target="_blank"
@@ -226,7 +226,6 @@ export default function NavBar({ activeSection }) {
           className="mobile-menu-btn"
           onClick={() => setMobileOpen(o => !o)}
           style={{
-            display: "none",
             background: "none",
             border: "none",
             color: "#fff",
@@ -244,7 +243,6 @@ export default function NavBar({ activeSection }) {
         <div
           className="mobile-menu"
           style={{
-            display: "none",
             background: "rgba(10,15,26,0.98)",
             borderTop: "1px solid rgba(255,255,255,0.07)",
             padding: "16px 24px 24px",
@@ -268,26 +266,44 @@ export default function NavBar({ activeSection }) {
               {l.label}
             </a>
           ))}
-          <a
-            href={REPAIR_STATUS_URL}
-            target="_blank"
-            rel="noreferrer"
-            style={{
-              display: "block",
-              textAlign: "center",
-              marginTop: 16,
-              background: "rgba(45,252,82,0.12)",
-              color: "#2dfc52",
-              fontWeight: 700,
-              fontSize: 14,
-              padding: "12px",
-              borderRadius: 10,
-              textDecoration: "none",
-              border: "1px solid rgba(45,252,82,0.3)",
-            }}
-          >
-            🔍 Estado de Reparación
-          </a>
+          <div style={{ marginTop: 24, display: "flex", flexDirection: "column", gap: 12 }}>
+            <a
+              href={REPAIR_STATUS_URL}
+              target="_blank"
+              rel="noreferrer"
+              style={{
+                display: "block",
+                textAlign: "center",
+                background: "rgba(45,252,82,0.12)",
+                color: "#2dfc52",
+                fontWeight: 700,
+                fontSize: 14,
+                padding: "14px",
+                borderRadius: 12,
+                textDecoration: "none",
+                border: "1px solid rgba(45,252,82,0.3)",
+              }}
+            >
+              🔍 Estado de Reparación
+            </a>
+            <a
+              href="#contacto"
+              onClick={() => setMobileOpen(false)}
+              style={{
+                display: "block",
+                textAlign: "center",
+                background: "#0d59f2",
+                color: "#fff",
+                fontWeight: 700,
+                fontSize: 14,
+                padding: "14px",
+                borderRadius: 12,
+                textDecoration: "none",
+              }}
+            >
+              Agendar Turno
+            </a>
+          </div>
         </div>
       )}
     </header>
