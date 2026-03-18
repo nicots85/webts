@@ -1,8 +1,16 @@
-// api/chat.js — Vercel Serverless Function
+// api/chat.js — Vercel Serverless Function (CommonJS)
 // Proxy seguro entre el browser y Groq. La API key nunca llega al cliente.
 
-export default async function handler(req, res) {
-  // Solo POST
+module.exports = async function handler(req, res) {
+  // CORS headers para desarrollo local
+  res.setHeader("Access-Control-Allow-Origin", "*");
+  res.setHeader("Access-Control-Allow-Methods", "POST, OPTIONS");
+  res.setHeader("Access-Control-Allow-Headers", "Content-Type");
+
+  if (req.method === "OPTIONS") {
+    return res.status(200).end();
+  }
+
   if (req.method !== "POST") {
     return res.status(405).json({ error: "Method not allowed" });
   }
@@ -15,6 +23,7 @@ export default async function handler(req, res) {
 
   const apiKey = process.env.GROQ_API_KEY;
   if (!apiKey) {
+    console.error("GROQ_API_KEY not set");
     return res.status(500).json({ error: "GROQ_API_KEY not configured" });
   }
 
@@ -23,7 +32,7 @@ export default async function handler(req, res) {
       ? [{ role: "system", content: system }, ...messages]
       : messages;
 
-    const response = await fetch("https://api.groq.com/openai/v1/chat/completions", {
+    const groqRes = await fetch("https://api.groq.com/openai/v1/chat/completions", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -37,18 +46,18 @@ export default async function handler(req, res) {
       }),
     });
 
-    if (!response.ok) {
-      const err = await response.text();
-      console.error("Groq API error:", err);
-      return res.status(502).json({ error: "Error al conectar con el servicio de IA" });
+    if (!groqRes.ok) {
+      const errText = await groqRes.text();
+      console.error("Groq API error:", groqRes.status, errText);
+      return res.status(502).json({ error: "Error al conectar con Groq: " + groqRes.status });
     }
 
-    const data = await response.json();
+    const data = await groqRes.json();
     const reply = data.choices?.[0]?.message?.content || "No pude generar una respuesta.";
 
     return res.status(200).json({ reply });
   } catch (error) {
-    console.error("Handler error:", error);
-    return res.status(500).json({ error: "Error interno del servidor" });
+    console.error("Handler error:", error.message);
+    return res.status(500).json({ error: "Error interno: " + error.message });
   }
-}
+};
