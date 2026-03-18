@@ -1,0 +1,54 @@
+// api/chat.js — Vercel Serverless Function
+// Proxy seguro entre el browser y Groq. La API key nunca llega al cliente.
+
+export default async function handler(req, res) {
+  // Solo POST
+  if (req.method !== "POST") {
+    return res.status(405).json({ error: "Method not allowed" });
+  }
+
+  const { messages, system } = req.body;
+
+  if (!messages || !Array.isArray(messages)) {
+    return res.status(400).json({ error: "messages array is required" });
+  }
+
+  const apiKey = process.env.GROQ_API_KEY;
+  if (!apiKey) {
+    return res.status(500).json({ error: "GROQ_API_KEY not configured" });
+  }
+
+  try {
+    const groqMessages = system
+      ? [{ role: "system", content: system }, ...messages]
+      : messages;
+
+    const response = await fetch("https://api.groq.com/openai/v1/chat/completions", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: `Bearer ${apiKey}`,
+      },
+      body: JSON.stringify({
+        model: "llama-3.3-70b-versatile",
+        messages: groqMessages,
+        max_tokens: 400,
+        temperature: 0.6,
+      }),
+    });
+
+    if (!response.ok) {
+      const err = await response.text();
+      console.error("Groq API error:", err);
+      return res.status(502).json({ error: "Error al conectar con el servicio de IA" });
+    }
+
+    const data = await response.json();
+    const reply = data.choices?.[0]?.message?.content || "No pude generar una respuesta.";
+
+    return res.status(200).json({ reply });
+  } catch (error) {
+    console.error("Handler error:", error);
+    return res.status(500).json({ error: "Error interno del servidor" });
+  }
+}
