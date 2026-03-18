@@ -57,33 +57,34 @@ function buildWhatsAppLink(name, device, brand, model, problem) {
 
 // ─── COMPONENTES SECUNDARIOS ───────────────────────────────────────────────────
 
-function Services() {
+function ServiceNav() {
   return (
-    <section id="servicios" style={{ padding: "100px 24px", background: "rgba(255,255,255,0.02)" }}>
-      <div style={{ maxWidth: 1280, margin: "0 auto" }}>
-        <div style={{ textAlign: "center", marginBottom: 64 }}>
+    <section id="servicios" style={{ padding: "80px 24px 60px", background: "rgba(255,255,255,0.015)" }}>
+      <div style={{ maxWidth: 1100, margin: "0 auto" }}>
+        <div style={{ textAlign: "center", marginBottom: 48 }}>
           <h2
             style={{
               fontFamily: "'Space Grotesk', sans-serif",
-              fontSize: "clamp(32px, 4vw, 52px)",
+              fontSize: "clamp(28px, 4vw, 46px)",
               fontWeight: 900,
               color: "#fff",
               letterSpacing: "-1px",
-              margin: "0 0 16px",
+              margin: "0 0 14px",
             }}
           >
-            Nuestros Servicios
+            ¿Qué te reparamos hoy?
           </h2>
-          <p style={{ color: "rgba(255,255,255,0.5)", fontSize: 18, maxWidth: 560, margin: "0 auto" }}>
-            Soluciones técnicas especializadas para toda tu tecnología
+          <p style={{ color: "rgba(255,255,255,0.5)", fontSize: 17, maxWidth: 520, margin: "0 auto" }}>
+            Más de 15 años en el barrio. Diagnóstico sin cargo en todos los equipos.
           </p>
         </div>
 
         <div
           style={{
-            display: "grid",
-            gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))",
-            gap: 24,
+            display: "flex",
+            flexWrap: "wrap",
+            gap: 14,
+            justifyContent: "center",
           }}
         >
           {SERVICES.map((s) => (
@@ -91,70 +92,68 @@ function Services() {
               key={s.id}
               href={`#${s.id}`}
               style={{
-                display: "block",
+                display: "inline-flex",
+                alignItems: "center",
+                gap: 9,
                 textDecoration: "none",
-                background: "rgba(255,255,255,0.04)",
-                border: "1px solid rgba(255,255,255,0.08)",
-                borderRadius: 20,
-                padding: 32,
-                transition: "transform 0.25s, border-color 0.25s, box-shadow 0.25s",
-                cursor: "pointer",
+                background: `${s.color}12`,
+                border: `1px solid ${s.color}35`,
+                borderRadius: 99,
+                padding: "11px 22px",
+                color: "#fff",
+                fontSize: 15,
+                fontWeight: 600,
+                fontFamily: "'Space Grotesk', sans-serif",
+                transition: "transform 0.2s, background 0.2s, border-color 0.2s, box-shadow 0.2s",
               }}
               onMouseEnter={(e) => {
-                e.currentTarget.style.transform = "translateY(-4px)";
-                e.currentTarget.style.borderColor = s.color + "60";
-                e.currentTarget.style.boxShadow = `0 16px 48px ${s.color}20`;
+                e.currentTarget.style.transform = "translateY(-2px)";
+                e.currentTarget.style.background = `${s.color}28`;
+                e.currentTarget.style.borderColor = `${s.color}70`;
+                e.currentTarget.style.boxShadow = `0 8px 24px ${s.color}25`;
               }}
               onMouseLeave={(e) => {
                 e.currentTarget.style.transform = "none";
-                e.currentTarget.style.borderColor = "rgba(255,255,255,0.08)";
+                e.currentTarget.style.background = `${s.color}12`;
+                e.currentTarget.style.borderColor = `${s.color}35`;
                 e.currentTarget.style.boxShadow = "none";
               }}
             >
-              <div
-                style={{
-                  width: 64,
-                  height: 64,
-                  borderRadius: 16,
-                  background: s.color + "20",
-                  border: `1px solid ${s.color}40`,
-                  display: "flex",
-                  alignItems: "center",
-                  justifyContent: "center",
-                  fontSize: 32,
-                  marginBottom: 24,
-                }}
-              >
-                {s.icon}
-              </div>
-              <h3
-                style={{
-                  fontFamily: "'Space Grotesk', sans-serif",
-                  fontSize: 22,
-                  fontWeight: 800,
-                  color: "#fff",
-                  margin: "0 0 6px",
-                }}
-              >
-                {s.title}
-              </h3>
-              <p style={{ fontSize: 13, color: s.color, fontWeight: 600, margin: "0 0 16px" }}>{s.subtitle}</p>
-              <p style={{ color: "rgba(255,255,255,0.55)", fontSize: 14, lineHeight: 1.65, margin: "0 0 24px" }}>
-                {s.desc}
-              </p>
-              <ul style={{ listStyle: "none", padding: 0, margin: 0 }}>
-                {s.items.map((item) => (
-                  <li
-                    key={item}
-                    style={{ display: "flex", alignItems: "center", gap: 8, color: "rgba(255,255,255,0.6)", fontSize: 13, marginBottom: 8 }}
-                  >
-                    <span style={{ color: s.color, fontSize: 16 }}>✓</span>
-                    {item}
-                  </li>
-                ))}
-              </ul>
+              <span style={{ fontSize: 18 }}>{s.icon}</span>
+              {s.title}
             </a>
           ))}
+          <a
+            href="#armado"
+            style={{
+              display: "inline-flex",
+              alignItems: "center",
+              gap: 9,
+              textDecoration: "none",
+              background: "rgba(13,89,242,0.12)",
+              border: "1px solid rgba(13,89,242,0.35)",
+              borderRadius: 99,
+              padding: "11px 22px",
+              color: "#fff",
+              fontSize: 15,
+              fontWeight: 600,
+              fontFamily: "'Space Grotesk', sans-serif",
+              transition: "transform 0.2s, background 0.2s, box-shadow 0.2s",
+            }}
+            onMouseEnter={(e) => {
+              e.currentTarget.style.transform = "translateY(-2px)";
+              e.currentTarget.style.background = "rgba(13,89,242,0.25)";
+              e.currentTarget.style.boxShadow = "0 8px 24px rgba(13,89,242,0.25)";
+            }}
+            onMouseLeave={(e) => {
+              e.currentTarget.style.transform = "none";
+              e.currentTarget.style.background = "rgba(13,89,242,0.12)";
+              e.currentTarget.style.boxShadow = "none";
+            }}
+          >
+            <span style={{ fontSize: 18 }}>🖥️</span>
+            Armado de PC a Medida
+          </a>
         </div>
       </div>
     </section>
@@ -804,7 +803,7 @@ export default function App() {
 
             <NavBar activeSection="inicio" />
             <Hero />
-            <Services />
+            <ServiceNav />
 
             {SERVICES.map((s, index) => (
               <section key={s.id} id={s.id} style={{ padding: "100px 24px", background: index % 2 === 0 ? "rgba(255,255,255,0.01)" : "transparent" }}>
@@ -827,9 +826,14 @@ export default function App() {
                           </li>
                         ))}
                       </ul>
-                      <a href="#contacto" style={{ display: "inline-block", background: s.color, color: ["#2dfc52", "#e6e6e6"].includes(s.color.toLowerCase()) ? "#0a0f1a" : "#fff", fontFamily: "'Space Grotesk', sans-serif", fontWeight: 800, fontSize: 16, padding: "16px 36px", borderRadius: 14, textDecoration: "none", marginTop: 40, boxShadow: `0 8px 32px ${s.color}35` }}>
-                        Agendar turno →
-                      </a>
+                      <div style={{ display: "flex", gap: 14, flexWrap: "wrap", marginTop: 40 }}>
+                        <a href={`/${s.id}`} style={{ display: "inline-block", background: s.color, color: ["#2dfc52", "#e6e6e6"].includes(s.color.toLowerCase()) ? "#0a0f1a" : "#fff", fontFamily: "'Space Grotesk', sans-serif", fontWeight: 800, fontSize: 15, padding: "14px 30px", borderRadius: 14, textDecoration: "none", boxShadow: `0 8px 32px ${s.color}35` }}>
+                          Ver más info →
+                        </a>
+                        <a href={`https://wa.me/5491127650658?text=${encodeURIComponent(`Hola TechnoStore! Quiero consultar sobre ${s.title}.`)}`} target="_blank" rel="noreferrer" style={{ display: "inline-flex", alignItems: "center", gap: 8, background: "rgba(45,252,82,0.12)", border: "1px solid rgba(45,252,82,0.35)", color: "#2dfc52", fontFamily: "'Space Grotesk', sans-serif", fontWeight: 700, fontSize: 15, padding: "14px 28px", borderRadius: 14, textDecoration: "none" }}>
+                          💬 Consultar
+                        </a>
+                      </div>
                     </div>
 
                     <div style={{ flex: 1, minWidth: 280, position: "relative" }}>
