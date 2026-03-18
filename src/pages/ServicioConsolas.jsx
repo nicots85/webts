@@ -1,5 +1,7 @@
 // Landing page para Reparación de Consolas
 
+import useSEO from "../hooks/useSEO";
+
 const WHATSAPP_NUMBER = "5491127650658";
 
 function getWhatsAppUrl(text) {
@@ -7,6 +9,11 @@ function getWhatsAppUrl(text) {
 }
 
 export default function ServicioConsolas({ imageUrl }) {
+  useSEO({
+    title: "Reparación de Consolas PS4, PS5, Xbox y Nintendo Switch en Buenos Aires | TechnoStore",
+    description: "Reparamos consolas de videojuegos en Buenos Aires. PS4, PS5, Xbox, Nintendo Switch. Mantenimiento, HDMI, metal líquido, drift de joysticks, reballing GPU. Diagnóstico sin cargo. Av. Santa Fe 2844.",
+    canonical: "https://technostore.com.ar/consolas",
+  });
   return (
     <div style={{ background: "#0a0f1a", minHeight: "100vh" }}>
       {/* Hero Section */}

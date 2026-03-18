@@ -1,5 +1,7 @@
 // Landing page para Ventas de equipos y accesorios
 
+import useSEO from "../hooks/useSEO";
+
 const WHATSAPP_NUMBER = "5491127650658";
 
 function getWhatsAppUrl(text) {
@@ -7,6 +9,11 @@ function getWhatsAppUrl(text) {
 }
 
 export default function ServicioVentas({ imageUrl }) {
+  useSEO({
+    title: "Venta de Celulares, Accesorios y Hardware en Buenos Aires | TechnoStore",
+    description: "Vendemos celulares libres, notebooks, tablets, fundas, templados, cargadores, SSD, RAM y periféricos en Buenos Aires. Consultá disponibilidad y precios por WhatsApp. Av. Santa Fe 2844.",
+    canonical: "https://technostore.com.ar/ventas",
+  });
   return (
     <div style={{ background: "#0a0f1a", minHeight: "100vh" }}>
       <section

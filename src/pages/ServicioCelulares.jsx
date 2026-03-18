@@ -2,6 +2,7 @@
 // Optimizada para campañas de publicidad pagada
 
 import { useState } from "react";
+import useSEO from "../hooks/useSEO";
 
 const WHATSAPP_NUMBER = "5491127650658";
 
@@ -10,6 +11,11 @@ function getWhatsAppUrl(text) {
 }
 
 export default function ServicioCelulares({ imageUrl }) {
+  useSEO({
+    title: "Reparación de Celulares en Buenos Aires · Samsung, Motorola, Xiaomi | TechnoStore",
+    description: "Reparamos celulares de todas las marcas en Buenos Aires. Samsung, Motorola, Xiaomi, Huawei y más. Pantalla, batería, carga, daño por líquido. Diagnóstico sin cargo. Reparación en el día. Av. Santa Fe 2844.",
+    canonical: "https://technostore.com.ar/celulares",
+  });
   return (
     <div style={{ background: "#0a0f1a", minHeight: "100vh" }}>
       {/* Hero Section */}

@@ -2,6 +2,7 @@
 // Esta página está optimizada para campañas de publicidad pagada
 
 import { useState } from "react";
+import useSEO from "../hooks/useSEO";
 
 const WHATSAPP_NUMBER = "5491127650658";
 
@@ -11,6 +12,11 @@ function getWhatsAppUrl(text) {
 
 export default function ServicioApple({ imageUrl }) {
   const [mostrarFormulario, setMostrarFormulario] = useState(false);
+  useSEO({
+    title: "Reparación de MacBook, iPhone e iPad en Buenos Aires | TechnoStore",
+    description: "Servicio técnico Apple especializado en Buenos Aires. Reparamos MacBook, iPhone, iPad e iMac. Microsoldadura, cambio de pantalla, batería, Face ID y más. Diagnóstico sin cargo. Más de 10 años de experiencia. Av. Santa Fe 2844.",
+    canonical: "https://technostore.com.ar/apple",
+  });
 
   return (
     <div style={{ background: "#0a0f1a", minHeight: "100vh" }}>

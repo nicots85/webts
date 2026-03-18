@@ -1,5 +1,7 @@
 // Landing page para Reparación de Bisagras
 
+import useSEO from "../hooks/useSEO";
+
 const WHATSAPP_NUMBER = "5491127650658";
 
 function getWhatsAppUrl(text) {
@@ -7,6 +9,11 @@ function getWhatsAppUrl(text) {
 }
 
 export default function ServicioBisagras({ imageUrl }) {
+  useSEO({
+    title: "Reparación de Bisagras de Notebook en Buenos Aires | TechnoStore",
+    description: "Reparamos bisagras rotas de notebooks HP, Lenovo, Asus, Acer, Dell en Buenos Aires. Reconstruimos plásticos, reforzamos estructura. No cambiás toda la laptop. Diagnóstico gratuito. Av. Santa Fe 2844.",
+    canonical: "https://technostore.com.ar/bisagras",
+  });
   return (
     <div style={{ background: "#0a0f1a", minHeight: "100vh" }}>
       {/* Hero Section */}

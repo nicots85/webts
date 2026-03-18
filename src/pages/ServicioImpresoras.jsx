@@ -1,5 +1,7 @@
 // Landing page para Servicio de Impresoras
 
+import useSEO from "../hooks/useSEO";
+
 const WHATSAPP_NUMBER = "5491127650658";
 
 function getWhatsAppUrl(text) {
@@ -7,6 +9,11 @@ function getWhatsAppUrl(text) {
 }
 
 export default function ServicioImpresoras({ imageUrl }) {
+  useSEO({
+    title: "Servicio Técnico de Impresoras en Buenos Aires · Epson, HP, Brother, Canon | TechnoStore",
+    description: "Reparamos y damos mantenimiento a impresoras Epson, HP, Brother y Canon en Buenos Aires. Destapamos cabezales, reseteamos almohadillas, instalamos sistema de tinta continua. Av. Santa Fe 2844.",
+    canonical: "https://technostore.com.ar/impresoras",
+  });
   return (
     <div style={{ background: "#0a0f1a", minHeight: "100vh" }}>
       <section

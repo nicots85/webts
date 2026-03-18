@@ -1,5 +1,7 @@
 // Landing page para Upgrade de Velocidad
 
+import useSEO from "../hooks/useSEO";
+
 const WHATSAPP_NUMBER = "5491127650658";
 
 function getWhatsAppUrl(text) {
@@ -7,6 +9,11 @@ function getWhatsAppUrl(text) {
 }
 
 export default function ServicioUpgrades({ imageUrl }) {
+  useSEO({
+    title: "Upgrade de Velocidad para Tu Notebook en Buenos Aires | TechnoStore",
+    description: "¿Tu computadora está lenta? Instalamos SSD y ampliamos RAM en Buenos Aires. Tu notebook puede quedar hasta 10 veces más rápida. Clonamos el disco: no perdés nada. Av. Santa Fe 2844.",
+    canonical: "https://technostore.com.ar/upgrades",
+  });
   return (
     <div style={{ background: "#0a0f1a", minHeight: "100vh" }}>
       {/* Hero Section */}

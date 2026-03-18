@@ -827,11 +827,13 @@ export default function App() {
                         ))}
                       </ul>
                       <div style={{ display: "flex", gap: 14, flexWrap: "wrap", marginTop: 40 }}>
-                        <a href={`/${s.id}`} style={{ display: "inline-block", background: s.color, color: ["#2dfc52", "#e6e6e6"].includes(s.color.toLowerCase()) ? "#0a0f1a" : "#fff", fontFamily: "'Space Grotesk', sans-serif", fontWeight: 800, fontSize: 15, padding: "14px 30px", borderRadius: 14, textDecoration: "none", boxShadow: `0 8px 32px ${s.color}35` }}>
-                          Ver más info →
-                        </a>
-                        <a href={`https://wa.me/5491127650658?text=${encodeURIComponent(`Hola TechnoStore! Quiero consultar sobre ${s.title}.`)}`} target="_blank" rel="noreferrer" style={{ display: "inline-flex", alignItems: "center", gap: 8, background: "rgba(45,252,82,0.12)", border: "1px solid rgba(45,252,82,0.35)", color: "#2dfc52", fontFamily: "'Space Grotesk', sans-serif", fontWeight: 700, fontSize: 15, padding: "14px 28px", borderRadius: 14, textDecoration: "none" }}>
-                          💬 Consultar
+                        <a
+                          href={`https://wa.me/5491127650658?text=${encodeURIComponent(`Hola TechnoStore! Quiero consultar sobre ${s.title}. ¿Me pueden dar más info?`)}`}
+                          target="_blank"
+                          rel="noreferrer"
+                          style={{ display: "inline-flex", alignItems: "center", gap: 8, background: s.color, color: ["#2dfc52", "#e6e6e6"].includes(s.color.toLowerCase()) ? "#0a0f1a" : "#fff", fontFamily: "'Space Grotesk', sans-serif", fontWeight: 800, fontSize: 15, padding: "14px 30px", borderRadius: 14, textDecoration: "none", boxShadow: `0 8px 32px ${s.color}35` }}
+                        >
+                          💬 Consultar por WhatsApp
                         </a>
                       </div>
                     </div>

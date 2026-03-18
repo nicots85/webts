@@ -1,6 +1,7 @@
 // Landing page para Computadoras y Notebooks
 
 import { useState } from "react";
+import useSEO from "../hooks/useSEO";
 
 const WHATSAPP_NUMBER = "5491127650658";
 
@@ -9,6 +10,11 @@ function getWhatsAppUrl(text) {
 }
 
 export default function ServicioComputadoras({ imageUrl }) {
+  useSEO({
+    title: "Reparación de Computadoras y Notebooks en Buenos Aires | TechnoStore",
+    description: "Reparamos computadoras de escritorio, notebooks y All-in-One de todas las marcas en Buenos Aires. Formateo, backup, reparación de motherboard, diagnóstico sin cargo. Av. Santa Fe 2844.",
+    canonical: "https://technostore.com.ar/computadoras",
+  });
   return (
     <div style={{ background: "#0a0f1a", minHeight: "100vh" }}>
       {/* Hero Section */}

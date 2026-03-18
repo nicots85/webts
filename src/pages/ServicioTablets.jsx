@@ -1,5 +1,7 @@
 // Landing page para Tablets e iPads
 
+import useSEO from "../hooks/useSEO";
+
 const WHATSAPP_NUMBER = "5491127650658";
 
 function getWhatsAppUrl(text) {
@@ -7,6 +9,11 @@ function getWhatsAppUrl(text) {
 }
 
 export default function ServicioTablets({ imageUrl }) {
+  useSEO({
+    title: "Reparación de Tablets e iPads en Buenos Aires | TechnoStore",
+    description: "Reparamos tablets e iPads de todas las marcas en Buenos Aires. Pantallas, baterías, táctil, carga y software. iPad todas las generaciones, Samsung Galaxy Tab, Lenovo. Diagnóstico sin cargo. Av. Santa Fe 2844.",
+    canonical: "https://technostore.com.ar/tablets",
+  });
   return (
     <div style={{ background: "#0a0f1a", minHeight: "100vh" }}>
       <section

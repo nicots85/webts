@@ -1,6 +1,8 @@
 // Landing page para Armado de PC
 // Optimizada para campañas de publicidad en Buenos Aires
 
+import useSEO from "../hooks/useSEO";
+
 const WHATSAPP_NUMBER = "5491127650658";
 
 function getWhatsAppUrl(text) {
@@ -8,6 +10,11 @@ function getWhatsAppUrl(text) {
 }
 
 export default function ServicioArmadoPC({ imageUrl }) {
+  useSEO({
+    title: "Armado de PC a Medida en Buenos Aires · Gaming, Diseño, Trabajo | TechnoStore",
+    description: "Armamos PCs a medida en Buenos Aires para gaming, diseño gráfico, edición de video o trabajo. Asesoría gratuita, componentes originales con garantía, drivers instalados. Av. Santa Fe 2844.",
+    canonical: "https://technostore.com.ar/armado",
+  });
   return (
     <div style={{ background: "#0a0f1a", minHeight: "100vh", color: "#fff", fontFamily: "'Space Grotesk', sans-serif" }}>
       {/* Hero Section */}
