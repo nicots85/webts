@@ -1,38 +1,43 @@
-// api/chat.js — Vercel Serverless Function (ESM)
+// api/chat.js — Vercel Edge Function
 // Proxy seguro entre el browser y Groq. La API key nunca llega al cliente.
 
-export default async function handler(req, res) {
-  // CORS headers para desarrollo local
-  res.setHeader("Access-Control-Allow-Origin", "*");
-  res.setHeader("Access-Control-Allow-Methods", "POST, OPTIONS");
-  res.setHeader("Access-Control-Allow-Headers", "Content-Type");
+export const config = {
+  runtime: "edge",
+};
 
-  if (req.method === "OPTIONS") {
-    return res.status(200).end();
-  }
-
+export default async function handler(req) {
+  // Solo POST
   if (req.method !== "POST") {
-    return res.status(405).json({ error: "Method not allowed" });
-  }
-
-  const { messages, system } = req.body;
-
-  if (!messages || !Array.isArray(messages)) {
-    return res.status(400).json({ error: "messages array is required" });
-  }
-
-  const apiKey = process.env.GROQ_API_KEY;
-  if (!apiKey) {
-    console.error("GROQ_API_KEY not set");
-    return res.status(500).json({ error: "GROQ_API_KEY not configured" });
+    return new Response(JSON.stringify({ error: "Method not allowed" }), {
+      status: 405,
+      headers: { "Content-Type": "application/json" },
+    });
   }
 
   try {
+    const { messages, system } = await req.json();
+
+    if (!messages || !Array.isArray(messages)) {
+      return new Response(JSON.stringify({ error: "messages array is required" }), {
+        status: 400,
+        headers: { "Content-Type": "application/json" },
+      });
+    }
+
+    const apiKey = process.env.GROQ_API_KEY;
+    if (!apiKey) {
+      console.error("GROQ_API_KEY not configured in Vercel.");
+      return new Response(JSON.stringify({ error: "GROQ_API_KEY not configured" }), {
+        status: 500,
+        headers: { "Content-Type": "application/json" },
+      });
+    }
+
     const groqMessages = system
       ? [{ role: "system", content: system }, ...messages]
       : messages;
 
-    const groqRes = await fetch("https://api.groq.com/openai/v1/chat/completions", {
+    const response = await fetch("https://api.groq.com/openai/v1/chat/completions", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -46,18 +51,30 @@ export default async function handler(req, res) {
       }),
     });
 
-    if (!groqRes.ok) {
-      const errText = await groqRes.text();
-      console.error("Groq API error:", groqRes.status, errText);
-      return res.status(502).json({ error: "Error al conectar con Groq: " + groqRes.status });
+    if (!response.ok) {
+      const err = await response.text();
+      console.error("Groq API error:", response.status, err);
+      return new Response(JSON.stringify({ error: "Error de conexión con IA", details: err }), {
+        status: 502,
+        headers: { "Content-Type": "application/json" },
+      });
     }
 
-    const data = await groqRes.json();
+    const data = await response.json();
     const reply = data.choices?.[0]?.message?.content || "No pude generar una respuesta.";
 
-    return res.status(200).json({ reply });
+    return new Response(JSON.stringify({ reply }), {
+      status: 200,
+      headers: {
+        "Content-Type": "application/json",
+        "Access-Control-Allow-Origin": "*",
+      },
+    });
   } catch (error) {
-    console.error("Handler error:", error.message);
-    return res.status(500).json({ error: "Error interno: " + error.message });
+    console.error("Edge Function error:", error.message);
+    return new Response(JSON.stringify({ error: "Error interno del servidor", details: error.message }), {
+      status: 500,
+      headers: { "Content-Type": "application/json" },
+    });
   }
-};
+}
