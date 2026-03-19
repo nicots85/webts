@@ -1,7 +1,7 @@
-// api/chat.js — Vercel Serverless Function (CommonJS)
+// api/chat.js — Vercel Serverless Function (ESM)
 // Proxy seguro entre el browser y Groq. La API key nunca llega al cliente.
 
-module.exports = async function handler(req, res) {
+export default async function handler(req, res) {
   // CORS headers para desarrollo local
   res.setHeader("Access-Control-Allow-Origin", "*");
   res.setHeader("Access-Control-Allow-Methods", "POST, OPTIONS");
